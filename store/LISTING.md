@@ -7,7 +7,9 @@ Dashboard: https://chrome.google.com/webstore/devconsole
 
 ## 0. Before you start
 1. Create a developer account. There is a one-time $5 registration fee.
-2. Publish `PRIVACY.md` at a public URL. GitHub Pages works: enable Pages for the repo, and the policy will be at `https://<your-username>.github.io/<repo>/PRIVACY`. Or paste it into a public Google Doc.
+2. Turn on GitHub Pages once: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**, pick the branch, folder **/docs**, then **Save**. Within a minute or two:
+   - Privacy policy: https://adityarungta2048.github.io/Grabbit/privacy.html
+   - Homepage: https://adityarungta2048.github.io/Grabbit/
 3. Click **New item** and upload `grabbit-1.1.0.zip` (build it with `./build.sh`).
 
 ---
@@ -106,8 +108,8 @@ The screenshots and tiles are JPEGs with no alpha, as the store requires. Upload
 
 ### Additional fields
 - **Official URL:** *(optional)* only a site you've verified in Search Console
-- **Homepage URL:** your GitHub repo or GitHub Pages URL
-- **Support URL:** `https://github.com/<your-username>/<repo>/issues`
+- **Homepage URL:** `https://adityarungta2048.github.io/Grabbit/`
+- **Support URL:** `https://github.com/AdityaRungta2048/Grabbit/issues`
 - **Mature content:** No
 
 ---
@@ -139,7 +141,7 @@ Then tick all three certifications:
 - I do not use or transfer user data for purposes that are unrelated to my item's single purpose
 - I do not use or transfer user data to determine creditworthiness or for lending purposes
 
-**Privacy policy URL:** the public URL of `PRIVACY.md` from step 0.
+**Privacy policy URL:** `https://adityarungta2048.github.io/Grabbit/privacy.html`
 
 ---
 
@@ -156,7 +158,7 @@ Then click **Submit for review**. A first review usually takes a few days. Optio
 web scraper, data scraper, data extractor, scrape to excel, website to excel, scrape to google sheets, csv export, table scraper, list scraper, email extractor, email scraper, lead extractor, contact finder, pagination scraper, infinite scroll scraper, bulk url scraper, scheduled scraper, price tracker, price monitor, image downloader, bulk image downloader, no code scraper, free web scraper, instant data scraper, link extractor
 
 ## Launch tips for more installs
-1. Publish the privacy policy and a simple landing page (GitHub Pages works) and link both from the listing. Listings with a website rank better.
+1. Once the store approves Grabbit, point the "Get Grabbit for Chrome" button in `docs/index.html` at the store page. Listings with a website rank better, and the site sends visitors to the store.
 2. Add a short YouTube demo as the promo video.
 3. Early ratings matter most. The panel asks for a review after a user's 3rd export, and you can also share the review link with your first users.
 4. Post a short demo GIF on Product Hunt, Reddit (r/webscraping, r/chrome_extensions, r/sales, r/leadgeneration, r/datasets, r/ecommerce), and in LinkedIn/X growth communities.

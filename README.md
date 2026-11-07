@@ -43,3 +43,4 @@ This creates `dist/grabbit-<version>.zip`. Upload it in the Developer Dashboard.
 | `panel.*` | Side panel UI |
 | `export.js` | CSV / TSV / JSON / dependency-free XLSX writer |
 | `welcome.html` | First-run onboarding |
+| `docs/` | GitHub Pages site: homepage and privacy policy (keep `docs/privacy.html` in sync with `PRIVACY.md`) |
