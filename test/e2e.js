@@ -7,7 +7,7 @@ const assert = require('assert');
 const launch = require('./harness');
 
 (async () => {
-  const { base, openPanel: open, close } = await launch();
+  const { sw, base, openPanel: open, close } = await launch();
   const errors = [];
   const openPanel = async (url) => {
     const r = await open(url);
@@ -94,6 +94,53 @@ const launch = require('./harness');
   await sc.panel.click('#runPager');
   await sc.panel.waitForFunction(() => document.querySelector('#progress').hidden && +document.querySelector('#rowCount').textContent >= 40, null, { timeout: 90000, polling: 200 });
   assert.strictEqual(await rowCount(sc.panel), 40, 'infinite scroll collected all');
+
+  // 9. Image download: 9 product images from the demo list
+  const im = await openPanel(`${base}/demo.html`);
+  await im.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent === 9, null, { polling: 200 });
+  assert(await im.panel.isVisible('#dlImages'), 'image download button shown');
+  await im.panel.click('#dlImages');
+  await im.panel.waitForFunction(() => document.querySelector('#progress').hidden, null, { polling: 200 });
+  const imgs = await sw.evaluate(async () => {
+    for (let i = 0; i < 50; i++) {
+      const d = (await chrome.downloads.search({})).filter((x) => x.finalUrl.startsWith('data:image/svg'));
+      if (d.length >= 9 && d.every((x) => x.state === 'complete')) return d.length;
+      await new Promise((r) => setTimeout(r, 200));
+    }
+    return 0;
+  });
+  assert.strictEqual(imgs, 9, 'downloaded 9 images');
+  const names = await im.panel.evaluate(() => [imageName('data:image/svg+xml,abc', 0), imageName('https://x.com/a/b/photo%20one.webp?w=2', 11), imageName('https://x.com/img?id=3', 2)]);
+  console.log('image names:', names);
+  assert.deepStrictEqual(names, ['001-image.svg', '012-photo_one.webp', '003-img.jpg']);
+
+  // 10. Schedule: 3 pages via Next, auto CSV export, first run starts right away
+  const sch = await openPanel(`${base}/shop1.html`);
+  await sch.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent === 12, null, { polling: 200 });
+  await sch.panel.click('#pagerCard summary');
+  await sch.panel.check('[name=pmode][value=next]');
+  await sch.panel.waitForFunction(() => document.querySelector('#nextLabel').textContent.includes('Next'), null, { polling: 200 });
+  await sch.panel.fill('#delay', '0.2');
+  await sch.panel.click('[data-tab=schedule]');
+  await sch.panel.selectOption('#schedExport', 'csv');
+  await sch.panel.click('#createSchedule');
+  await sch.panel.waitForFunction(() => /Last run .* 36 rows/.test(document.querySelector('#schedList').textContent), null, { polling: 300, timeout: 90000 });
+  const alarms = await sw.evaluate(() => chrome.alarms.getAll());
+  assert.strictEqual(alarms.length, 1, 'alarm created');
+  assert.strictEqual(alarms[0].periodInMinutes, 1440, 'daily');
+  const csv1 = await sw.evaluate(async () => (await chrome.downloads.search({ state: 'complete' })).filter((d) => d.finalUrl.startsWith('data:text/csv')).map((d) => d.finalUrl));
+  assert.strictEqual(csv1.length, 1, 'auto CSV exported');
+  const csvText = Buffer.from(csv1[0].split(',')[1], 'base64').toString('utf8');
+  assert.strictEqual(csvText.trim().split('\r\n').length, 37, 'auto CSV has header + 36 rows');
+  // Second run: same data, so nothing new
+  await sch.panel.click('#schedList [data-a=run]');
+  await sch.panel.waitForFunction(() => /Running/.test(document.querySelector('#schedList').textContent), null, { polling: 100, timeout: 5000 }).catch(() => {});
+  await sch.panel.waitForFunction(() => /Last run .* 36 rows/.test(document.querySelector('#schedList').textContent) && !/new/.test(document.querySelector('#schedList').textContent), null, { polling: 300, timeout: 90000 });
+  await sch.panel.click('#schedList [data-a=view]');
+  await sch.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent === 36, null, { polling: 200 });
+  await sch.panel.click('#schedList [data-a=del]');
+  await sch.panel.waitForFunction(() => !document.querySelector('#schedEmpty').hidden, null, { polling: 200 });
+  assert.strictEqual((await sw.evaluate(() => chrome.alarms.getAll())).length, 0, 'alarm removed');
 
   // Keep a copy of the xlsx for external validation.
   fs.copyFileSync(xlsxPath, path.join(os.tmpdir(), 'grabbit-test.xlsx'));

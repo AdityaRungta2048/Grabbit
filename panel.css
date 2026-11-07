@@ -17,7 +17,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 #host { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .tabs { display: flex; gap: 4px; padding: 0 12px; border-bottom: 1px solid var(--line); }
-.tabs button { flex: 1; border: 0; background: none; padding: 9px 4px; cursor: pointer; color: var(--muted); font-weight: 600; border-bottom: 2px solid transparent; }
+.tabs button { flex: 1; font-size: 12.5px; border: 0; background: none; padding: 9px 4px; cursor: pointer; color: var(--muted); font-weight: 600; border-bottom: 2px solid transparent; }
 .tabs button[aria-selected="true"] { color: var(--brand); border-color: var(--brand); }
 
 section { padding: 10px 12px 0; }
@@ -99,3 +99,5 @@ td img { height: 28px; border-radius: 4px; vertical-align: middle; }
 .toast { position: fixed; left: 50%; bottom: 70px; transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-weight: 600; opacity: 0; transition: all .2s; pointer-events: none; max-width: 90vw; text-align: center; }
 .toast.show { opacity: 1; transform: translateX(-50%); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain .host { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }

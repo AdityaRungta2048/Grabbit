@@ -1,19 +1,13 @@
 // Grabbit side panel. Bound to the tab it was opened from (?tab=ID).
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const tabId = +new URLSearchParams(location.search).get('tab');
 const Local = window.__grabbit; // same engine, used here to parse fetched pages
 
 const state = { cols: [], rows: [], cands: [], ci: 0, recipe: null, next: null, host: '', stop: false, busy: false };
 const MAX_SHOWN = 300;
 
-// ---------- page bridge ----------
-async function callIn(tid, name, ...args) {
-  await chrome.scripting.executeScript({ target: { tabId: tid }, files: ['content.js'] });
-  const [r] = await chrome.scripting.executeScript({ target: { tabId: tid }, func: (n, a) => JSON.stringify(window.__grabbit[n](...a) ?? null), args: [name, args] });
-  return JSON.parse(r?.result ?? 'null'); // JSON keeps column order; structured clone may not
-}
+// ---------- page bridge (callIn, paginate etc. live in scrape.js) ----------
 const call = (name, ...args) => callIn(tabId, name, ...args);
 
 function notice(msg) {
@@ -54,7 +48,8 @@ const fromObjects = (objs, extra = {}) => {
   return { cols: keys.map((k) => ({ key: k, name: k })), rows: objs.map((o) => ({ ...o, ...extra })) };
 };
 
-const isImage = (c, v) => (c.kind === 'src' || c.name === 'Image') && /^(https?:|data:image\/)/.test(v);
+const isImageCol = (c) => c.kind === 'src' || c.key === 'Image';
+const isImage = (c, v) => isImageCol(c) && /^(https?:|data:image\/)/.test(v);
 
 function render() {
   const { cols, rows } = state;
@@ -62,6 +57,7 @@ function render() {
   $('#colCount').textContent = cols.length;
   $('#empty').hidden = rows.length > 0;
   $('#grid').hidden = rows.length === 0;
+  $('#dlImages').hidden = !rows.length || !cols.some(isImageCol);
   const thead = $('#grid thead'), tbody = $('#grid tbody');
   thead.innerHTML = '';
   tbody.innerHTML = '';
@@ -117,6 +113,7 @@ $('#clearData').onclick = () => { setData([], []); call('clear').catch(() => {})
 $$('.tabs button').forEach((b) => (b.onclick = () => {
   $$('.tabs button').forEach((x) => x.setAttribute('aria-selected', x === b));
   $$('[data-pane]').forEach((p) => (p.hidden = p.dataset.pane !== b.dataset.tab));
+  if (b.dataset.tab === 'schedule') chrome.action.setBadgeText({ text: '' });
 }));
 
 // ---------- lists & tables ----------
@@ -208,20 +205,6 @@ function endBusy(text) {
 }
 $('#stop').onclick = () => { state.stop = true; };
 
-async function waitForChange(before, timeout = 20000) {
-  const t0 = Date.now();
-  while (Date.now() - t0 < timeout && !state.stop) {
-    await sleep(500);
-    try {
-      const tab = await chrome.tabs.get(tabId);
-      if (tab.status !== 'complete') continue;
-      const fp = await call('fingerprint', state.recipe.rowSelector);
-      if (fp !== before && !fp.startsWith('0:')) return true;
-    } catch { /* page is navigating */ }
-  }
-  return false;
-}
-
 $('#runPager').onclick = async () => {
   const mode = $('[name=pmode]:checked').value;
   if (!state.recipe) return toast('Pick a list first');
@@ -235,21 +218,15 @@ $('#runPager').onclick = async () => {
   const seen = new Set();
   setData(state.recipe.columns, []);
   startBusy('Page 1…');
-  let stale = 0;
   try {
-    for (let page = 1; page <= max && !state.stop; page++) {
-      addRows(state.recipe.columns, await call('extract', state.recipe), seen);
-      progress(page / max, `Page ${page} of ${max} · ${state.rows.length} rows`);
-      if (page === max) break;
-      const before = await call('fingerprint', state.recipe.rowSelector);
-      if (mode === 'next') {
-        if (!(await call('clickNext', state.next.selector))) break;
-      } else await call('scrollMore', state.recipe.rowSelector);
-      if (!(await waitForChange(before, mode === 'scroll' ? 8000 : 20000))) {
-        if (mode === 'next' || ++stale >= 2) break;
-      } else stale = 0;
-      await sleep(delay);
-    }
+    await paginate(tabId, state.recipe, {
+      mode, next: state.next, max, delay,
+      stop: () => state.stop,
+      onPage: (rows, page) => {
+        addRows(state.recipe.columns, rows, seen);
+        progress(page / max, `Page ${page} of ${max} · ${state.rows.length} rows`);
+      },
+    });
     endBusy(`Done · ${state.rows.length} rows`);
   } catch (e) {
     endBusy();
@@ -257,12 +234,16 @@ $('#runPager').onclick = async () => {
   }
 };
 
-// Recipes
+// Recipes. Keep the user's column renames and deletions.
+const currentRecipe = () => ({
+  ...state.recipe,
+  columns: state.recipe.columns.filter((c) => state.cols.some((x) => x.key === c.key)).map((c) => ({ ...c, name: state.cols.find((x) => x.key === c.key).name })),
+});
 async function recipes() { return (await chrome.storage.local.get('recipes')).recipes || {}; }
 $('#saveRecipe').onclick = async () => {
   if (!state.recipe) return toast('Pick a list first');
   const all = await recipes();
-  all[state.host] = { recipe: { ...state.recipe, columns: state.recipe.columns.map((c) => ({ ...c, name: state.cols.find((x) => x.key === c.key)?.name || c.name })).filter((c) => state.cols.some((x) => x.key === c.key)) }, next: state.next, mode: $('[name=pmode]:checked').value };
+  all[state.host] = { recipe: currentRecipe(), next: state.next, mode: $('[name=pmode]:checked').value };
   await chrome.storage.local.set({ recipes: all });
   $('#saved').hidden = false;
   toast('Recipe saved for ' + state.host);
@@ -325,16 +306,6 @@ $('#csvFile').onchange = async (e) => {
   $('#urls').oninput();
 };
 
-function waitLoaded(tid, timeout = 30000) {
-  return new Promise((resolve) => {
-    const done = () => { chrome.tabs.onUpdated.removeListener(l); clearTimeout(t); resolve(); };
-    const l = (id, info) => { if (id === tid && info.status === 'complete') done(); };
-    const t = setTimeout(done, timeout);
-    chrome.tabs.onUpdated.addListener(l);
-    chrome.tabs.get(tid).then((tab) => tab.status === 'complete' && done()).catch(done);
-  });
-}
-
 async function scrapeOne(url, mode) {
   const tab = await chrome.tabs.create({ url, active: false });
   try {
@@ -385,6 +356,92 @@ $('#runBulk').onclick = async () => {
   endBusy(`Bulk done · ${state.rows.length} rows`);
 };
 
+// ---------- image downloads ----------
+function imageName(url, i) {
+  let base = 'image', ext = '';
+  if (url.startsWith('data:')) ext = '.' + (url.match(/^data:image\/([a-z+]+)/)?.[1] || 'png').replace('svg+xml', 'svg').replace('jpeg', 'jpg');
+  else {
+    base = decodeURIComponent(new URL(url).pathname.split('/').pop() || 'image').replace(/[^\w.-]+/g, '_').slice(-80) || 'image';
+    if (!/\.(jpe?g|png|gif|webp|avif|svg|bmp|ico)$/i.test(base)) ext = '.jpg';
+  }
+  return `${String(i + 1).padStart(3, '0')}-${base}${ext}`;
+}
+$('#dlImages').onclick = async () => {
+  const urls = [...new Set(state.rows.flatMap((r) => state.cols.filter(isImageCol).map((c) => String(r[c.key] ?? ''))).filter((v) => /^(https?:|data:image\/)/.test(v)))];
+  if (!urls.length) return toast('No image URLs in the data');
+  if (!(await chrome.permissions.request({ permissions: ['downloads'] }))) return toast('Permission needed to save images');
+  const folder = 'grabbit/' + (state.host || 'images').replace(/^www\./, '').replace(/[^\w.-]+/g, '_') + '-' + new Date().toISOString().slice(0, 10);
+  startBusy(`Saving 0 of ${urls.length} images…`);
+  let failed = 0;
+  for (const [i, url] of urls.entries()) {
+    if (state.stop) break;
+    try { await chrome.downloads.download({ url, filename: `${folder}/${imageName(url, i)}`, conflictAction: 'uniquify', saveAs: false }); }
+    catch { failed++; }
+    progress((i + 1) / urls.length, `Saving ${i + 1} of ${urls.length} images…`);
+  }
+  endBusy(`Saved ${urls.length - failed} images to Downloads/${folder}${failed ? ` · ${failed} failed` : ''}`);
+};
+
+// ---------- schedules (runs happen in background.js) ----------
+const EVERY = { 60: 'Every hour', 360: 'Every 6 hours', 1440: 'Every day', 10080: 'Every week' };
+$('#createSchedule').onclick = async () => {
+  if (!state.recipe) return toast('Pick a list on the Lists tab first');
+  if (!state.origin) return toast('This page can’t be scheduled');
+  const autoExport = $('#schedExport').value;
+  // Request before any other await so the click still counts as a user gesture.
+  const ok = await chrome.permissions.request({ origins: [state.origin], ...(autoExport !== 'none' && { permissions: ['downloads'] }) });
+  if (!ok) return toast('Permission needed to run in the background');
+  const mode = $('[name=pmode]:checked').value;
+  const s = {
+    id: Date.now().toString(36),
+    url: state.url,
+    host: state.host,
+    recipe: currentRecipe(),
+    mode,
+    next: state.next,
+    max: mode === 'none' ? 1 : Math.max(1, +$('#maxPages').value || 10),
+    delay: Math.max(0, +$('#delay').value || 0) * 1000,
+    every: +$('#schedEvery').value,
+    autoExport,
+  };
+  const { schedules = [] } = await chrome.storage.local.get('schedules');
+  await chrome.storage.local.set({ schedules: [...schedules, s] });
+  await chrome.alarms.create('sched:' + s.id, { periodInMinutes: s.every, delayInMinutes: s.every });
+  chrome.runtime.sendMessage({ grabbit: 'runSchedule', id: s.id }); // first run now, so the user sees it works
+  toast('Scheduled · first run started');
+};
+
+async function renderSchedules() {
+  const { schedules = [] } = await chrome.storage.local.get('schedules');
+  const list = $('#schedList');
+  list.innerHTML = '';
+  $('#schedEmpty').hidden = schedules.length > 0;
+  for (const s of schedules) {
+    const li = document.createElement('li');
+    li.className = 'card';
+    li.innerHTML = '<div class="row between"><b class="host"></b><span class="muted tiny every"></span></div><div class="muted tiny status"></div><div class="row gap mt"><button class="btn small" data-a="view">View data</button><button class="btn small" data-a="run">Run now</button><button class="btn small danger" data-a="del">Delete</button></div>';
+    li.querySelector('.host').textContent = s.host + new URL(s.url).pathname.replace(/\/$/, '');
+    li.querySelector('.every').textContent = EVERY[s.every] + (s.autoExport !== 'none' ? ` · auto ${s.autoExport.toUpperCase()}` : '');
+    li.querySelector('.status').textContent = s.running ? 'Running…'
+      : s.lastRun ? `Last run ${new Date(s.lastRun).toLocaleString()} · ${s.lastCount} rows${s.lastAdded ? ` · ${s.lastAdded} new` : ''}${s.lastError ? ` · ⚠ ${s.lastError}` : ''}`
+      : 'Not run yet';
+    li.querySelector('[data-a=run]').onclick = () => chrome.runtime.sendMessage({ grabbit: 'runSchedule', id: s.id });
+    li.querySelector('[data-a=view]').onclick = async () => {
+      const res = (await chrome.storage.local.get('result:' + s.id))['result:' + s.id];
+      if (!res) return toast('No data yet');
+      setData(res.cols, res.rows);
+    };
+    li.querySelector('[data-a=del]').onclick = async () => {
+      const { schedules = [] } = await chrome.storage.local.get('schedules');
+      await chrome.storage.local.set({ schedules: schedules.filter((x) => x.id !== s.id) });
+      chrome.storage.local.remove('result:' + s.id);
+      chrome.alarms.clear('sched:' + s.id);
+    };
+    list.appendChild(li);
+  }
+}
+chrome.storage.onChanged.addListener((ch) => ch.schedules && renderSchedules());
+
 // ---------- export ----------
 const fileBase = () => `${(state.host || 'grabbit').replace(/^www\./, '')}-${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}`;
 function download(blob, name) {
@@ -424,10 +481,12 @@ $('#rateLink').onclick = $('#rateClose').onclick = () => { chrome.storage.local.
   try {
     const tab = await chrome.tabs.get(tabId);
     state.host = tab.url ? new URL(tab.url).hostname : '';
+    state.url = tab.url;
     if (/^https?:/.test(tab.url)) state.origin = new URL(tab.url).origin + '/*';
     $('#host').textContent = state.host || 'Web scraper';
     if ((await recipes())[state.host]) $('#saved').hidden = false;
   } catch {}
   pagerUI();
+  renderSchedules();
   scan();
 })();

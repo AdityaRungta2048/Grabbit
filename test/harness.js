@@ -25,6 +25,7 @@ module.exports = async function launch(viewport) {
   for (const f of fs.readdirSync(root)) if (!['test', '.git', 'store', 'dist', 'node_modules'].includes(f)) fs.cpSync(path.join(root, f), path.join(ext, f), { recursive: true });
   const m = JSON.parse(fs.readFileSync(path.join(ext, 'manifest.json')));
   m.host_permissions = ['<all_urls>'];
+  m.permissions.push(...m.optional_permissions); // already granted, so permissions.request() resolves without a prompt
   fs.writeFileSync(path.join(ext, 'manifest.json'), JSON.stringify(m));
 
   const ctx = await chromium.launchPersistentContext(fs.mkdtempSync(path.join(os.tmpdir(), 'grabbit-prof-')), {
@@ -46,5 +47,5 @@ module.exports = async function launch(viewport) {
     return { page, panel };
   };
   const close = async () => { await ctx.close(); server.close(); };
-  return { ctx, base, openPanel, close };
+  return { ctx, sw, base, openPanel, close };
 };

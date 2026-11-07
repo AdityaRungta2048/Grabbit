@@ -13,9 +13,10 @@
   </header>
 
   <nav class="tabs" role="tablist">
-    <button role="tab" data-tab="list" aria-selected="true">Lists &amp; tables</button>
+    <button role="tab" data-tab="list" aria-selected="true">Lists</button>
     <button role="tab" data-tab="quick">Quick grab</button>
     <button role="tab" data-tab="bulk">Bulk URLs</button>
+    <button role="tab" data-tab="schedule">Schedule</button>
   </nav>
 
   <div id="notice" class="notice" hidden></div>
@@ -99,6 +100,25 @@
     </div>
   </section>
 
+  <!-- Schedule -->
+  <section data-pane="schedule" hidden>
+    <div class="card">
+      <div class="label">Re-scrape this list automatically</div>
+      <p class="muted tiny">Uses the list and page settings from the Lists tab. Runs in a background tab while Chrome is open. Great for price and stock tracking.</p>
+      <div class="row gap">
+        <label class="field">How often
+          <select id="schedEvery"><option value="60">Every hour</option><option value="360">Every 6 hours</option><option value="1440" selected>Every day</option><option value="10080">Every week</option></select>
+        </label>
+        <label class="field">Auto-download
+          <select id="schedExport"><option value="none">Off</option><option value="xlsx">Excel</option><option value="csv">CSV</option></select>
+        </label>
+      </div>
+      <button id="createSchedule" class="btn primary wide mt">⏰ Create schedule</button>
+    </div>
+    <p id="schedEmpty" class="muted tiny">No schedules yet.</p>
+    <ul id="schedList" class="plain"></ul>
+  </section>
+
   <!-- Progress -->
   <div id="progress" class="progress" hidden>
     <div class="bar"><i id="barFill"></i></div>
@@ -110,6 +130,7 @@
     <div class="row between">
       <div class="label"><span id="rowCount">0</span> rows · <span id="colCount">0</span> columns</div>
       <div class="row gap">
+        <button id="dlImages" class="btn small" title="Save every image in the data to your Downloads folder" hidden>⬇ Images</button>
         <button id="dedupe" class="btn small" title="Remove duplicate rows">Dedupe</button>
         <button id="clearData" class="btn small" title="Clear all data">Clear</button>
       </div>
@@ -136,6 +157,7 @@
 
   <script src="content.js"></script>
   <script src="export.js"></script>
+  <script src="scrape.js"></script>
   <script src="panel.js"></script>
 </body>
 </html>

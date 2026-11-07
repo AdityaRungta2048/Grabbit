@@ -2,10 +2,11 @@
   "manifest_version": 3,
   "name": "Grabbit – Free Web Scraper & Data Extractor",
   "short_name": "Grabbit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Scrape any website to Excel, CSV, JSON or Google Sheets in one click. Free, no code, no account. Lists, tables, emails, pages.",
   "minimum_chrome_version": "116",
-  "permissions": ["activeTab", "scripting", "sidePanel", "storage"],
+  "permissions": ["activeTab", "scripting", "sidePanel", "storage", "alarms"],
+  "optional_permissions": ["downloads"],
   "optional_host_permissions": ["<all_urls>"],
   "background": { "service_worker": "background.js" },
   "action": {
