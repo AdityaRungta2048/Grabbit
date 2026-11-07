@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Grabbit – Free Web Scraper & Data Extractor",
+  "short_name": "Grabbit",
+  "version": "1.0.0",
+  "description": "Scrape any website to Excel, CSV, JSON or Google Sheets in one click. Free, no code, no account. Lists, tables, emails, pages.",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "sidePanel", "storage"],
+  "optional_host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Open Grabbit (Alt+G)",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "commands": {
+    "_execute_action": { "suggested_key": { "default": "Alt+G" }, "description": "Open Grabbit on this page" }
+  }
+}

@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Feed</title></head><body>
+<ul id="feed"></ul>
+<script>
+let n = 0;
+const add = () => { for (let i = 0; i < 10 && n < 40; i++, n++) document.querySelector('#feed').insertAdjacentHTML('beforeend', `<li class="post"><h4>Post ${n}</h4><p class="author">user${n % 7}</p><div style="height:120px"></div></li>`); };
+add();
+addEventListener('scroll', () => { if (innerHeight + scrollY >= document.body.scrollHeight - 50) setTimeout(add, 300); });
+</script></body></html>

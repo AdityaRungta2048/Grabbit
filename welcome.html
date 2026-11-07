@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Grabbit</title>
+  <link rel="stylesheet" href="panel.css" />
+  <style>
+    body { align-items: center; padding: 48px 16px; }
+    main { max-width: 680px; width: 100%; }
+    h1 { font-size: 32px; letter-spacing: -.02em; margin: 14px 0 6px; }
+    .lead { font-size: 16px; color: var(--muted); margin: 0 0 28px; }
+    ol { list-style: none; padding: 0; display: grid; gap: 12px; counter-reset: s; }
+    li { counter-increment: s; display: flex; gap: 14px; align-items: flex-start; font-size: 14.5px; }
+    li::before { content: counter(s); flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--brand), var(--brand-2)); }
+    kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 1px 6px; font: 600 12px ui-monospace, monospace; background: var(--card); }
+    .feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin-top: 28px; }
+    .feat .card { margin: 0; }
+    .feat b { display: block; margin-bottom: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="icons/128.png" width="72" height="72" alt="" />
+    <h1>Grabbit is ready 🐰</h1>
+    <p class="lead">Turn any website into a spreadsheet in seconds. Free, private, and no account needed.</p>
+    <section class="card">
+      <ol>
+        <li><span><b>Pin Grabbit:</b> click the puzzle icon 🧩 in Chrome’s toolbar, then the pin next to Grabbit.</span></li>
+        <li><span><b>Open it on any page</b> with the icon or <kbd>Alt</kbd>+<kbd>G</kbd>. Grabbit finds lists and tables automatically.</span></li>
+        <li><span><b>Not the right data?</b> Click ‹ › to see other lists, or <b>Pick on page</b> and click any item.</span></li>
+        <li><span><b>Export</b> to Excel, CSV, JSON, or straight into Google Sheets.</span></li>
+      </ol>
+    </section>
+    <div class="feat">
+      <div class="card"><b>📄 Multiple pages</b><span class="muted">Follows “Next” buttons and infinite scroll.</span></div>
+      <div class="card"><b>✉️ Emails &amp; contacts</b><span class="muted">Also checks a site’s contact and about pages.</span></div>
+      <div class="card"><b>🌐 Bulk URLs</b><span class="muted">Scrape hundreds of pages from a list or CSV.</span></div>
+      <div class="card"><b>🔒 100% private</b><span class="muted">Everything runs in your browser. Nothing is uploaded.</span></div>
+    </div>
+  </main>
+</body>
+</html>
