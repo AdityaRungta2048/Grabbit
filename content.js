@@ -70,7 +70,8 @@
   }
 
   const imgSrc = (el) => {
-    const lazy = el.getAttribute('data-src') || el.getAttribute('data-lazy-src') || el.getAttribute('data-original');
+    const set = el.getAttribute('data-srcset') || el.getAttribute('data-lazy-srcset') || el.getAttribute('srcset');
+    const lazy = el.getAttribute('data-src') || el.getAttribute('data-lazy-src') || el.getAttribute('data-original') || set?.trim().split(/\s+/)[0];
     const src = el.currentSrc || el.src;
     return lazy && (!src || src.startsWith('data:')) ? new URL(lazy, location.href).href : src;
   };
@@ -105,6 +106,9 @@
         if (h) return h.slice(0, 40);
       }
     }
+    // What the values look like beats where they sit: prices are often inside headings or titled wrappers.
+    const byValue = nameFromValues(values);
+    if (byValue) return byValue;
     // Name after the closest heading or meaningful class between the field and its row.
     // The row's own class ("product-card") would name every field the same, so it only names the row itself.
     for (let e = el; e && (e !== row || el === row); e = e.parentElement) {
@@ -114,8 +118,6 @@
       if (pretty) return pretty[0].toUpperCase() + pretty.slice(1);
       if (e === row) break;
     }
-    const byValue = nameFromValues(values);
-    if (byValue) return byValue;
     const [k, en] = { A: ['colLinkText', 'Link text'], TIME: ['colDate', 'Date'], LI: ['colItem', 'Item'], TD: ['colCell', 'Cell'] }[el.tagName] || ['colText', 'Text'];
     return tr(k, en);
   }
@@ -137,9 +139,10 @@
     const merged = [];
     for (const f of found.values()) {
       const leaf = f.path.split('>').pop().replace(/@\d+$/, '');
-      const m = merged.find((g) => g.kind === f.kind && g.leaf === leaf && ![...f.rows].some((i) => g.rows.has(i)));
+      const type = f.kind === 'text' ? nameFromValues(f.values) : ''; // "Price", "Discount" or ''
+      const m = merged.find((g) => g.kind === f.kind && (g.leaf === leaf || (type && g.type === type)) && ![...f.rows].some((i) => g.rows.has(i)));
       if (!m) {
-        merged.push({ ...f, leaf, paths: [f.path] });
+        merged.push({ ...f, leaf, type, paths: [f.path] });
         continue;
       }
       m.paths.push(f.path);
@@ -148,10 +151,16 @@
     }
     const min = Math.max(2, Math.ceil(rows.length * 0.2));
     const cols = [];
+    const price = tr('colPrice', 'Price');
+    let firstPrice = null;
     for (const f of merged) {
       if (f.rows.size < min) continue;
       if (rows.length > 3 && f.values.size === 1) continue; // same in every row: "Add to cart", icons...
-      cols.push({ key: f.key, name: nameFor(f.el, f.kind, f.row, f.values), path: f.path, ...(f.paths.length > 1 && { paths: f.paths }), kind: f.kind });
+      let name = nameFor(f.el, f.kind, f.row, f.values);
+      // A second price that only appears on items that also have the first one is the pre-discount price.
+      if (name === price && firstPrice && [...f.rows].every((i) => firstPrice.rows.has(i)) && f.rows.size < firstPrice.rows.size) name = tr('colOldPrice', 'Original price');
+      else if (name === price) firstPrice ||= f;
+      cols.push({ key: f.key, name, path: f.path, ...(f.paths.length > 1 && { paths: f.paths }), kind: f.kind });
     }
     // Nothing named Title? The first plain text field is the item's name on almost every list.
     const title = tr('colTitle', 'Title');

@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "할인"
+  },
+  "colOldPrice": {
+    "message": "원래 가격"
   }
 }

@@ -106,14 +106,17 @@ const launch = require('./harness');
   console.log('nested columns:', nsCols);
   assert(!nsCols.some((c) => /^(Link|Image) \d/.test(c)), 'no Link 2 / Image 2 columns');
   assert(!nsCols.some((c) => /css/i.test(c)), 'no generated class names');
-  assert.deepStrictEqual(nsCols.filter((c) => c.startsWith('Price')), ['Price', 'Price 2'], 'sale and regular prices share a column');
-  const priceCol = nsCols.indexOf('Price') + 2; // +1 for the # column, +1 for nth-child
-  const prices = await ns.panel.$$eval(`#grid tbody td:nth-child(${priceCol})`, (t) => t.map((x) => x.textContent));
-  assert(prices.every((x) => /^₹[\d,]+$/.test(x)), 'every card has a price: ' + prices.join(' '));
+  assert.deepStrictEqual(nsCols.slice(-3), ['Price', 'Original price', 'Discount'], 'sale and regular prices share a column; price inside a heading is still a Price');
+  const colValues = (name) => ns.panel.$$eval(`#grid tbody td:nth-child(${nsCols.indexOf(name) + 2})`, (t) => t.map((x) => x.title || x.textContent));
+  const prices = await colValues('Price');
+  assert(prices.every((x) => /^₹ [\d,]+$/.test(x)), 'every card has a price: ' + prices.join(' '));
+  assert((await colValues('Original price')).filter(Boolean).length === 10, 'original price only on the 10 discounted cards');
+  const nsImgs = await colValues('Image');
+  assert(nsImgs.every((x) => /\/img\/p\d+\.jpg$/.test(x)), 'lazy images (data-src, data-srcset) are captured: ' + nsImgs.filter((x) => !/jpg$/.test(x)).length + ' missing');
   await ns.panel.click('#nextCand');
   await ns.panel.click('#pick');
   await ns.page.waitForSelector('#grabbit-tip');
-  await ns.page.click('.css-gridrow:nth-child(3) .product-card:nth-child(2) .css-curprice');
+  await ns.page.click('.css-gridrow:nth-child(3) .product-card:nth-child(3) .css-regprice');
   await ns.panel.waitForFunction(() => document.querySelector('#candPos').textContent.startsWith('1/') && +document.querySelector('#rowCount').textContent === 30, null, { polling: 200 });
 
   // 9. Image download: 9 product images from the demo list

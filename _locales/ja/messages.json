@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "割引"
+  },
+  "colOldPrice": {
+    "message": "元の価格"
   }
 }

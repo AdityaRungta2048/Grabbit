@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "折扣"
+  },
+  "colOldPrice": {
+    "message": "原价"
   }
 }

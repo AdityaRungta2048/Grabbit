@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "Diskon"
+  },
+  "colOldPrice": {
+    "message": "Harga asli"
   }
 }

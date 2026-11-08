@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "Desconto"
+  },
+  "colOldPrice": {
+    "message": "Preço original"
   }
 }

@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "Скидка"
+  },
+  "colOldPrice": {
+    "message": "Старая цена"
   }
 }

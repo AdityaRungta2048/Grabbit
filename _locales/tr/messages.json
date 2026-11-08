@@ -643,5 +643,8 @@
   },
   "colDiscount": {
     "message": "İndirim"
+  },
+  "colOldPrice": {
+    "message": "Eski fiyat"
   }
 }
