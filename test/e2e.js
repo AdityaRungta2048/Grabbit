@@ -97,6 +97,9 @@ const launch = require('./harness');
   await sc.panel.click('#scrollHintBtn');
   await sc.panel.waitForFunction(() => document.querySelector('#progress').hidden && +document.querySelector('#rowCount').textContent >= 40, null, { timeout: 90000, polling: 200 });
   assert.strictEqual(await rowCount(sc.panel), 40, 'infinite scroll collected all');
+  const scCols = await sc.panel.$$eval('#grid thead input', (i) => i.map((x) => x.value));
+  const scImgs = await sc.panel.$$eval(`#grid tbody td:nth-child(${scCols.indexOf('Image') + 2})`, (t) => t.map((x) => x.title));
+  assert(scImgs.length === 40 && scImgs.every((x) => /\/img\/post\d+\.png$/.test(x)), 'pictures that load on scroll are captured, missing rows: ' + scImgs.map((x, i) => (x ? '' : i + 1)).filter(Boolean).join(','));
 
   // 8b. Grid split into row containers (4 cards each, generated class names, sale prices in an extra wrapper)
   const ns = await openPanel(`${base}/nested.html`);

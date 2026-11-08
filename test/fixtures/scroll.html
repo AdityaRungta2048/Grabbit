@@ -1,8 +1,17 @@
 <!doctype html><html><head><meta charset="utf-8"><title>Feed</title></head><body>
+<!-- Infinite feed: 10 posts per load, 40 total. Like many shops, a post's picture only gets a src once it scrolls into view. -->
 <ul id="feed"></ul>
 <script>
 let n = 0;
-const add = () => { for (let i = 0; i < 10 && n < 40; i++, n++) document.querySelector('#feed').insertAdjacentHTML('beforeend', `<li class="post"><h4>Post ${n}</h4><p class="author">user${n % 7}</p><div style="height:120px"></div></li>`); };
+const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (e.isIntersecting) { e.target.src = e.target.dataset.later; io.unobserve(e.target); }
+}));
+const add = () => {
+  for (let i = 0; i < 10 && n < 40; i++, n++) {
+    document.querySelector('#feed').insertAdjacentHTML('beforeend', `<li class="post"><a href="/post/${n}"><img alt="" data-later="/img/post${n}.png" width="80" height="60"></a><h4>Post ${n}</h4><p class="author">user${n % 7}</p><div style="height:120px"></div></li>`);
+    io.observe(document.querySelector('#feed').lastElementChild.querySelector('img'));
+  }
+};
 add();
 addEventListener('scroll', () => { if (innerHeight + scrollY >= document.body.scrollHeight - 50) setTimeout(add, 300); });
 </script></body></html>

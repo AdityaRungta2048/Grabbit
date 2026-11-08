@@ -36,11 +36,8 @@ function setData(cols, rows) {
 }
 function addRows(cols, rows, seen) {
   for (const c of cols) if (!state.cols.some((x) => x.key === c.key)) state.cols.push({ ...c });
-  for (const r of rows) {
-    const k = JSON.stringify(state.cols.map((c) => r[c.key] ?? ''));
-    if (seen) { if (seen.has(k)) continue; seen.add(k); }
-    state.rows.push(r);
-  }
+  if (seen) mergeRows(seen, state.cols, rows, state.rows); // seen: Map of item key -> row (scrape.js)
+  else state.rows.push(...rows);
   render();
 }
 const colName = (key) => chrome.i18n.getMessage('col' + key.replace(/\W/g, '')) || key;
@@ -233,7 +230,7 @@ $('#runPager').onclick = async () => {
     // Page loads would drop the one-time activeTab grant, so ask for this site only.
     if (state.origin && !(await chrome.permissions.request({ origins: [state.origin] }))) return toast(t('permFollow'));
   }
-  const seen = new Set();
+  const seen = new Map();
   setData(state.recipe.columns, []);
   startBusy(t('pageOf', 1, max, 0));
   try {

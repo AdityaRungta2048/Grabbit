@@ -31,7 +31,7 @@ async function runSchedule(id) {
   running.add(id);
   await updateSchedule(id, { running: true });
 
-  const rows = [], seen = new Set();
+  const rows = [], seen = new Map();
   let error = '';
   let tab;
   try {
@@ -41,7 +41,7 @@ async function runSchedule(id) {
     await sleep(1500);
     await paginate(tab.id, s.recipe, {
       mode: s.mode, next: s.next, max: s.max, delay: s.delay,
-      onPage: (page) => page.forEach((r) => !seen.has(rowKey(r)) && seen.add(rowKey(r)) && rows.push(r)),
+      onPage: (page) => mergeRows(seen, s.recipe.columns, page, rows),
     });
     if (!rows.length) error = chrome.i18n.getMessage('errNoRows');
   } catch (e) {
@@ -52,8 +52,8 @@ async function runSchedule(id) {
 
   const key = 'result:' + id;
   const prev = (await chrome.storage.local.get(key))[key];
-  const before = new Set((prev?.rows || []).map(rowKey));
-  const added = prev ? rows.filter((r) => !before.has(rowKey(r))).length : 0;
+  const before = new Set((prev?.rows || []).map((r) => itemKey(s.recipe.columns, r)));
+  const added = prev ? rows.filter((r) => !before.has(itemKey(s.recipe.columns, r))).length : 0;
   if (rows.length) {
     try { await chrome.storage.local.set({ [key]: { at: Date.now(), cols: s.recipe.columns, rows } }); }
     catch (e) { error = 'could not save results: ' + e.message; }

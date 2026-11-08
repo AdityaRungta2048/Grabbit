@@ -2,10 +2,26 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Key order is not stable (chrome.storage returns keys sorted), so sort before comparing rows.
 const rowKey = (r) => JSON.stringify(Object.keys(r).sort().map((k) => [k, r[k]]));
+// The same item can be read twice, e.g. before and after its lazy image loaded: identify it by its link when it has one.
+const itemKey = (cols, r) => {
+  const link = cols.find((c) => c.kind === 'href');
+  return (link && r[link.key]) || rowKey(r);
+};
+// Keep one row per item; a later read fills fields the earlier one was missing.
+function mergeRows(seen, cols, rows, out) {
+  for (const r of rows) {
+    const k = itemKey(cols, r);
+    const old = seen.get(k);
+    if (!old) {
+      seen.set(k, r);
+      out.push(r);
+    } else for (const [f, v] of Object.entries(r)) if (v && !old[f]) old[f] = v;
+  }
+}
 
 async function callIn(tid, name, ...args) {
   await chrome.scripting.executeScript({ target: { tabId: tid }, files: ['content.js'] });
-  const [r] = await chrome.scripting.executeScript({ target: { tabId: tid }, func: (n, a) => JSON.stringify(window.__grabbit[n](...a) ?? null), args: [name, args] });
+  const [r] = await chrome.scripting.executeScript({ target: { tabId: tid }, func: async (n, a) => JSON.stringify((await window.__grabbit[n](...a)) ?? null), args: [name, args] });
   return JSON.parse(r?.result ?? 'null'); // JSON keeps column order; structured clone may not
 }
 
@@ -36,6 +52,7 @@ async function waitForChange(tid, rowSelector, before, timeout, stop) {
 async function paginate(tid, recipe, { mode = 'none', next, max = 1, delay = 0, onPage, stop = () => false }) {
   let stale = 0;
   for (let page = 1; page <= max && !stop(); page++) {
+    await callIn(tid, 'revealLazy', recipe.rowSelector); // sites that only load pictures once they scroll into view
     await onPage(await callIn(tid, 'extract', recipe), page);
     if (page === max || mode === 'none') break;
     const before = await callIn(tid, 'fingerprint', recipe.rowSelector);
@@ -46,5 +63,10 @@ async function paginate(tid, recipe, { mode = 'none', next, max = 1, delay = 0, 
       if (mode === 'next' || ++stale >= 2) break;
     } else stale = 0;
     await sleep(delay);
+  }
+  // Rows that arrived on the last step may still be waiting for their pictures.
+  if (mode !== 'none' && !stop()) {
+    await callIn(tid, 'revealLazy', recipe.rowSelector);
+    await onPage(await callIn(tid, 'extract', recipe), max);
   }
 }

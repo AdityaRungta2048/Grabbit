@@ -381,6 +381,35 @@
     return document.documentElement.scrollHeight - bottom < innerHeight * 1.5;
   };
 
+  // Many shops only add a product's picture once it scrolls into view. Scroll past the rows still
+  // missing one, a screen at a time, then return to where the user was.
+  G.revealLazy = async (rowSelector) => {
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+    const hasImg = (r) => [...r.querySelectorAll('img')].some((i) => { const s = imgSrc(i); return s && !s.startsWith('data:'); });
+    const lacking = () => {
+      const rows = [...document.querySelectorAll(rowSelector)];
+      const l = rows.filter((r) => !hasImg(r));
+      return l.length === rows.length ? [] : l; // a list without pictures at all: nothing to wait for
+    };
+    let todo = lacking();
+    if (!todo.length) return 0;
+    const x = scrollX, y = scrollY;
+    // A few passes: new rows can arrive while scrolling, and a picture may need a moment on screen.
+    for (let pass = 0; pass < 3 && todo.length; pass++) {
+      for (const r of todo) {
+        if (hasImg(r)) continue;
+        r.scrollIntoView({ block: 'center' });
+        await wait(250);
+      }
+      await wait(400);
+      const left = lacking();
+      if (left.length >= todo.length) break; // no progress: these rows really have no picture
+      todo = left;
+    }
+    scrollTo(x, y);
+    return lacking().length;
+  };
+
   G.scrollMore = (rowSelector) => {
     const rows = document.querySelectorAll(rowSelector);
     rows[rows.length - 1]?.scrollIntoView({ block: 'end' });
