@@ -245,14 +245,22 @@
     return out.slice(0, 10).map(({ score, ...c }) => c);
   };
 
+  // A row's main picture when it isn't where the other rows keep theirs (some shops build a batch differently).
+  const mainImage = (row) => {
+    const urls = [...row.querySelectorAll('img')].map(imgSrc).filter(Boolean);
+    return urls.find((u) => !u.startsWith('data:')) || urls[0] || '';
+  };
+
   G.extract = (recipe) => {
     const rows = [...document.querySelectorAll(recipe.rowSelector)];
+    const mainImg = recipe.columns.find((c) => c.kind === 'src');
     highlight(rows);
     return rows.map((row) => {
       const o = {};
       for (const c of recipe.columns) {
         let v = '';
         for (const p of c.paths || [c.path]) if ((v = valueOf(resolve(row, p), c.kind))) break;
+        if (!v && c === mainImg) v = mainImage(row);
         o[c.key] = v;
       }
       return o;

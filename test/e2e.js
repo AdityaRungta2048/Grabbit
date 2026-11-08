@@ -121,7 +121,7 @@ const launch = require('./harness');
   assert(prices.every((x) => /^₹ [\d,]+$/.test(x)), 'every card has a price: ' + prices.join(' '));
   assert((await colValues('Original price')).filter(Boolean).length === 10, 'original price only on the 10 discounted cards');
   const nsImgs = await colValues('Image');
-  assert(nsImgs.every((x) => /\/img\/p\d+\.jpg$/.test(x)), 'lazy images (data-src, data-srcset) are captured: ' + nsImgs.filter((x) => !/jpg$/.test(x)).length + ' missing');
+  assert(nsImgs.every((x) => /\/img\/p\d+\.(jpg|webp)$/.test(x)), 'every card has its picture (lazy, srcset, or wrapped differently): ' + nsImgs.filter((x) => !/(jpg|webp)$/.test(x)).length + ' missing');
   await ns.panel.click('#nextCand');
   await ns.panel.click('#pick');
   await ns.page.waitForSelector('#grabbit-tip');
