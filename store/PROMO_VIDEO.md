@@ -50,7 +50,7 @@ Add Grabbit to Chrome.
 - Paste the YouTube URL into **Global promo video** in the dashboard.
 
 ## Ready-made video
-`grabbit-promo.mp4` is a 56-second captioned video (1920×1080, no voiceover) recorded from the real extension. Regenerate it with `node test/promo-video.js`; it's written to `dist/grabbit-promo.mp4`.
+`grabbit-promo.mp4` is a 56-second video (1920×1080) recorded from the real extension, with captions, a natural voiceover (Kokoro-82M, Apache-2.0, voice af_heart), original background music that dips under the voice, and click sounds. Loudness is -14 LUFS, YouTube's standard. Regenerate it with `node test/promo-video.js` (picture), then `test/promo-audio.py` (sound; setup steps at the top of that file).
 
 **Upload to YouTube** (the store only accepts a YouTube link):
 1. Go to YouTube Studio → **Create → Upload videos** and choose `grabbit-promo.mp4`.
@@ -64,5 +64,4 @@ Add Grabbit to Chrome.
    Get it free: <your Chrome Web Store link>
    ```
 4. Thumbnail: `store/promo-marquee.jpg`.
-5. Optional music: in YouTube Studio → **Editor → Audio**, add a free track from the Audio Library.
-6. Visibility: **Public** (or Unlisted). Copy the link and paste it into **Global promo video** in the store dashboard.
+5. Visibility: **Unlisted**, so only people with the link (your store page) can see it. Copy the link and paste it into **Global promo video** in the store dashboard.
