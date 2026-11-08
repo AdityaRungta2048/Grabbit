@@ -268,23 +268,6 @@
   "noLists": {
     "message": "Tidak ada daftar. Gunakan \"Pilih di halaman\"."
   },
-  "listInfo": {
-    "message": "Daftar $P1$ dari $P2$ · $P3$ item · $P4$ kolom",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "Halaman tidak bisa dibaca."
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "URL massal"
+  },
+  "itemsFields": {
+    "message": "$P1$ item · $P2$ kolom",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "$P1$ daftar ditemukan di halaman ini. Gunakan ‹ › untuk berganti.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "Halaman ini mungkin memuat item lain saat digulir."
+  },
+  "scrollHintBtn": {
+    "message": "Ambil semua dengan Infinite scroll"
+  },
+  "colPrice": {
+    "message": "Harga"
+  },
+  "colDiscount": {
+    "message": "Diskon"
   }
 }

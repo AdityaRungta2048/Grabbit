@@ -124,12 +124,19 @@ $$('.tabs button').forEach((b) => (b.onclick = () => {
 function showCandidate() {
   const c = state.cands[state.ci];
   $('#prevCand').disabled = $('#nextCand').disabled = state.cands.length < 2;
+  // "1/10" = which of the lists found on this page is shown (menus, filters… also repeat), not pages.
+  $('#candPos').textContent = state.cands.length > 1 ? `${state.ci + 1}/${state.cands.length}` : '';
+  $('#candPos').title = t('otherLists', state.cands.length);
+  $('#scrollHint').hidden = true;
   if (!c) {
     $('#candInfo').textContent = t('noLists');
     return;
   }
-  $('#candInfo').textContent = t('listInfo', state.ci + 1, state.cands.length, c.count, c.columns.length);
+  $('#candInfo').textContent = t('itemsFields', c.count, c.columns.length);
   useRecipe({ rowSelector: c.rowSelector, columns: c.columns });
+  call('moreOnScroll', c.rowSelector).then((more) => {
+    if (state.cands[state.ci] === c) $('#scrollHint').hidden = !more || $('[name=pmode]:checked').value !== 'none';
+  }).catch(() => {});
 }
 async function useRecipe(recipe, scroll = true) {
   state.recipe = recipe;
@@ -188,6 +195,13 @@ function pagerUI() {
   }
 }
 $$('[name=pmode]').forEach((r) => (r.onchange = pagerUI));
+$('#scrollHintBtn').onclick = () => {
+  $('#scrollHint').hidden = true;
+  $('#pagerCard').open = true;
+  $('[name=pmode][value=scroll]').checked = true;
+  pagerUI();
+  $('#runPager').click();
+};
 
 function startBusy(text) {
   state.busy = true;

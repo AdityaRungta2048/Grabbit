@@ -268,23 +268,6 @@
   "noLists": {
     "message": "Keine Listen gefunden. Nutze „Auf der Seite wählen“."
   },
-  "listInfo": {
-    "message": "Liste $P1$ von $P2$ · $P3$ Einträge · $P4$ Felder",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "Seite nicht lesbar."
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "Mehrere URLs"
+  },
+  "itemsFields": {
+    "message": "$P1$ Einträge · $P2$ Felder",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "$P1$ Listen auf dieser Seite gefunden. Mit ‹ › wechseln.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "Diese Seite lädt beim Scrollen eventuell weitere Einträge."
+  },
+  "scrollHintBtn": {
+    "message": "Alle holen mit Endlosem Scrollen"
+  },
+  "colPrice": {
+    "message": "Preis"
+  },
+  "colDiscount": {
+    "message": "Rabatt"
   }
 }

@@ -48,6 +48,7 @@ details[open] summary::after { content: "▴"; }
 .btn:focus-visible, .tabs button:focus-visible, .tile:focus-visible, .link:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 .link { background: none; border: 0; color: var(--brand); cursor: pointer; padding: 2px 0; font-weight: 600; }
 
+.hint { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; border-color: var(--brand); background: linear-gradient(90deg, rgba(124,92,255,.10), rgba(255,122,89,.10)); }
 .saved { display: flex; justify-content: space-between; align-items: center; background: linear-gradient(90deg, rgba(124,92,255,.12), rgba(255,122,89,.12)); }
 
 .seg { display: flex; gap: 4px; background: var(--bg); border-radius: 9px; padding: 3px; }

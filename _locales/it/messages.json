@@ -268,23 +268,6 @@
   "noLists": {
     "message": "Nessuna lista trovata. Usa «Scegli nella pagina»."
   },
-  "listInfo": {
-    "message": "Lista $P1$ di $P2$ · $P3$ elementi · $P4$ campi",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "Pagina non leggibile."
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "URL in blocco"
+  },
+  "itemsFields": {
+    "message": "$P1$ elementi · $P2$ campi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "$P1$ liste trovate in questa pagina. Usa ‹ › per cambiare.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "Questa pagina potrebbe caricare altri elementi scorrendo."
+  },
+  "scrollHintBtn": {
+    "message": "Prendili tutti con Scroll infinito"
+  },
+  "colPrice": {
+    "message": "Prezzo"
+  },
+  "colDiscount": {
+    "message": "Sconto"
   }
 }

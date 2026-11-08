@@ -35,6 +35,7 @@
           <div id="candInfo" class="muted" data-i18n="scanning">Scanning page…</div>
         </div>
         <div class="row gap">
+          <span id="candPos" class="muted tiny"></span>
           <button id="prevCand" class="btn icon" data-i18n-attr="title:prevList,aria-label:prevList">‹</button>
           <button id="nextCand" class="btn icon" data-i18n-attr="title:nextList,aria-label:nextList">›</button>
         </div>
@@ -43,6 +44,11 @@
         <button id="pick" class="btn primary grow">🎯 <span data-i18n="pickOnPage">Pick on page</span></button>
         <button id="rescan" class="btn" data-i18n="rescan" data-i18n-attr="title:rescanTitle">Rescan</button>
       </div>
+    </div>
+
+    <div id="scrollHint" class="card hint" hidden>
+      <span data-i18n="scrollHint">This page may load more items as you scroll.</span>
+      <button id="scrollHintBtn" class="btn small primary" data-i18n="scrollHintBtn">Get them all with Infinite scroll</button>
     </div>
 
     <details class="card" id="pagerCard">

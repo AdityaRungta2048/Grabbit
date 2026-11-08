@@ -4,7 +4,7 @@
   const G = (window.__grabbit = {});
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'IFRAME', 'HEAD', 'META', 'LINK', 'BR', 'HR', 'svg', 'SVG', 'path', 'OPTION']);
   const norm = (s) => (s || '').replace(/\s+/g, ' ').trim();
-  const tr = (key, en) => chrome.i18n?.getMessage(key) || en; // translated UI text, English fallback
+  const tr = (key, en) => globalThis.chrome?.i18n?.getMessage(key) || en; // translated UI text, English fallback
 
   // ---------- element signatures & selectors ----------
   const stableClasses = (el) =>
@@ -81,7 +81,19 @@
     return norm(el.innerText ?? el.textContent);
   }
 
-  function nameFor(el, kind, row) {
+  // Generated CSS-in-JS class names ("css-owizmz", "sc-bdVaJa") make useless column names.
+  const HASHED = /^(css|sc|jsx|emotion|styled|tw|chakra|mui|svelte)-|^[a-z]{1,3}-[a-z0-9]{5,}$/i;
+  const PRICE = /^(?:\p{Sc}|rs\.?|inr|mrp:?)\s*\d[\d.,\s]*$|^\d[\d.,\s]*\s*(?:\p{Sc}|kr|zł|lei)$/iu;
+  const DISCOUNT = /^-?\d{1,3}\s?%/;
+  function nameFromValues(values) {
+    const v = [...values].filter(Boolean);
+    if (!v.length) return '';
+    if (v.every((x) => PRICE.test(x))) return tr('colPrice', 'Price');
+    if (v.every((x) => DISCOUNT.test(x) && x.length < 25)) return tr('colDiscount', 'Discount');
+    return '';
+  }
+
+  function nameFor(el, kind, row, values = []) {
     if (kind === 'href') return tr('colLink', 'Link');
     if (kind === 'src') return tr('colImage', 'Image');
     if (row.tagName === 'TR') {
@@ -94,41 +106,61 @@
       }
     }
     // Name after the closest heading or meaningful class between the field and its row.
-    for (let e = el; e && e !== row.parentElement; e = e.parentElement) {
+    // The row's own class ("product-card") would name every field the same, so it only names the row itself.
+    for (let e = el; e && (e !== row || el === row); e = e.parentElement) {
       if (/^H[1-6]$/.test(e.tagName)) return tr('colTitle', 'Title');
-      const c = stableClasses(e).find((x) => x.length > 2);
+      const c = stableClasses(e).find((x) => x.length > 2 && !HASHED.test(x));
       const pretty = c?.replace(/^.*__/, '').replace(/[-_]+/g, ' ').trim();
       if (pretty) return pretty[0].toUpperCase() + pretty.slice(1);
       if (e === row) break;
     }
+    const byValue = nameFromValues(values);
+    if (byValue) return byValue;
     const [k, en] = { A: ['colLinkText', 'Link text'], TIME: ['colDate', 'Date'], LI: ['colItem', 'Item'], TD: ['colCell', 'Cell'] }[el.tagName] || ['colText', 'Text'];
     return tr(k, en);
   }
 
   function buildColumns(rows) {
-    const found = new Map(); // key -> {count, sample el}
-    for (const row of rows) {
-      const keys = new Set();
+    const found = new Map(); // key -> {path, kind, rows: Set of row indexes, sample values}
+    rows.forEach((row, ri) => {
       walkFields(row, (path, kind, el) => {
         const key = path + '|' + kind;
-        if (keys.has(key)) return;
-        keys.add(key);
-        const f = found.get(key) || { path, kind, count: 0, el, row, values: new Set() };
-        f.count++;
+        const f = found.get(key) || { key, path, kind, el, row, rows: new Set(), values: new Set() };
+        if (f.rows.has(ri)) return;
+        f.rows.add(ri);
         if (f.values.size < 3) f.values.add(valueOf(el, kind));
         found.set(key, f);
       });
+    });
+    // The same field can sit in a different wrapper on some rows (e.g. sale prices inside an extra div).
+    // Same kind + same element signature + never in the same row = one column with fallback paths.
+    const merged = [];
+    for (const f of found.values()) {
+      const leaf = f.path.split('>').pop().replace(/@\d+$/, '');
+      const m = merged.find((g) => g.kind === f.kind && g.leaf === leaf && ![...f.rows].some((i) => g.rows.has(i)));
+      if (!m) {
+        merged.push({ ...f, leaf, paths: [f.path] });
+        continue;
+      }
+      m.paths.push(f.path);
+      f.rows.forEach((i) => m.rows.add(i));
+      f.values.forEach((v) => m.values.size < 3 && m.values.add(v));
     }
     const min = Math.max(2, Math.ceil(rows.length * 0.2));
-    const names = {};
     const cols = [];
-    for (const [key, f] of found) {
-      if (f.count < min) continue;
+    for (const f of merged) {
+      if (f.rows.size < min) continue;
       if (rows.length > 3 && f.values.size === 1) continue; // same in every row: "Add to cart", icons...
-      let name = nameFor(f.el, f.kind, f.row);
-      names[name] = (names[name] || 0) + 1;
-      if (names[name] > 1) name += ' ' + names[name];
-      cols.push({ key, name, path: f.path, kind: f.kind });
+      cols.push({ key: f.key, name: nameFor(f.el, f.kind, f.row, f.values), path: f.path, ...(f.paths.length > 1 && { paths: f.paths }), kind: f.kind });
+    }
+    // Nothing named Title? The first plain text field is the item's name on almost every list.
+    const title = tr('colTitle', 'Title');
+    const firstText = cols.find((c) => c.kind === 'text' && c.name === tr('colText', 'Text'));
+    if (firstText && !cols.some((c) => c.name === title)) firstText.name = title;
+    const names = {};
+    for (const c of cols) {
+      names[c.name] = (names[c.name] || 0) + 1;
+      if (names[c.name] > 1) c.name += ' ' + names[c.name];
     }
     return cols;
   }
@@ -147,27 +179,54 @@
     return groups;
   }
 
-  function makeCandidate(parent, rows) {
-    const rowSelector = cssPath(parent) + ' > ' + sig(rows[0]);
+  function makeCandidate(parent, rows, rowSelector = cssPath(parent) + ' > ' + sig(rows[0])) {
     const columns = buildColumns(rows);
     return { rowSelector, columns, count: rows.length };
   }
+
+  // Grids are often split into row containers of 3-4 cards. If (almost) every row holds several
+  // look-alike children, those children are the real items: one list across all rows.
+  function innerCards(rows) {
+    if (/^(TR|TBODY|THEAD|TFOOT|TABLE)$/.test(rows[0].tagName)) return null; // table rows hold cells, not items
+    const bySig = new Map();
+    for (const r of rows)
+      for (const c of r.children) {
+        if (SKIP.has(c.tagName)) continue;
+        const s = sig(c);
+        if (!bySig.has(s)) bySig.set(s, []);
+        bySig.get(s).push(c);
+      }
+    let best = null;
+    for (const [s, cards] of bySig) {
+      const holders = new Set(cards.map((c) => c.parentElement)).size;
+      // Real item cards have structure and a link or picture; paragraphs, cells and swatches don't.
+      const cardLike = cards.every((c) => c.querySelector('*') && c.matches('a[href], :has(a[href], img)'));
+      if (cardLike && holders >= rows.length * 0.8 && cards.length >= rows.length * 1.5 && cards.length >= 3 && (!best || cards.length > best.cards.length))
+        best = { s, cards };
+    }
+    return best;
+  }
+  const textScore = (els) => Math.sqrt(els.reduce((n, r) => n + Math.min((r.textContent || '').length, 400), 0) / els.length + 10);
 
   G.detect = () => {
     const rough = [];
     for (const parent of document.body.querySelectorAll('*')) {
       if (parent.children.length < 3 || SKIP.has(parent.tagName) || !visible(parent)) continue;
       for (const rows of groupsOf(parent).values()) {
+        const inner = rows.length >= 2 && innerCards(rows);
+        if (inner)
+          rough.push({ parent, rows: inner.cards, selector: cssPath(parent) + ' > ' + sig(rows[0]) + ' > ' + inner.s, score: inner.cards.length * textScore(inner.cards) });
         if (rows.length < 3) continue;
         const text = rows.reduce((n, r) => n + Math.min((r.textContent || '').length, 400), 0) / rows.length;
         if (text < 3 && !rows[0].querySelector('img')) continue;
-        rough.push({ parent, rows, score: rows.length * Math.sqrt(text + 10) });
+        // A list of row containers is rarely what people want when its cards form a list of their own.
+        rough.push({ parent, rows, score: rows.length * Math.sqrt(text + 10) * (inner ? 0.3 : 1) });
       }
     }
     rough.sort((a, b) => b.score - a.score);
     const out = [];
     for (const r of rough.slice(0, 40)) {
-      const c = makeCandidate(r.parent, r.rows);
+      const c = makeCandidate(r.parent, r.rows, r.selector);
       if (!c.columns.length) continue;
       c.score = r.score * Math.min(c.columns.length, 8);
       if (out.some((o) => o.rowSelector === c.rowSelector)) continue;
@@ -182,7 +241,11 @@
     highlight(rows);
     return rows.map((row) => {
       const o = {};
-      for (const c of recipe.columns) o[c.key] = valueOf(resolve(row, c.path), c.kind);
+      for (const c of recipe.columns) {
+        let v = '';
+        for (const p of c.paths || [c.path]) if ((v = valueOf(resolve(row, p), c.kind))) break;
+        o[c.key] = v;
+      }
       return o;
     }).filter((o) => Object.values(o).some(Boolean));
   };
@@ -243,8 +306,11 @@
       }
       const best = rowFromClick(e.target);
       if (!best) return chrome.runtime.sendMessage({ grabbit: 'picked', error: tr('noRepeating', 'No repeating items found there. Try clicking another item.') });
-      const c = makeCandidate(best.parent, best.rows);
-      highlight(best.rows);
+      const inner = innerCards(best.rows);
+      const c = inner && inner.cards.some((card) => card.contains(e.target))
+        ? makeCandidate(best.parent, inner.cards, cssPath(best.parent) + ' > ' + sig(best.rows[0]) + ' > ' + inner.s)
+        : makeCandidate(best.parent, best.rows);
+      highlight([...document.querySelectorAll(c.rowSelector)]);
       chrome.runtime.sendMessage({ grabbit: 'picked', candidate: c });
     };
     const key = (e) => {
@@ -296,6 +362,14 @@
   G.fingerprint = (rowSelector) => {
     const rows = document.querySelectorAll(rowSelector);
     return rows.length + ':' + norm(rows[0]?.textContent).slice(0, 80) + ':' + norm(rows[rows.length - 1]?.textContent).slice(0, 80);
+  };
+
+  // Likely lazy-loads more as you scroll: the list runs to near the page bottom and there is no Next button.
+  G.moreOnScroll = (rowSelector) => {
+    const rows = document.querySelectorAll(rowSelector);
+    if (rows.length < 6 || G.findNext()) return false;
+    const bottom = rows[rows.length - 1].getBoundingClientRect().bottom + scrollY;
+    return document.documentElement.scrollHeight - bottom < innerHeight * 1.5;
   };
 
   G.scrollMore = (rowSelector) => {

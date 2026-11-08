@@ -30,6 +30,9 @@ const launch = require('./harness');
   console.log('row 1:', firstRow);
   assert(firstRow.includes('$11.99') && firstRow.some((v) => v.endsWith('/item/1-1')), 'row values');
   assert(await page.locator('[data-grabbit-row]').count() === 12, 'rows highlighted on page');
+  await panel.waitForTimeout(500);
+  assert(await panel.isHidden('#scrollHint'), 'no scroll hint when the page has a Next button');
+  assert.strictEqual(await panel.textContent('#candInfo'), '12 items · 5 fields', 'item count wording');
 
   // 2. Exports
   const [dl] = await Promise.all([panel.waitForEvent('download'), panel.click('[data-export=xlsx]')]);
@@ -46,7 +49,7 @@ const launch = require('./harness');
   await panel.click('#pick');
   await page.waitForSelector('#grabbit-tip');
   await page.click('.product-card:nth-child(3) .price');
-  await panel.waitForFunction(() => document.querySelector('#candInfo').textContent.startsWith('List 1') && +document.querySelector('#rowCount').textContent === 12, null, { polling: 200 });
+  await panel.waitForFunction(() => document.querySelector('#candPos').textContent.startsWith('1/') && +document.querySelector('#rowCount').textContent === 12, null, { polling: 200 });
   assert.strictEqual(await page.evaluate(() => location.pathname), '/shop1.html', 'picker click did not navigate');
 
   // 4. Pagination via Next link (3 pages x 12)
@@ -88,12 +91,30 @@ const launch = require('./harness');
   // 8. Infinite scroll: 10 items load at a time, 40 total
   const sc = await openPanel(`${base}/scroll.html`);
   await sc.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent === 10, null, { polling: 200 });
-  await sc.panel.click('#pagerCard summary');
-  await sc.panel.check('[name=pmode][value=scroll]');
-  await sc.panel.fill('#delay', '0.5');
-  await sc.panel.click('#runPager');
+  // The list runs to the page bottom with no Next button, so the panel offers infinite scroll in one click.
+  await sc.panel.waitForSelector('#scrollHint:not([hidden])', { timeout: 10000 });
+  await sc.panel.evaluate(() => { document.querySelector('#delay').value = '0.5'; }); // pager section is still collapsed
+  await sc.panel.click('#scrollHintBtn');
   await sc.panel.waitForFunction(() => document.querySelector('#progress').hidden && +document.querySelector('#rowCount').textContent >= 40, null, { timeout: 90000, polling: 200 });
   assert.strictEqual(await rowCount(sc.panel), 40, 'infinite scroll collected all');
+
+  // 8b. Grid split into row containers (4 cards each, generated class names, sale prices in an extra wrapper)
+  const ns = await openPanel(`${base}/nested.html`);
+  await ns.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent > 0, null, { polling: 200 });
+  assert.strictEqual(await rowCount(ns.panel), 30, 'all 30 cards in one list, not 8 row containers');
+  const nsCols = await ns.panel.$$eval('#grid thead input', (i) => i.map((x) => x.value));
+  console.log('nested columns:', nsCols);
+  assert(!nsCols.some((c) => /^(Link|Image) \d/.test(c)), 'no Link 2 / Image 2 columns');
+  assert(!nsCols.some((c) => /css/i.test(c)), 'no generated class names');
+  assert.deepStrictEqual(nsCols.filter((c) => c.startsWith('Price')), ['Price', 'Price 2'], 'sale and regular prices share a column');
+  const priceCol = nsCols.indexOf('Price') + 2; // +1 for the # column, +1 for nth-child
+  const prices = await ns.panel.$$eval(`#grid tbody td:nth-child(${priceCol})`, (t) => t.map((x) => x.textContent));
+  assert(prices.every((x) => /^₹[\d,]+$/.test(x)), 'every card has a price: ' + prices.join(' '));
+  await ns.panel.click('#nextCand');
+  await ns.panel.click('#pick');
+  await ns.page.waitForSelector('#grabbit-tip');
+  await ns.page.click('.css-gridrow:nth-child(3) .product-card:nth-child(2) .css-curprice');
+  await ns.panel.waitForFunction(() => document.querySelector('#candPos').textContent.startsWith('1/') && +document.querySelector('#rowCount').textContent === 30, null, { polling: 200 });
 
   // 9. Image download: 9 product images from the demo list
   const im = await openPanel(`${base}/demo.html`);

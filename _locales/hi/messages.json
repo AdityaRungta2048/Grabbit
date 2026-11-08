@@ -268,23 +268,6 @@
   "noLists": {
     "message": "कोई लिस्ट नहीं मिली। “पेज पर चुनें” इस्तेमाल करें।"
   },
-  "listInfo": {
-    "message": "लिस्ट $P1$/$P2$ · $P3$ आइटम · $P4$ फ़ील्ड",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "पेज पढ़ा नहीं जा सका।"
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "बल्क URL"
+  },
+  "itemsFields": {
+    "message": "$P1$ आइटम · $P2$ फ़ील्ड",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "इस पेज पर $P1$ लिस्ट मिलीं। बदलने के लिए ‹ › दबाएं।",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "यह पेज स्क्रॉल करने पर और आइटम लोड कर सकता है।"
+  },
+  "scrollHintBtn": {
+    "message": "इनफ़िनिट स्क्रॉल से सब निकालें"
+  },
+  "colPrice": {
+    "message": "कीमत"
+  },
+  "colDiscount": {
+    "message": "छूट"
   }
 }

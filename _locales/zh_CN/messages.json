@@ -268,23 +268,6 @@
   "noLists": {
     "message": "未找到列表。请使用“在页面上选择”。"
   },
-  "listInfo": {
-    "message": "列表 $P1$/$P2$ · $P3$ 项 · $P4$ 个字段",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "无法读取页面。"
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "批量网址"
+  },
+  "itemsFields": {
+    "message": "$P1$ 项 · $P2$ 个字段",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "在此页面找到 $P1$ 个列表。用 ‹ › 切换。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "此页面可能会在滚动时加载更多内容。"
+  },
+  "scrollHintBtn": {
+    "message": "用无限滚动全部抓取"
+  },
+  "colPrice": {
+    "message": "价格"
+  },
+  "colDiscount": {
+    "message": "折扣"
   }
 }

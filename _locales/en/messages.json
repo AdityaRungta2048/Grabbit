@@ -272,23 +272,6 @@
   "noLists": {
     "message": "No lists found. Use “Pick on page”."
   },
-  "listInfo": {
-    "message": "List $P1$ of $P2$ · $P3$ items · $P4$ fields",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "Page not readable."
   },
@@ -633,5 +616,36 @@
   },
   "wBulk": {
     "message": "Bulk URLs"
+  },
+  "itemsFields": {
+    "message": "$P1$ items · $P2$ fields",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "$P1$ lists found on this page. Use ‹ › to switch.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "This page may load more items as you scroll."
+  },
+  "scrollHintBtn": {
+    "message": "Get them all with Infinite scroll"
+  },
+  "colPrice": {
+    "message": "Price"
+  },
+  "colDiscount": {
+    "message": "Discount"
   }
 }

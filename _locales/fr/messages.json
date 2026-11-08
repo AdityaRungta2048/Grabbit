@@ -268,23 +268,6 @@
   "noLists": {
     "message": "Aucune liste trouvée. Utilisez « Choisir sur la page »."
   },
-  "listInfo": {
-    "message": "Liste $P1$ sur $P2$ · $P3$ éléments · $P4$ champs",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "Page illisible."
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "URL en masse"
+  },
+  "itemsFields": {
+    "message": "$P1$ éléments · $P2$ champs",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "$P1$ listes trouvées sur cette page. Utilisez ‹ › pour changer.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "Cette page peut charger plus d'éléments au défilement."
+  },
+  "scrollHintBtn": {
+    "message": "Tout récupérer avec Défilement infini"
+  },
+  "colPrice": {
+    "message": "Prix"
+  },
+  "colDiscount": {
+    "message": "Remise"
   }
 }

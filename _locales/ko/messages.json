@@ -268,23 +268,6 @@
   "noLists": {
     "message": "목록을 찾지 못했습니다. \"페이지에서 선택\"을 사용하세요."
   },
-  "listInfo": {
-    "message": "목록 $P1$/$P2$ · 항목 $P3$개 · 필드 $P4$개",
-    "placeholders": {
-      "p1": {
-        "content": "$1"
-      },
-      "p2": {
-        "content": "$2"
-      },
-      "p3": {
-        "content": "$3"
-      },
-      "p4": {
-        "content": "$4"
-      }
-    }
-  },
   "notReadable": {
     "message": "페이지를 읽을 수 없습니다."
   },
@@ -629,5 +612,36 @@
   },
   "wBulk": {
     "message": "URL 일괄"
+  },
+  "itemsFields": {
+    "message": "항목 $P1$개 · 필드 $P2$개",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "otherLists": {
+    "message": "이 페이지에서 목록 $P1$개를 찾았습니다. ‹ ›로 전환하세요.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "scrollHint": {
+    "message": "이 페이지는 스크롤하면 항목을 더 불러올 수 있습니다."
+  },
+  "scrollHintBtn": {
+    "message": "무한 스크롤로 모두 가져오기"
+  },
+  "colPrice": {
+    "message": "가격"
+  },
+  "colDiscount": {
+    "message": "할인"
   }
 }
