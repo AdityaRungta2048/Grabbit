@@ -14,6 +14,12 @@
       .slice(0, 3);
   const sig = (el) => el.tagName.toLowerCase() + stableClasses(el).map((c) => '.' + CSS.escape(c)).join('');
 
+  // Generated CSS-in-JS class names ("css-owizmz", "sc-bdVaJa"): useless as column names, and sites
+  // regenerate them when content changes (nike.in does while loading more), so they can't anchor a selector.
+  const HASHED = /^(css|sc|jsx|emotion|styled|tw|chakra|mui|svelte)-|^[a-z]{1,3}-[a-z0-9]{5,}$/i;
+  const anchorSig = (el) => el.tagName.toLowerCase() + stableClasses(el).filter((c) => !HASHED.test(c)).map((c) => '.' + CSS.escape(c)).join('');
+
+  // Selector for the containers around a list. Skips generated class names; position fills in.
   function cssPath(el) {
     const parts = [];
     while (el && el.nodeType === 1 && el !== document.documentElement) {
@@ -21,7 +27,7 @@
         parts.unshift('#' + CSS.escape(el.id));
         break;
       }
-      let part = el === document.body ? 'body' : sig(el);
+      let part = el === document.body ? 'body' : anchorSig(el);
       const p = el.parentElement;
       if (p && el !== document.body && [...p.children].filter((c) => c.matches(part)).length > 1)
         part += `:nth-child(${[...p.children].indexOf(el) + 1})`;
@@ -82,8 +88,6 @@
     return norm(el.innerText ?? el.textContent);
   }
 
-  // Generated CSS-in-JS class names ("css-owizmz", "sc-bdVaJa") make useless column names.
-  const HASHED = /^(css|sc|jsx|emotion|styled|tw|chakra|mui|svelte)-|^[a-z]{1,3}-[a-z0-9]{5,}$/i;
   const PRICE = /^(?:\p{Sc}|rs\.?|inr|mrp:?)\s*\d[\d.,\s]*$|^\d[\d.,\s]*\s*(?:\p{Sc}|kr|zł|lei)$/iu;
   const DISCOUNT = /^-?\d{1,3}\s?%/;
   function nameFromValues(values) {
@@ -357,13 +361,17 @@
     const t = norm(e.innerText || e.value);
     return /^[›»>→]{1,2}$/.test(t) || NEXT_WORDS.test(t.replace(/[^\p{L}\p{M}\p{N} ]/gu, '').trim());
   };
-  G.findNext = () => {
-    let el = document.querySelector('a[rel~=next]');
+  // rowSelector (optional): the list being scraped. A real Next button comes after the list's first
+  // item and sits outside the list and outside filter panels ("+ More" there expands filter options).
+  G.findNext = (rowSelector) => {
+    const rows = rowSelector ? [...document.querySelectorAll(rowSelector)] : [];
+    const ok = (e) =>
+      !e.closest('[class*=carousel],[class*=slider],[class*=swiper],aside,[class*=filter],[class*=Filter],[class*=facet],[class*=Facet],[class*=refine]') &&
+      (!rows.length || (rows[0].compareDocumentPosition(e) & Node.DOCUMENT_POSITION_FOLLOWING && !rows.some((r) => r.contains(e))));
+    let el = [...document.querySelectorAll('a[rel~=next]')].find(ok);
     if (!el) {
-      const all = [...document.querySelectorAll('a,button,[role=button],input[type=submit],input[type=button]')].filter(visible);
-      el =
-        all.find((e) => /\bnext\b/i.test(e.getAttribute('aria-label') || '') && !e.closest('[class*=carousel],[class*=slider],[class*=swiper]')) ||
-        all.find((e) => isNext(e) && !e.closest('[class*=carousel],[class*=slider],[class*=swiper]'));
+      const all = [...document.querySelectorAll('a,button,[role=button],input[type=submit],input[type=button]')].filter((e) => visible(e) && ok(e));
+      el = all.find((e) => /\bnext\b/i.test(e.getAttribute('aria-label') || '')) || all.find(isNext);
     }
     return el ? { selector: cssPath(el), label: norm(el.innerText || el.value || el.getAttribute('aria-label')).slice(0, 30) || 'Next' } : null;
   };
@@ -384,7 +392,7 @@
   // Likely lazy-loads more as you scroll: the list runs to near the page bottom and there is no Next button.
   G.moreOnScroll = (rowSelector) => {
     const rows = document.querySelectorAll(rowSelector);
-    if (rows.length < 6 || G.findNext()) return false;
+    if (rows.length < 6 || G.findNext(rowSelector)) return false;
     const bottom = rows[rows.length - 1].getBoundingClientRect().bottom + scrollY;
     return document.documentElement.scrollHeight - bottom < innerHeight * 1.5;
   };
@@ -418,19 +426,30 @@
     return lacking().length;
   };
 
-  G.scrollMore = (rowSelector) => {
+  // Scroll like a person: a screen at a time with short pauses. Many sites (nike.in among them) watch the
+  // scroll as it passes and ignore a single jump to the bottom.
+  G.scrollMore = async (rowSelector) => {
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
     const rows = document.querySelectorAll(rowSelector);
-    rows[rows.length - 1]?.scrollIntoView({ block: 'end' });
-    // Also scroll the nearest scrollable container (feeds inside panels).
-    for (let p = rows[0]?.parentElement; p && p !== document.body; p = p.parentElement) {
-      if (p.scrollHeight > p.clientHeight + 20 && /(auto|scroll)/.test(getComputedStyle(p).overflowY)) {
-        p.scrollTop = p.scrollHeight;
-        break;
-      }
+    // Feeds inside a scrollable panel scroll that panel, not the page.
+    let box = null;
+    for (let p = rows[0]?.parentElement; p && p !== document.body; p = p.parentElement)
+      if (p.scrollHeight > p.clientHeight + 20 && /(auto|scroll)/.test(getComputedStyle(p).overflowY)) { box = p; break; }
+    const el = box || document.scrollingElement || document.documentElement;
+    const view = box ? box.clientHeight : innerHeight;
+    // Start from just above the last item so the walk always passes the list's end.
+    const last = rows[rows.length - 1];
+    if (last && !box) {
+      const top = last.getBoundingClientRect().top + scrollY - view;
+      if (top > scrollY) scrollTo(0, top);
     }
-    window.scrollTo(0, document.documentElement.scrollHeight);
+    for (let i = 0; i < 40 && el.scrollTop + view < el.scrollHeight - 2; i++) {
+      el.scrollBy(0, Math.round(view * 0.7));
+      await wait(150);
+    }
     return rows.length;
   };
+
 
   // ---------- quick extractors ----------
   const EMAIL = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,24}/gi;

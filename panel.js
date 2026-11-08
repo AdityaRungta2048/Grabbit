@@ -193,7 +193,7 @@ function pagerUI() {
   $('#runPager').disabled = mode === 'none';
   $('#pagerSummary').textContent = t({ none: 'off', next: 'nextButton', scroll: 'infiniteScroll' }[mode]);
   if (mode === 'next' && !state.next) {
-    call('findNext').then((n) => {
+    call('findNext', state.recipe?.rowSelector).then((n) => {
       state.next = n;
       $('#nextLabel').textContent = n ? n.label : t('notFoundChoose');
     }).catch(() => {});
@@ -250,6 +250,7 @@ $('#runPager').onclick = async () => {
         progress(page / max, t('pageOf', page, max, state.rows.length));
       },
     });
+    $('#candInfo').textContent = t('itemsFields', state.rows.length, state.cols.length);
     endBusy(t('doneRows', state.rows.length));
   } catch (e) {
     endBusy();

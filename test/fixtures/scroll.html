@@ -1,15 +1,17 @@
 <!doctype html><html><head><meta charset="utf-8"><title>Feed</title></head><body>
-<!-- Infinite feed: 10 posts per load, 40 total. Like many shops, a post's picture only gets a src once it scrolls into view. -->
-<ul id="feed"></ul>
+<!-- Infinite feed: 10 posts per load, 40 total. Like nike.in: pictures get a src only once they scroll into view,
+     more posts load only while scrolling past the end, and a wrapper's generated class changes on every load. -->
+<div class="css-qxbwkm"><ul class="feed"></ul></div>
 <script>
 let n = 0;
 const io = new IntersectionObserver((entries) => entries.forEach((e) => {
   if (e.isIntersecting) { e.target.src = e.target.dataset.later; io.unobserve(e.target); }
 }));
 const add = () => {
+  document.querySelector('.feed').parentElement.className = 'css-' + Array.from({ length: 6 }, () => 'abcdefghjkmnpqrstuvwxyz'[(Math.random() * 23) | 0]).join('');
   for (let i = 0; i < 10 && n < 40; i++, n++) {
-    document.querySelector('#feed').insertAdjacentHTML('beforeend', `<li class="post"><a href="/post/${n}"><img alt="" data-later="/img/post${n}.png" width="80" height="60"></a><h4>Post ${n}</h4><p class="author">user${n % 7}</p><div style="height:120px"></div></li>`);
-    io.observe(document.querySelector('#feed').lastElementChild.querySelector('img'));
+    document.querySelector('.feed').insertAdjacentHTML('beforeend', `<li class="post"><a href="/post/${n}"><img alt="" data-later="/img/post${n}.png" width="80" height="60"></a><h4>Post ${n}</h4><p class="author">user${n % 7}</p><div style="height:120px"></div></li>`);
+    io.observe(document.querySelector('.feed').lastElementChild.querySelector('img'));
   }
 };
 add();
