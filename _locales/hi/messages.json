@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – मुफ़्त वेब स्क्रैपर और डेटा एक्सट्रैक्टर"
+  },
+  "appDesc": {
+    "message": "किसी भी वेबसाइट का डेटा एक क्लिक में Excel, CSV, JSON या Google Sheets में। मुफ़्त, बिना कोड, बिना अकाउंट। लिस्ट, टेबल, ईमेल।"
+  },
+  "actionTitle": {
+    "message": "Grabbit खोलें (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "इस पेज पर Grabbit खोलें"
+  }
+}

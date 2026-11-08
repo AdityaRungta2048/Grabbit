@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – 무료 웹 스크래퍼 & 데이터 추출기"
+  },
+  "appDesc": {
+    "message": "클릭 한 번으로 모든 웹사이트 데이터를 Excel, CSV, JSON, Google 스프레드시트로. 무료, 코딩·가입 불필요. 목록, 표, 이메일 추출."
+  },
+  "actionTitle": {
+    "message": "Grabbit 열기 (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "이 페이지에서 Grabbit 열기"
+  }
+}

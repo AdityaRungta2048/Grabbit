@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – 無料のWebスクレイパー＆データ抽出ツール"
+  },
+  "appDesc": {
+    "message": "あらゆるサイトのデータをワンクリックでExcel・CSV・JSON・Googleスプレッドシートへ。無料、コード不要、登録不要。リスト・表・メールを抽出。"
+  },
+  "actionTitle": {
+    "message": "Grabbit を開く (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "このページで Grabbit を開く"
+  }
+}

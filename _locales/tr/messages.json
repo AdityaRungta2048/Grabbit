@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – Ücretsiz Web Scraper ve Veri Çıkarıcı"
+  },
+  "appDesc": {
+    "message": "Herhangi bir sitedeki verileri tek tıkla Excel, CSV, JSON veya Google E-Tablolar'a aktarın. Ücretsiz, kod ve hesap gerekmez."
+  },
+  "actionTitle": {
+    "message": "Grabbit'i aç (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "Bu sayfada Grabbit'i aç"
+  }
+}

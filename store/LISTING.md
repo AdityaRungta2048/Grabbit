@@ -1,4 +1,4 @@
-# Chrome Web Store submission guide: Grabbit 1.1.0
+# Chrome Web Store submission guide: Grabbit 1.1.1
 
 Follow the Developer Dashboard top to bottom and copy each field below.
 Dashboard: https://chrome.google.com/webstore/devconsole
@@ -10,12 +10,12 @@ Dashboard: https://chrome.google.com/webstore/devconsole
 2. Turn on GitHub Pages once: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**, pick the branch, folder **/docs**, then **Save**. Within a minute or two:
    - Privacy policy: https://adityarungta2048.github.io/Grabbit/privacy.html
    - Homepage: https://adityarungta2048.github.io/Grabbit/
-3. Click **New item** and upload `grabbit-1.1.0.zip` (build it with `./build.sh`).
+3. Click **New item** and upload `grabbit-1.1.1.zip` (build it with `./build.sh`).
 
 ---
 
 ## 1. Package
-Upload `dist/grabbit-1.1.0.zip`.
+Upload `dist/grabbit-1.1.1.zip`.
 
 ---
 
@@ -111,6 +111,31 @@ The screenshots and tiles are JPEGs with no alpha, as the store requires. Upload
 - **Homepage URL:** `https://adityarungta2048.github.io/Grabbit/`
 - **Support URL:** `https://github.com/AdityaRungta2048/Grabbit/issues`
 - **Mature content:** No
+
+---
+
+## 2b. Localized listings (12 more languages)
+The title and summary are translated inside the package (`_locales/`), so the store shows them automatically after you upload 1.1.1. The description has to be pasted in per language:
+
+1. **Store listing** tab → the language dropdown at the top → **Add language** (or pick it).
+2. Paste the description from the matching file. The screenshots and promo tiles default to the English ones, so you can leave them.
+
+| Language | Dashboard name | File |
+| --- | --- | --- |
+| Spanish | Spanish | `store/locales/es.md` |
+| Portuguese (Brazil) | Portuguese (Brazil) | `store/locales/pt_BR.md` |
+| French | French | `store/locales/fr.md` |
+| German | German | `store/locales/de.md` |
+| Italian | Italian | `store/locales/it.md` |
+| Russian | Russian | `store/locales/ru.md` |
+| Japanese | Japanese | `store/locales/ja.md` |
+| Korean | Korean | `store/locales/ko.md` |
+| Chinese (Simplified) | Chinese (China) | `store/locales/zh_CN.md` |
+| Hindi | Hindi | `store/locales/hi.md` |
+| Indonesian | Indonesian | `store/locales/id.md` |
+| Turkish | Turkish | `store/locales/tr.md` |
+
+Feature names inside the panel ("Pick on page", "Multiple pages") stay in English in every description, because the extension's interface is in English.
 
 ---
 

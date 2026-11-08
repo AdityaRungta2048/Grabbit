@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "Grabbit – Free Web Scraper & Data Extractor",
+    "description": "Extension name in Chrome and the Web Store (max 75 chars)."
+  },
+  "appDesc": {
+    "message": "Scrape any website to Excel, CSV, JSON or Google Sheets in one click. Free, no code, no account. Lists, tables, emails, pages.",
+    "description": "Web Store summary (max 132 chars)."
+  },
+  "actionTitle": {
+    "message": "Open Grabbit (Alt+G)",
+    "description": "Toolbar button tooltip."
+  },
+  "commandDesc": {
+    "message": "Open Grabbit on this page",
+    "description": "Keyboard shortcut description."
+  }
+}

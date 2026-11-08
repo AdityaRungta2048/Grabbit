@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – Web Scraper gratuito ed estrattore di dati"
+  },
+  "appDesc": {
+    "message": "Estrai dati da qualsiasi sito in Excel, CSV, JSON o Google Sheets con un clic. Gratis, senza codice né account. Liste e tabelle."
+  },
+  "actionTitle": {
+    "message": "Apri Grabbit (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "Apri Grabbit in questa pagina"
+  }
+}

@@ -1,0 +1,57 @@
+# Korean (ko) listing
+
+In the dashboard: **Store listing → language dropdown → Korean**, then paste the description below.
+The title and summary come from `_locales/ko/messages.json` in the package automatically.
+
+**Title (from the package):** Grabbit – 무료 웹 스크래퍼 & 데이터 추출기
+
+**Summary (from the package):** 클릭 한 번으로 모든 웹사이트 데이터를 Excel, CSV, JSON, Google 스프레드시트로. 무료, 코딩·가입 불필요. 목록, 표, 이메일 추출.
+
+## Description
+```
+Grabbit은 어떤 웹사이트든 몇 초 만에 깔끔한 스프레드시트로 바꿔 줍니다. 무료이고 계정이 필요 없으며, 데이터는 브라우저 밖으로 나가지 않습니다.
+
+페이지에서 Grabbit을 열면 상품, 검색 결과, 매물, 디렉터리, 잠재 고객, 채용 공고, 리뷰, 가격 등의 목록과 표를 자동으로 찾아 줍니다. 미리보기를 확인하고 Excel, CSV, JSON 또는 Google 스프레드시트로 내보내세요.
+
+★ GRABBIT을 써야 하는 이유
+• 100% 무료: 크레딧 없음, 행 수 제한 없음, "내보내려면 업그레이드" 없음
+• 회원가입, 계정, API 키 불필요
+• 개인정보 보호: 모든 작업이 브라우저 안에서 처리되며 아무것도 업로드되지 않음
+• 코딩 불필요: 선택자, XPath, 설정 없음
+• 최소 권한: 연 탭만 읽고, 더 필요할 때는 먼저 묻습니다
+
+★ 기능
+✔ 목록, 그리드, 표를 클릭 한 번으로 자동 감지
+✔ 포인트 앤 클릭: 항목 하나를 클릭하면 비슷한 항목을 모두 선택
+✔ 여러 페이지: "다음" 버튼과 페이지 이동을 자동으로 따라감
+✔ 무한 스크롤: 계속 스크롤하며 모든 항목 수집
+✔ URL 일괄 스크래핑: 링크 수백 개를 붙여넣거나 CSV 불러오기
+✔ 예약 스크래핑: 매시간, 매일, 매주 다시 수집하고 새로 추가된 행 수 확인. 가격, 재고, 채용 추적에 최적. Excel/CSV 자동 다운로드 지원
+✔ 이미지를 클릭 한 번으로 폴더에 일괄 다운로드
+✔ 이메일, 전화번호, SNS 프로필(LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub) 추출, 문의 페이지까지 확인
+✔ 링크, 이미지, 페이지 텍스트 추출
+✔ HTML 표는 실제 열 제목 유지
+✔ 내장 편집기: 열 이름 변경·삭제, 셀 편집, 중복 제거
+✔ 사이트별 레시피 저장
+✔ Excel(.xlsx), CSV, JSON, 클립보드, Google 스프레드시트로 내보내기
+✔ 사이드 패널, 단축키 Alt+G, 다크 모드
+
+★ 이런 분께 추천
+• 리드 발굴: 기업 디렉터리에서 이메일과 연락처 수집
+• 이커머스: 상품, 가격, 평점, 이미지 수집 및 경쟁사 가격 모니터링
+• 부동산, 채용, 마켓플레이스
+• SEO: 모든 링크, 제목, 본문
+• 리서치와 저널리즘: HTML 표를 스프레드시트로
+• 채용과 마케팅
+
+★ 사용 방법
+1. 웹사이트를 열고 Grabbit 아이콘 클릭(또는 Alt+G)
+2. 찾은 데이터가 강조 표시됩니다. ‹ ›로 목록을 바꾸거나 "Pick on page" 사용
+3. 필요하면 "Multiple pages"를 켜거나 예약 실행 설정
+4. Excel, CSV, JSON 또는 Sheets 클릭. 끝!
+
+★ 개인정보
+Grabbit에는 서버가 없습니다. 어떤 데이터도 수집, 저장, 판매하지 않습니다.
+
+책임감 있게 스크래핑하고 각 사이트의 이용약관을 지켜 주세요.
+```

@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – Web Scraper Gratis & Ekstraktor Data"
+  },
+  "appDesc": {
+    "message": "Ambil data dari situs mana pun ke Excel, CSV, JSON, atau Google Sheets dalam satu klik. Gratis, tanpa kode, tanpa akun."
+  },
+  "actionTitle": {
+    "message": "Buka Grabbit (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "Buka Grabbit di halaman ini"
+  }
+}

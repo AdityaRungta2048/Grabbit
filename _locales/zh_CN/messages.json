@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – 免费网页爬虫与数据抓取工具"
+  },
+  "appDesc": {
+    "message": "一键将任意网站数据导出到 Excel、CSV、JSON 或 Google 表格。免费、无需代码、无需注册。支持列表、表格和邮箱提取。"
+  },
+  "actionTitle": {
+    "message": "打开 Grabbit (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "在此页面打开 Grabbit"
+  }
+}

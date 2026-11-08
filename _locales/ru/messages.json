@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Grabbit – бесплатный веб-скрапер и парсер данных"
+  },
+  "appDesc": {
+    "message": "Парсинг любого сайта в Excel, CSV, JSON или Google Таблицы в один клик. Бесплатно, без кода и регистрации. Списки, таблицы, email."
+  },
+  "actionTitle": {
+    "message": "Открыть Grabbit (Alt+G)"
+  },
+  "commandDesc": {
+    "message": "Открыть Grabbit на этой странице"
+  }
+}
