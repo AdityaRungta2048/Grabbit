@@ -269,10 +269,10 @@
   G.cancelPick = () => stopPicker?.();
 
   // ---------- pagination ----------
-  const NEXT_WORDS = /^(next|next page|more|load more|show more|see more|view more|more results|older|older posts|siguiente|suivant|weiter|nächste|próxima|próximo|avanti|volgende|następna|далее|次へ|下一页|下一頁|다음)$/i;
+  const NEXT_WORDS = /^(next|next page|more|load more|show more|see more|view more|more results|older|older posts|siguiente|suivant|weiter|nächste|próxima|próximo|avanti|volgende|następna|далее|следующая|次へ|次のページ|下一页|下一頁|다음|다음 페이지|अगला|अगला पेज|berikutnya|selanjutnya|sonraki|sonraki sayfa|página siguiente|page suivante)$/iu;
   const isNext = (e) => {
     const t = norm(e.innerText || e.value);
-    return /^[›»>→]{1,2}$/.test(t) || NEXT_WORDS.test(t.replace(/[^\p{L}\p{N} ]/gu, '').trim());
+    return /^[›»>→]{1,2}$/.test(t) || NEXT_WORDS.test(t.replace(/[^\p{L}\p{M}\p{N} ]/gu, '').trim());
   };
   G.findNext = () => {
     let el = document.querySelector('a[rel~=next]');

@@ -70,7 +70,7 @@ async function run(lang) {
     await comp.close();
   };
 
-  const { page, panel } = await openPanel(`${base}/demo.html`, PANEL);
+  const { page, panel } = await openPanel(`${base}/demo.html?lang=${lang}`, PANEL);
   if (extra) await panel.addStyleTag({ content: `body,button,input,select,textarea{font-family:system-ui,-apple-system,"Segoe UI",Roboto,${extra},sans-serif}` });
   await panel.waitForFunction(() => +document.querySelector('#rowCount').textContent > 0, null, { polling: 200 });
   await panel.evaluate(() => { document.querySelector('#host').textContent = 'northpeakoutdoor.co'; });
@@ -78,7 +78,8 @@ async function run(lang) {
 
   await panel.click('#pagerCard summary');
   await panel.check('[name=pmode][value=next]');
-  await panel.waitForFunction(() => document.querySelector('#nextLabel').textContent.includes('Next'), null, { polling: 200 });
+  // Auto-detected from the shop's own localized button ("Weiter ›", "次へ ›"…).
+  await panel.waitForFunction(() => ![t('notFound'), t('notFoundChoose')].includes(document.querySelector('#nextLabel').textContent), null, { polling: 200 });
   await shoot(page, panel, 'screenshot-2.jpg', c.s2);
 
   await panel.click('[data-tab=quick]');
@@ -88,7 +89,7 @@ async function run(lang) {
   await shoot(page, panel, 'screenshot-3.jpg', c.s3);
 
   await panel.click('[data-tab=bulk]');
-  await panel.fill('#urls', [1, 2, 3].map((n) => `${base}/demo.html?list=${n}`).join('\n'));
+  await panel.fill('#urls', [1, 2, 3].map((n) => `${base}/demo.html?lang=${lang}&list=${n}`).join('\n'));
   await panel.dispatchEvent('#urls', 'input');
   await panel.selectOption('#bulkMode', 'auto');
   await panel.click('#runBulk');

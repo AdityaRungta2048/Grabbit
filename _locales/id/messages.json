@@ -60,7 +60,7 @@
     "message": "Mati"
   },
   "nextButton": {
-    "message": "Tombol \"Next\""
+    "message": "Tombol \"Berikutnya\""
   },
   "infiniteScroll": {
     "message": "Infinite scroll"
@@ -292,7 +292,7 @@
     "message": "Klik sebuah item di halaman"
   },
   "clickNext": {
-    "message": "Klik tombol Next di halaman"
+    "message": "Klik tombol Berikutnya di halaman"
   },
   "notFoundChoose": {
     "message": "tidak ditemukan, klik Pilih"
@@ -301,7 +301,7 @@
     "message": "Pilih daftar dulu"
   },
   "chooseNextFirst": {
-    "message": "Pilih tombol Next dulu"
+    "message": "Pilih tombol Berikutnya dulu"
   },
   "permFollow": {
     "message": "Perlu izin untuk mengikuti halaman"
@@ -511,7 +511,7 @@
     "message": "Buka Grabbit dari ikon toolbar di halaman yang ingin Anda ambil datanya."
   },
   "tipNext": {
-    "message": "Klik tombol atau link \"Next\" · Esc untuk batal"
+    "message": "Klik tombol atau link \"Berikutnya\" · Esc untuk batal"
   },
   "tipList": {
     "message": "Klik item mana saja di daftar yang Anda mau · Esc untuk batal"
@@ -610,7 +610,7 @@
     "message": "100% privat"
   },
   "wf1": {
-    "message": "Mengikuti tombol \"Next\" dan infinite scroll."
+    "message": "Mengikuti tombol \"Berikutnya\" dan infinite scroll."
   },
   "wf2": {
     "message": "Juga memeriksa halaman kontak dan tentang kami."

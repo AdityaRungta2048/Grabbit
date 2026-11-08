@@ -1,4 +1,4 @@
-# Chrome Web Store submission guide: Grabbit 1.2.0
+# Chrome Web Store submission guide: Grabbit 1.2.1
 
 Follow the Developer Dashboard top to bottom and copy each field below.
 Dashboard: https://chrome.google.com/webstore/devconsole
@@ -10,12 +10,12 @@ Dashboard: https://chrome.google.com/webstore/devconsole
 2. Turn on GitHub Pages once: repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**, pick the branch, folder **/docs**, then **Save**. Within a minute or two:
    - Privacy policy: https://adityarungta2048.github.io/Grabbit/privacy.html
    - Homepage: https://adityarungta2048.github.io/Grabbit/
-3. Click **New item** and upload `grabbit-1.2.0.zip` (build it with `./build.sh`).
+3. Click **New item** and upload `grabbit-1.2.1.zip` (build it with `./build.sh`).
 
 ---
 
 ## 1. Package
-Upload `dist/grabbit-1.2.0.zip`.
+Upload `dist/grabbit-1.2.1.zip`.
 
 ---
 
@@ -115,7 +115,7 @@ The screenshots and tiles are JPEGs with no alpha, as the store requires. Upload
 ---
 
 ## 2b. Localized listings (12 more languages)
-The title and summary are translated inside the package (`_locales/`), so the store shows them automatically after you upload 1.2.0. The description and images are added per language:
+The title and summary are translated inside the package (`_locales/`), so the store shows them automatically after you upload 1.2.1. The description and images are added per language:
 
 1. **Store listing** tab → the language dropdown at the top → **Add language** (or pick it).
 2. Paste the description from the language's `.md` file.

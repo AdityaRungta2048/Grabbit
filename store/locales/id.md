@@ -23,7 +23,7 @@ Buka Grabbit di sebuah halaman dan ia akan menemukan daftar dan tabel untuk Anda
 ★ FITUR
 ✔ Deteksi otomatis daftar, grid, dan tabel dalam satu klik
 ✔ Pilih dengan klik: klik satu item dan Grabbit memilih semua yang mirip
-✔ Banyak halaman: mengikuti tombol "Next" dan paginasi secara otomatis
+✔ Banyak halaman: mengikuti tombol "Berikutnya" dan paginasi secara otomatis
 ✔ Infinite scroll: terus menggulir dan mengumpulkan setiap item
 ✔ Scraping URL massal: tempel ratusan link atau muat CSV
 ✔ Scraping terjadwal: ulangi setiap jam, hari, atau minggu dan lihat berapa baris yang baru. Cocok untuk memantau harga, stok, dan lowongan. Bisa unduh Excel atau CSV otomatis
