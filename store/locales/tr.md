@@ -46,8 +46,8 @@ Grabbit'i bir sayfada açın; listeleri ve tabloları sizin için bulsun: ürün
 
 ★ NASIL ÇALIŞIR
 1. Herhangi bir siteyi açın ve Grabbit simgesine tıklayın (veya Alt+G'ye basın)
-2. Grabbit bulduğu verileri vurgular. Listeyi ‹ › ile değiştirin veya "Pick on page" kullanın
-3. İsteğe bağlı: "Multiple pages" özelliğini açın veya zamanlayın
+2. Grabbit bulduğu verileri vurgular. Listeyi ‹ › ile değiştirin veya "Sayfada seç" kullanın
+3. İsteğe bağlı: "Çoklu sayfa" özelliğini açın veya zamanlayın
 4. Excel, CSV, JSON veya Sheets'e tıklayın. Bu kadar!
 
 ★ GİZLİLİK

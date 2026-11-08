@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "इस पेज पर Grabbit खोलें"
+  },
+  "webScraper": {
+    "message": "वेब स्क्रैपर"
+  },
+  "tabLists": {
+    "message": "लिस्ट"
+  },
+  "tabQuick": {
+    "message": "झटपट ग्रैब"
+  },
+  "tabBulk": {
+    "message": "बल्क URL"
+  },
+  "tabSchedule": {
+    "message": "शेड्यूल"
+  },
+  "savedRecipe": {
+    "message": "इस साइट के लिए सेव की गई रेसिपी"
+  },
+  "useIt": {
+    "message": "इस्तेमाल करें"
+  },
+  "detectedData": {
+    "message": "मिला हुआ डेटा"
+  },
+  "scanning": {
+    "message": "पेज स्कैन हो रहा है…"
+  },
+  "prevList": {
+    "message": "पिछली लिस्ट"
+  },
+  "nextList": {
+    "message": "अगली लिस्ट"
+  },
+  "pickOnPage": {
+    "message": "पेज पर चुनें"
+  },
+  "rescan": {
+    "message": "फिर से स्कैन"
+  },
+  "rescanTitle": {
+    "message": "पेज को फिर से स्कैन करें"
+  },
+  "multiplePages": {
+    "message": "कई पेज"
+  },
+  "off": {
+    "message": "बंद"
+  },
+  "nextButton": {
+    "message": "“Next” बटन"
+  },
+  "infiniteScroll": {
+    "message": "इनफ़िनिट स्क्रॉल"
+  },
+  "buttonLabel": {
+    "message": "बटन:"
+  },
+  "notFound": {
+    "message": "नहीं मिला"
+  },
+  "choose": {
+    "message": "चुनें"
+  },
+  "maxPages": {
+    "message": "अधिकतम पेज"
+  },
+  "waitSec": {
+    "message": "इंतज़ार (सेकंड)"
+  },
+  "scrapeAllPages": {
+    "message": "सभी पेज स्क्रैप करें"
+  },
+  "saveRecipe": {
+    "message": "इस साइट के लिए रेसिपी के रूप में सेव करें"
+  },
+  "qContacts": {
+    "message": "ईमेल और कॉन्टैक्ट"
+  },
+  "qContactsSub": {
+    "message": "ईमेल, फ़ोन, सोशल"
+  },
+  "qLinks": {
+    "message": "सभी लिंक"
+  },
+  "qLinksSub": {
+    "message": "टेक्स्ट, URL, इंटरनल/एक्सटर्नल"
+  },
+  "qImages": {
+    "message": "सभी इमेज"
+  },
+  "qImagesSub": {
+    "message": "URL, alt टेक्स्ट, साइज़"
+  },
+  "qText": {
+    "message": "पेज टेक्स्ट"
+  },
+  "qTextSub": {
+    "message": "हेडिंग और पैराग्राफ़"
+  },
+  "pasteUrls": {
+    "message": "URL पेस्ट करें (हर लाइन में एक)"
+  },
+  "loadCsv": {
+    "message": "CSV से लोड करें"
+  },
+  "urlCount": {
+    "message": "$P1$ URL",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "क्या निकालना है"
+  },
+  "bulkContacts": {
+    "message": "कॉन्टैक्ट जानकारी (कॉन्टैक्ट पेज भी देखता है)"
+  },
+  "bulkRecipe": {
+    "message": "मौजूदा पेज जैसी लिस्ट (चुनी हुई लिस्ट)"
+  },
+  "bulkAuto": {
+    "message": "हर पेज की मुख्य लिस्ट अपने आप पहचानें"
+  },
+  "pagesAtATime": {
+    "message": "एक साथ पेज"
+  },
+  "startBulk": {
+    "message": "बल्क स्क्रैप शुरू करें"
+  },
+  "bulkNote": {
+    "message": "पेज बैकग्राउंड टैब में खुलते हैं और अपने आप बंद हो जाते हैं। Chrome इन साइटों को पढ़ने की अनुमति एक बार मांगेगा।"
+  },
+  "schedTitle": {
+    "message": "इस लिस्ट को अपने आप दोबारा स्क्रैप करें"
+  },
+  "schedNote": {
+    "message": "लिस्ट टैब की लिस्ट और पेज सेटिंग इस्तेमाल करता है। Chrome खुला रहने तक बैकग्राउंड टैब में चलता है। कीमत और स्टॉक ट्रैक करने के लिए बढ़िया।"
+  },
+  "howOften": {
+    "message": "कितनी बार"
+  },
+  "autoDownload": {
+    "message": "ऑटो-डाउनलोड"
+  },
+  "every60": {
+    "message": "हर घंटे"
+  },
+  "every360": {
+    "message": "हर 6 घंटे"
+  },
+  "every1440": {
+    "message": "रोज़"
+  },
+  "every10080": {
+    "message": "हर हफ़्ते"
+  },
+  "createSchedule": {
+    "message": "शेड्यूल बनाएं"
+  },
+  "noSchedules": {
+    "message": "अभी कोई शेड्यूल नहीं।"
+  },
+  "working": {
+    "message": "काम चल रहा है…"
+  },
+  "stop": {
+    "message": "रोकें"
+  },
+  "rows": {
+    "message": "रो"
+  },
+  "columns": {
+    "message": "कॉलम"
+  },
+  "images": {
+    "message": "इमेज"
+  },
+  "imagesTitle": {
+    "message": "डेटा की सभी इमेज Downloads फ़ोल्डर में सेव करें"
+  },
+  "dedupe": {
+    "message": "डुप्लिकेट हटाएं"
+  },
+  "dedupeTitle": {
+    "message": "डुप्लिकेट रो हटाएं"
+  },
+  "clear": {
+    "message": "साफ़ करें"
+  },
+  "clearTitle": {
+    "message": "सारा डेटा साफ़ करें"
+  },
+  "emptyTitle": {
+    "message": "आपका डेटा यहां दिखेगा।"
+  },
+  "emptySub": {
+    "message": "कोई लिस्ट चुनें या झटपट ग्रैब इस्तेमाल करें।"
+  },
+  "copy": {
+    "message": "कॉपी"
+  },
+  "copyTitle": {
+    "message": "टेबल के रूप में कॉपी करें और कहीं भी पेस्ट करें"
+  },
+  "sheetsTitle": {
+    "message": "कॉपी करें और नई Google Sheet खोलें। Ctrl+V से पेस्ट करें"
+  },
+  "enjoying": {
+    "message": "Grabbit पसंद आ रहा है?"
+  },
+  "leaveReview": {
+    "message": "★★★★★ रिव्यू दें"
+  },
+  "dismiss": {
+    "message": "बंद करें"
+  },
+  "errCantRead": {
+    "message": "Grabbit यह पेज नहीं पढ़ सकता। Chrome, chrome:// पेजों और Chrome Web Store पर एक्सटेंशन ब्लॉक करता है। अगर पेज अभी बदला है, तो Grabbit आइकन पर फिर से क्लिक करें।"
+  },
+  "errGeneric": {
+    "message": "कुछ गड़बड़ हुई: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "कॉलम का नाम"
+  },
+  "removeColumn": {
+    "message": "कॉलम हटाएं"
+  },
+  "showingFirst": {
+    "message": "पहली $P1$ रो दिख रही हैं। सभी $P2$ रो एक्सपोर्ट होंगी।",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "$P1$ डुप्लिकेट हटाए गए",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "कोई लिस्ट नहीं मिली। “पेज पर चुनें” इस्तेमाल करें।"
+  },
+  "listInfo": {
+    "message": "लिस्ट $P1$/$P2$ · $P3$ आइटम · $P4$ फ़ील्ड",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "पेज पढ़ा नहीं जा सका।"
+  },
+  "clickItem": {
+    "message": "पेज पर किसी आइटम पर क्लिक करें"
+  },
+  "clickNext": {
+    "message": "पेज पर Next बटन पर क्लिक करें"
+  },
+  "notFoundChoose": {
+    "message": "नहीं मिला, चुनें पर क्लिक करें"
+  },
+  "pickListFirst": {
+    "message": "पहले एक लिस्ट चुनें"
+  },
+  "chooseNextFirst": {
+    "message": "पहले Next बटन चुनें"
+  },
+  "permFollow": {
+    "message": "पेज फ़ॉलो करने के लिए अनुमति चाहिए"
+  },
+  "pageOf": {
+    "message": "पेज $P1$/$P2$ · $P3$ रो",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "हो गया · $P1$ रो",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "$P1$ के लिए रेसिपी सेव हो गई",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "सेव की गई रेसिपी इस्तेमाल हो रही है"
+  },
+  "scanningContacts": {
+    "message": "पेज और कॉन्टैक्ट पेज स्कैन हो रहे हैं…"
+  },
+  "foundEmails": {
+    "message": "$P1$ ईमेल मिले",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "इस साइट पर कोई ईमेल नहीं मिला"
+  },
+  "grabbed": {
+    "message": "$P1$ रो निकाली गईं",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "कम से कम एक URL पेस्ट करें"
+  },
+  "pickListCurrent": {
+    "message": "पहले मौजूदा पेज पर एक लिस्ट चुनें"
+  },
+  "permSites": {
+    "message": "इन साइटों को खोलने के लिए अनुमति चाहिए"
+  },
+  "bulkProgress": {
+    "message": "$P1$/$P2$ पेज · $P3$ रो",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ फ़ेल",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "बल्क स्क्रैप पूरा · $P1$ रो",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "डेटा में कोई इमेज URL नहीं है"
+  },
+  "permImages": {
+    "message": "इमेज सेव करने के लिए अनुमति चाहिए"
+  },
+  "savingImages": {
+    "message": "इमेज सेव हो रही हैं $P1$/$P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "$P1$ इमेज $P2$ में सेव हुईं",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "पहले लिस्ट टैब में एक लिस्ट चुनें"
+  },
+  "cantSchedule": {
+    "message": "इस पेज को शेड्यूल नहीं किया जा सकता"
+  },
+  "permBackground": {
+    "message": "बैकग्राउंड में चलने के लिए अनुमति चाहिए"
+  },
+  "scheduled": {
+    "message": "शेड्यूल हो गया · पहला रन शुरू"
+  },
+  "viewData": {
+    "message": "डेटा देखें"
+  },
+  "runNow": {
+    "message": "अभी चलाएं"
+  },
+  "delete": {
+    "message": "हटाएं"
+  },
+  "autoX": {
+    "message": "ऑटो $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "चल रहा है…"
+  },
+  "lastRun": {
+    "message": "पिछला रन $P1$ · $P2$ रो",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "$P1$ नई",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "अभी तक नहीं चला"
+  },
+  "noDataYet": {
+    "message": "अभी कोई डेटा नहीं"
+  },
+  "nothingToExport": {
+    "message": "अभी एक्सपोर्ट करने को कुछ नहीं"
+  },
+  "copiedSheets": {
+    "message": "कॉपी हो गया! नई शीट में Ctrl+V (⌘V) दबाएं"
+  },
+  "copiedRows": {
+    "message": "$P1$ रो कॉपी हुईं",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$ रो एक्सपोर्ट हुईं",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "जिस पेज को स्क्रैप करना है, उस पर टूलबार आइकन से Grabbit खोलें।"
+  },
+  "tipNext": {
+    "message": "“Next” बटन या लिंक पर क्लिक करें · रद्द करने के लिए Esc"
+  },
+  "tipList": {
+    "message": "जिस लिस्ट को चाहते हैं उसके किसी भी आइटम पर क्लिक करें · रद्द करने के लिए Esc"
+  },
+  "noRepeating": {
+    "message": "वहां कोई दोहराए जाने वाले आइटम नहीं मिले। किसी दूसरे आइटम पर क्लिक करके देखें।"
+  },
+  "errSiteAccess": {
+    "message": "साइट एक्सेस हटा दिया गया"
+  },
+  "errNoRows": {
+    "message": "कोई रो नहीं मिली, शायद पेज का लेआउट बदल गया है"
+  },
+  "errDownloadsPerm": {
+    "message": "डाउनलोड की अनुमति हटा दी गई"
+  },
+  "colLink": {
+    "message": "लिंक"
+  },
+  "colImage": {
+    "message": "इमेज"
+  },
+  "colTitle": {
+    "message": "टाइटल"
+  },
+  "colLinkText": {
+    "message": "लिंक टेक्स्ट"
+  },
+  "colDate": {
+    "message": "तारीख"
+  },
+  "colItem": {
+    "message": "आइटम"
+  },
+  "colCell": {
+    "message": "सेल"
+  },
+  "colText": {
+    "message": "टेक्स्ट"
+  },
+  "colEmails": {
+    "message": "ईमेल"
+  },
+  "colPhones": {
+    "message": "फ़ोन"
+  },
+  "colDescription": {
+    "message": "विवरण"
+  },
+  "colType": {
+    "message": "प्रकार"
+  },
+  "colAlt": {
+    "message": "Alt टेक्स्ट"
+  },
+  "colWidth": {
+    "message": "चौड़ाई"
+  },
+  "colHeight": {
+    "message": "ऊंचाई"
+  },
+  "colSource": {
+    "message": "स्रोत URL"
+  },
+  "colError": {
+    "message": "त्रुटि"
+  },
+  "wPageTitle": {
+    "message": "Grabbit में आपका स्वागत है"
+  },
+  "wTitle": {
+    "message": "Grabbit तैयार है 🐰"
+  },
+  "wLead": {
+    "message": "किसी भी वेबसाइट को सेकंडों में स्प्रेडशीट में बदलें। मुफ़्त, प्राइवेट, और अकाउंट की ज़रूरत नहीं।"
+  },
+  "wStep1": {
+    "message": "<b>Grabbit पिन करें:</b> Chrome टूलबार में पज़ल आइकन 🧩 पर क्लिक करें, फिर Grabbit के पास पिन पर।"
+  },
+  "wStep2": {
+    "message": "<b>किसी भी पेज पर खोलें:</b> आइकन या <kbd>Alt</kbd>+<kbd>G</kbd> से। Grabbit लिस्ट और टेबल अपने आप ढूंढ लेता है।"
+  },
+  "wStep3": {
+    "message": "<b>सही डेटा नहीं मिला?</b> दूसरी लिस्ट देखने के लिए ‹ › दबाएं, या <b>पेज पर चुनें</b> दबाकर किसी आइटम पर क्लिक करें।"
+  },
+  "wStep4": {
+    "message": "Excel, CSV, JSON या सीधे Google Sheets में <b>एक्सपोर्ट</b> करें।"
+  },
+  "wSchedules": {
+    "message": "शेड्यूल"
+  },
+  "wImageDl": {
+    "message": "इमेज डाउनलोडर"
+  },
+  "wPrivate": {
+    "message": "100% प्राइवेट"
+  },
+  "wf1": {
+    "message": "“Next” बटन और इनफ़िनिट स्क्रॉल अपने आप फ़ॉलो करता है।"
+  },
+  "wf2": {
+    "message": "साइट के कॉन्टैक्ट और अबाउट पेज भी देखता है।"
+  },
+  "wf3": {
+    "message": "लिस्ट या CSV से सैकड़ों पेज स्क्रैप करें।"
+  },
+  "wf4": {
+    "message": "कीमत और स्टॉक ट्रैक करने के लिए हर घंटे, दिन या हफ़्ते दोबारा स्क्रैप करें।"
+  },
+  "wf5": {
+    "message": "अपने डेटा की सभी इमेज एक क्लिक में सेव करें।"
+  },
+  "wf6": {
+    "message": "सब कुछ आपके ब्राउज़र में चलता है। कुछ भी अपलोड नहीं होता।"
+  },
+  "wBulk": {
+    "message": "बल्क URL"
   }
 }

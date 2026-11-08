@@ -14,6 +14,7 @@ Turn any website into a spreadsheet in one click. Free, private, no code, no acc
 - **Saved recipes** per website
 - **Export**: Excel (.xlsx), CSV, JSON, clipboard, Google Sheets
 - Side panel UI, `Alt+G` shortcut, dark mode, zero dependencies, nothing leaves the browser
+- **13 languages**: English, Spanish, Portuguese (Brazil), French, German, Italian, Russian, Japanese, Korean, Chinese (Simplified), Hindi, Indonesian, Turkish. It follows the browser language.
 
 ## Install (development)
 1. Open `chrome://extensions`
@@ -24,6 +25,7 @@ Turn any website into a spreadsheet in one click. Free, private, no code, no acc
 Needs Node and Playwright with Chromium.
 ```bash
 node test/e2e.js
+node test/i18n-check.js
 ```
 This loads the real extension and checks auto-detect, the picker, pagination, infinite scroll, contacts, table headers, bulk URLs, image downloads, schedules and exports against the pages in `test/fixtures/`. `node test/screenshots.js` regenerates the store images.
 
@@ -43,4 +45,5 @@ This creates `dist/grabbit-<version>.zip`. Upload it in the Developer Dashboard.
 | `panel.*` | Side panel UI |
 | `export.js` | CSV / TSV / JSON / dependency-free XLSX writer |
 | `welcome.html` | First-run onboarding |
+| `i18n.js`, `_locales/` | Translations: `data-i18n` attributes in HTML, `t()` in scripts |
 | `docs/` | GitHub Pages site: homepage and privacy policy (keep `docs/privacy.html` in sync with `PRIVACY.md`) |

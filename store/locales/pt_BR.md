@@ -46,8 +46,8 @@ Abra o Grabbit em uma página e ele encontra as listas e tabelas para você: pro
 
 ★ COMO FUNCIONA
 1. Abra qualquer site e clique no ícone do Grabbit (ou pressione Alt+G)
-2. O Grabbit destaca os dados encontrados. Use ‹ › para trocar de lista ou "Pick on page"
-3. Opcional: ative "Multiple pages" ou agende a coleta
+2. O Grabbit destaca os dados encontrados. Use ‹ › para trocar de lista ou "Escolher na página"
+3. Opcional: ative "Várias páginas" ou agende a coleta
 4. Clique em Excel, CSV, JSON ou Sheets. Pronto!
 
 ★ PRIVACIDADE

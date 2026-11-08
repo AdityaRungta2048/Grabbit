@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome to Grabbit</title>
+  <title data-i18n="wPageTitle">Welcome to Grabbit</title>
   <link rel="stylesheet" href="panel.css" />
   <style>
     body { align-items: center; padding: 48px 16px; }
@@ -22,24 +22,25 @@
 <body>
   <main>
     <img src="icons/128.png" width="72" height="72" alt="" />
-    <h1>Grabbit is ready 🐰</h1>
-    <p class="lead">Turn any website into a spreadsheet in seconds. Free, private, and no account needed.</p>
+    <h1 data-i18n="wTitle">Grabbit is ready 🐰</h1>
+    <p class="lead" data-i18n="wLead">Turn any website into a spreadsheet in seconds. Free, private, and no account needed.</p>
     <section class="card">
       <ol>
-        <li><span><b>Pin Grabbit:</b> click the puzzle icon 🧩 in Chrome’s toolbar, then the pin next to Grabbit.</span></li>
-        <li><span><b>Open it on any page</b> with the icon or <kbd>Alt</kbd>+<kbd>G</kbd>. Grabbit finds lists and tables automatically.</span></li>
-        <li><span><b>Not the right data?</b> Click ‹ › to see other lists, or <b>Pick on page</b> and click any item.</span></li>
-        <li><span><b>Export</b> to Excel, CSV, JSON, or straight into Google Sheets.</span></li>
+        <li><span data-i18n-html="wStep1"></span></li>
+        <li><span data-i18n-html="wStep2"></span></li>
+        <li><span data-i18n-html="wStep3"></span></li>
+        <li><span data-i18n-html="wStep4"></span></li>
       </ol>
     </section>
     <div class="feat">
-      <div class="card"><b>📄 Multiple pages</b><span class="muted">Follows “Next” buttons and infinite scroll.</span></div>
-      <div class="card"><b>✉️ Emails &amp; contacts</b><span class="muted">Also checks a site’s contact and about pages.</span></div>
-      <div class="card"><b>🌐 Bulk URLs</b><span class="muted">Scrape hundreds of pages from a list or CSV.</span></div>
-      <div class="card"><b>⏰ Schedules</b><span class="muted">Re-scrape hourly, daily or weekly to track prices and stock.</span></div>
-      <div class="card"><b>🖼️ Image downloader</b><span class="muted">Save every image from your data in one click.</span></div>
-      <div class="card"><b>🔒 100% private</b><span class="muted">Everything runs in your browser. Nothing is uploaded.</span></div>
+      <div class="card"><b>📄 <span data-i18n="multiplePages"></span></b><span class="muted" data-i18n="wf1"></span></div>
+      <div class="card"><b>✉️ <span data-i18n="qContacts"></span></b><span class="muted" data-i18n="wf2"></span></div>
+      <div class="card"><b>🌐 <span data-i18n="wBulk"></span></b><span class="muted" data-i18n="wf3"></span></div>
+      <div class="card"><b>⏰ <span data-i18n="wSchedules"></span></b><span class="muted" data-i18n="wf4"></span></div>
+      <div class="card"><b>🖼️ <span data-i18n="wImageDl"></span></b><span class="muted" data-i18n="wf5"></span></div>
+      <div class="card"><b>🔒 <span data-i18n="wPrivate"></span></b><span class="muted" data-i18n="wf6"></span></div>
     </div>
   </main>
+  <script src="i18n.js"></script>
 </body>
 </html>

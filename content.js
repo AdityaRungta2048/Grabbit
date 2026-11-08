@@ -4,6 +4,7 @@
   const G = (window.__grabbit = {});
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'IFRAME', 'HEAD', 'META', 'LINK', 'BR', 'HR', 'svg', 'SVG', 'path', 'OPTION']);
   const norm = (s) => (s || '').replace(/\s+/g, ' ').trim();
+  const tr = (key, en) => chrome.i18n?.getMessage(key) || en; // translated UI text, English fallback
 
   // ---------- element signatures & selectors ----------
   const stableClasses = (el) =>
@@ -81,8 +82,8 @@
   }
 
   function nameFor(el, kind, row) {
-    if (kind === 'href') return 'Link';
-    if (kind === 'src') return 'Image';
+    if (kind === 'href') return tr('colLink', 'Link');
+    if (kind === 'src') return tr('colImage', 'Image');
     if (row.tagName === 'TR') {
       const cell = el.closest('td,th');
       const table = row.closest('table');
@@ -94,13 +95,14 @@
     }
     // Name after the closest heading or meaningful class between the field and its row.
     for (let e = el; e && e !== row.parentElement; e = e.parentElement) {
-      if (/^H[1-6]$/.test(e.tagName)) return 'Title';
+      if (/^H[1-6]$/.test(e.tagName)) return tr('colTitle', 'Title');
       const c = stableClasses(e).find((x) => x.length > 2);
       const pretty = c?.replace(/^.*__/, '').replace(/[-_]+/g, ' ').trim();
       if (pretty) return pretty[0].toUpperCase() + pretty.slice(1);
       if (e === row) break;
     }
-    return { A: 'Link text', TIME: 'Date', LI: 'Item', TD: 'Cell', SPAN: 'Text', P: 'Text', DIV: 'Text' }[el.tagName] || 'Text';
+    const [k, en] = { A: ['colLinkText', 'Link text'], TIME: ['colDate', 'Date'], LI: ['colItem', 'Item'], TD: ['colCell', 'Cell'] }[el.tagName] || ['colText', 'Text'];
+    return tr(k, en);
   }
 
   function buildColumns(rows) {
@@ -223,7 +225,7 @@
     box.id = 'grabbit-hover';
     const tip = document.createElement('div');
     tip.id = 'grabbit-tip';
-    tip.textContent = mode === 'next' ? 'Click the "Next" button or link · Esc to cancel' : 'Click any item in the list you want · Esc to cancel';
+    tip.textContent = mode === 'next' ? tr('tipNext', 'Click the "Next" button or link · Esc to cancel') : tr('tipList', 'Click any item in the list you want · Esc to cancel');
     document.documentElement.append(box, tip);
     const over = (e) => {
       const r = e.target.getBoundingClientRect();
@@ -240,7 +242,7 @@
         return;
       }
       const best = rowFromClick(e.target);
-      if (!best) return chrome.runtime.sendMessage({ grabbit: 'picked', error: 'No repeating items found there. Try clicking another item.' });
+      if (!best) return chrome.runtime.sendMessage({ grabbit: 'picked', error: tr('noRepeating', 'No repeating items found there. Try clicking another item.') });
       const c = makeCandidate(best.parent, best.rows);
       highlight(best.rows);
       chrome.runtime.sendMessage({ grabbit: 'picked', candidate: c });

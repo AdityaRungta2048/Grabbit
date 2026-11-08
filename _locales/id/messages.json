@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "Buka Grabbit di halaman ini"
+  },
+  "webScraper": {
+    "message": "Web scraper"
+  },
+  "tabLists": {
+    "message": "Daftar"
+  },
+  "tabQuick": {
+    "message": "Ambil cepat"
+  },
+  "tabBulk": {
+    "message": "URL massal"
+  },
+  "tabSchedule": {
+    "message": "Jadwal"
+  },
+  "savedRecipe": {
+    "message": "Resep tersimpan untuk situs ini"
+  },
+  "useIt": {
+    "message": "Pakai"
+  },
+  "detectedData": {
+    "message": "Data terdeteksi"
+  },
+  "scanning": {
+    "message": "Memindai halaman…"
+  },
+  "prevList": {
+    "message": "Daftar sebelumnya"
+  },
+  "nextList": {
+    "message": "Daftar berikutnya"
+  },
+  "pickOnPage": {
+    "message": "Pilih di halaman"
+  },
+  "rescan": {
+    "message": "Pindai ulang"
+  },
+  "rescanTitle": {
+    "message": "Pindai halaman lagi"
+  },
+  "multiplePages": {
+    "message": "Banyak halaman"
+  },
+  "off": {
+    "message": "Mati"
+  },
+  "nextButton": {
+    "message": "Tombol \"Next\""
+  },
+  "infiniteScroll": {
+    "message": "Infinite scroll"
+  },
+  "buttonLabel": {
+    "message": "Tombol:"
+  },
+  "notFound": {
+    "message": "tidak ditemukan"
+  },
+  "choose": {
+    "message": "Pilih"
+  },
+  "maxPages": {
+    "message": "Maks. halaman"
+  },
+  "waitSec": {
+    "message": "Jeda (detik)"
+  },
+  "scrapeAllPages": {
+    "message": "Ambil semua halaman"
+  },
+  "saveRecipe": {
+    "message": "Simpan sebagai resep untuk situs ini"
+  },
+  "qContacts": {
+    "message": "Email & kontak"
+  },
+  "qContactsSub": {
+    "message": "Email, telepon, sosial"
+  },
+  "qLinks": {
+    "message": "Semua link"
+  },
+  "qLinksSub": {
+    "message": "Teks, URL, internal/eksternal"
+  },
+  "qImages": {
+    "message": "Semua gambar"
+  },
+  "qImagesSub": {
+    "message": "URL, teks alt, ukuran"
+  },
+  "qText": {
+    "message": "Teks halaman"
+  },
+  "qTextSub": {
+    "message": "Judul & paragraf"
+  },
+  "pasteUrls": {
+    "message": "Tempel URL (satu per baris)"
+  },
+  "loadCsv": {
+    "message": "Muat dari CSV"
+  },
+  "urlCount": {
+    "message": "$P1$ URL",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "Yang diambil"
+  },
+  "bulkContacts": {
+    "message": "Detail kontak (juga cek halaman kontak)"
+  },
+  "bulkRecipe": {
+    "message": "Daftar yang sama dengan halaman ini (daftar terpilih)"
+  },
+  "bulkAuto": {
+    "message": "Deteksi otomatis daftar utama tiap halaman"
+  },
+  "pagesAtATime": {
+    "message": "Halaman sekaligus"
+  },
+  "startBulk": {
+    "message": "Mulai ambil massal"
+  },
+  "bulkNote": {
+    "message": "Halaman dibuka di tab latar belakang dan tertutup otomatis. Chrome akan meminta izin sekali untuk membaca situs tersebut."
+  },
+  "schedTitle": {
+    "message": "Ambil ulang daftar ini secara otomatis"
+  },
+  "schedNote": {
+    "message": "Memakai daftar dan pengaturan halaman dari tab Daftar. Berjalan di tab latar belakang selama Chrome terbuka. Cocok untuk memantau harga dan stok."
+  },
+  "howOften": {
+    "message": "Seberapa sering"
+  },
+  "autoDownload": {
+    "message": "Unduh otomatis"
+  },
+  "every60": {
+    "message": "Setiap jam"
+  },
+  "every360": {
+    "message": "Setiap 6 jam"
+  },
+  "every1440": {
+    "message": "Setiap hari"
+  },
+  "every10080": {
+    "message": "Setiap minggu"
+  },
+  "createSchedule": {
+    "message": "Buat jadwal"
+  },
+  "noSchedules": {
+    "message": "Belum ada jadwal."
+  },
+  "working": {
+    "message": "Memproses…"
+  },
+  "stop": {
+    "message": "Berhenti"
+  },
+  "rows": {
+    "message": "baris"
+  },
+  "columns": {
+    "message": "kolom"
+  },
+  "images": {
+    "message": "Gambar"
+  },
+  "imagesTitle": {
+    "message": "Simpan semua gambar dalam data ke folder Unduhan"
+  },
+  "dedupe": {
+    "message": "Hapus duplikat"
+  },
+  "dedupeTitle": {
+    "message": "Hapus baris duplikat"
+  },
+  "clear": {
+    "message": "Bersihkan"
+  },
+  "clearTitle": {
+    "message": "Hapus semua data"
+  },
+  "emptyTitle": {
+    "message": "Data Anda akan muncul di sini."
+  },
+  "emptySub": {
+    "message": "Pilih daftar, atau pakai Ambil cepat."
+  },
+  "copy": {
+    "message": "Salin"
+  },
+  "copyTitle": {
+    "message": "Salin sebagai tabel untuk ditempel di mana saja"
+  },
+  "sheetsTitle": {
+    "message": "Salin dan buka Google Sheet baru. Tempel dengan Ctrl+V"
+  },
+  "enjoying": {
+    "message": "Suka Grabbit?"
+  },
+  "leaveReview": {
+    "message": "Beri ulasan ★★★★★"
+  },
+  "dismiss": {
+    "message": "Tutup"
+  },
+  "errCantRead": {
+    "message": "Grabbit tidak bisa membaca halaman ini. Chrome memblokir ekstensi di halaman chrome:// dan Chrome Web Store. Jika halaman baru saja berganti, klik ikon Grabbit lagi."
+  },
+  "errGeneric": {
+    "message": "Terjadi kesalahan: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "Nama kolom"
+  },
+  "removeColumn": {
+    "message": "Hapus kolom"
+  },
+  "showingFirst": {
+    "message": "Menampilkan $P1$ baris pertama. Semua $P2$ baris akan diekspor.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "$P1$ duplikat dihapus",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "Tidak ada daftar. Gunakan \"Pilih di halaman\"."
+  },
+  "listInfo": {
+    "message": "Daftar $P1$ dari $P2$ · $P3$ item · $P4$ kolom",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "Halaman tidak bisa dibaca."
+  },
+  "clickItem": {
+    "message": "Klik sebuah item di halaman"
+  },
+  "clickNext": {
+    "message": "Klik tombol Next di halaman"
+  },
+  "notFoundChoose": {
+    "message": "tidak ditemukan, klik Pilih"
+  },
+  "pickListFirst": {
+    "message": "Pilih daftar dulu"
+  },
+  "chooseNextFirst": {
+    "message": "Pilih tombol Next dulu"
+  },
+  "permFollow": {
+    "message": "Perlu izin untuk mengikuti halaman"
+  },
+  "pageOf": {
+    "message": "Halaman $P1$ dari $P2$ · $P3$ baris",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "Selesai · $P1$ baris",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "Resep disimpan untuk $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "Memakai resep tersimpan"
+  },
+  "scanningContacts": {
+    "message": "Memindai halaman dan halaman kontak…"
+  },
+  "foundEmails": {
+    "message": "$P1$ email ditemukan",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "Tidak ada email di situs ini"
+  },
+  "grabbed": {
+    "message": "$P1$ baris diambil",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "Tempel minimal satu URL"
+  },
+  "pickListCurrent": {
+    "message": "Pilih daftar di halaman ini dulu"
+  },
+  "permSites": {
+    "message": "Perlu izin untuk membuka situs tersebut"
+  },
+  "bulkProgress": {
+    "message": "$P1$ dari $P2$ halaman · $P3$ baris",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ gagal",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "Ambil massal selesai · $P1$ baris",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "Tidak ada URL gambar dalam data"
+  },
+  "permImages": {
+    "message": "Perlu izin untuk menyimpan gambar"
+  },
+  "savingImages": {
+    "message": "Menyimpan $P1$ dari $P2$ gambar…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "$P1$ gambar disimpan ke $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "Pilih daftar di tab Daftar dulu"
+  },
+  "cantSchedule": {
+    "message": "Halaman ini tidak bisa dijadwalkan"
+  },
+  "permBackground": {
+    "message": "Perlu izin untuk berjalan di latar belakang"
+  },
+  "scheduled": {
+    "message": "Terjadwal · run pertama dimulai"
+  },
+  "viewData": {
+    "message": "Lihat data"
+  },
+  "runNow": {
+    "message": "Jalankan"
+  },
+  "delete": {
+    "message": "Hapus"
+  },
+  "autoX": {
+    "message": "$P1$ otomatis",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "Berjalan…"
+  },
+  "lastRun": {
+    "message": "Terakhir $P1$ · $P2$ baris",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "$P1$ baru",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "Belum pernah jalan"
+  },
+  "noDataYet": {
+    "message": "Belum ada data"
+  },
+  "nothingToExport": {
+    "message": "Belum ada yang bisa diekspor"
+  },
+  "copiedSheets": {
+    "message": "Tersalin! Tekan Ctrl+V (⌘V) di sheet baru"
+  },
+  "copiedRows": {
+    "message": "$P1$ baris disalin",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$ baris diekspor",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "Buka Grabbit dari ikon toolbar di halaman yang ingin Anda ambil datanya."
+  },
+  "tipNext": {
+    "message": "Klik tombol atau link \"Next\" · Esc untuk batal"
+  },
+  "tipList": {
+    "message": "Klik item mana saja di daftar yang Anda mau · Esc untuk batal"
+  },
+  "noRepeating": {
+    "message": "Tidak ada item berulang di sana. Coba klik item lain."
+  },
+  "errSiteAccess": {
+    "message": "akses situs dicabut"
+  },
+  "errNoRows": {
+    "message": "tidak ada baris, mungkin tata letak halaman berubah"
+  },
+  "errDownloadsPerm": {
+    "message": "izin unduhan dicabut"
+  },
+  "colLink": {
+    "message": "Link"
+  },
+  "colImage": {
+    "message": "Gambar"
+  },
+  "colTitle": {
+    "message": "Judul"
+  },
+  "colLinkText": {
+    "message": "Teks link"
+  },
+  "colDate": {
+    "message": "Tanggal"
+  },
+  "colItem": {
+    "message": "Item"
+  },
+  "colCell": {
+    "message": "Sel"
+  },
+  "colText": {
+    "message": "Teks"
+  },
+  "colEmails": {
+    "message": "Email"
+  },
+  "colPhones": {
+    "message": "Telepon"
+  },
+  "colDescription": {
+    "message": "Deskripsi"
+  },
+  "colType": {
+    "message": "Jenis"
+  },
+  "colAlt": {
+    "message": "Teks alt"
+  },
+  "colWidth": {
+    "message": "Lebar"
+  },
+  "colHeight": {
+    "message": "Tinggi"
+  },
+  "colSource": {
+    "message": "URL sumber"
+  },
+  "colError": {
+    "message": "Error"
+  },
+  "wPageTitle": {
+    "message": "Selamat datang di Grabbit"
+  },
+  "wTitle": {
+    "message": "Grabbit siap 🐰"
+  },
+  "wLead": {
+    "message": "Ubah situs web apa pun menjadi spreadsheet dalam hitungan detik. Gratis, privat, tanpa akun."
+  },
+  "wStep1": {
+    "message": "<b>Sematkan Grabbit:</b> klik ikon puzzle 🧩 di toolbar Chrome, lalu pin di samping Grabbit."
+  },
+  "wStep2": {
+    "message": "<b>Buka di halaman mana saja</b> lewat ikon atau <kbd>Alt</kbd>+<kbd>G</kbd>. Grabbit menemukan daftar dan tabel secara otomatis."
+  },
+  "wStep3": {
+    "message": "<b>Bukan data yang tepat?</b> Klik ‹ › untuk melihat daftar lain, atau <b>Pilih di halaman</b> lalu klik item mana saja."
+  },
+  "wStep4": {
+    "message": "<b>Ekspor</b> ke Excel, CSV, JSON, atau langsung ke Google Sheets."
+  },
+  "wSchedules": {
+    "message": "Jadwal"
+  },
+  "wImageDl": {
+    "message": "Pengunduh gambar"
+  },
+  "wPrivate": {
+    "message": "100% privat"
+  },
+  "wf1": {
+    "message": "Mengikuti tombol \"Next\" dan infinite scroll."
+  },
+  "wf2": {
+    "message": "Juga memeriksa halaman kontak dan tentang kami."
+  },
+  "wf3": {
+    "message": "Ambil ratusan halaman dari daftar atau CSV."
+  },
+  "wf4": {
+    "message": "Ambil ulang tiap jam, hari, atau minggu untuk memantau harga dan stok."
+  },
+  "wf5": {
+    "message": "Simpan semua gambar dari data Anda dengan satu klik."
+  },
+  "wf6": {
+    "message": "Semuanya berjalan di browser Anda. Tidak ada yang diunggah."
+  },
+  "wBulk": {
+    "message": "URL massal"
   }
 }

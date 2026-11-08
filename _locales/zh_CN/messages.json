@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "在此页面打开 Grabbit"
+  },
+  "webScraper": {
+    "message": "网页爬虫"
+  },
+  "tabLists": {
+    "message": "列表"
+  },
+  "tabQuick": {
+    "message": "快速抓取"
+  },
+  "tabBulk": {
+    "message": "批量网址"
+  },
+  "tabSchedule": {
+    "message": "定时"
+  },
+  "savedRecipe": {
+    "message": "已为此网站保存方案"
+  },
+  "useIt": {
+    "message": "使用"
+  },
+  "detectedData": {
+    "message": "检测到的数据"
+  },
+  "scanning": {
+    "message": "正在分析页面…"
+  },
+  "prevList": {
+    "message": "上一个列表"
+  },
+  "nextList": {
+    "message": "下一个列表"
+  },
+  "pickOnPage": {
+    "message": "在页面上选择"
+  },
+  "rescan": {
+    "message": "重新扫描"
+  },
+  "rescanTitle": {
+    "message": "重新分析页面"
+  },
+  "multiplePages": {
+    "message": "多页"
+  },
+  "off": {
+    "message": "关闭"
+  },
+  "nextButton": {
+    "message": "“下一页”按钮"
+  },
+  "infiniteScroll": {
+    "message": "无限滚动"
+  },
+  "buttonLabel": {
+    "message": "按钮："
+  },
+  "notFound": {
+    "message": "未找到"
+  },
+  "choose": {
+    "message": "选择"
+  },
+  "maxPages": {
+    "message": "最多页数"
+  },
+  "waitSec": {
+    "message": "等待（秒）"
+  },
+  "scrapeAllPages": {
+    "message": "抓取所有页面"
+  },
+  "saveRecipe": {
+    "message": "保存为此网站的方案"
+  },
+  "qContacts": {
+    "message": "邮箱和联系方式"
+  },
+  "qContactsSub": {
+    "message": "邮箱、电话、社交账号"
+  },
+  "qLinks": {
+    "message": "所有链接"
+  },
+  "qLinksSub": {
+    "message": "文本、网址、站内/站外"
+  },
+  "qImages": {
+    "message": "所有图片"
+  },
+  "qImagesSub": {
+    "message": "网址、替代文本、尺寸"
+  },
+  "qText": {
+    "message": "页面文本"
+  },
+  "qTextSub": {
+    "message": "标题和段落"
+  },
+  "pasteUrls": {
+    "message": "粘贴网址（每行一个）"
+  },
+  "loadCsv": {
+    "message": "从 CSV 导入"
+  },
+  "urlCount": {
+    "message": "$P1$ 个网址",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "抓取内容"
+  },
+  "bulkContacts": {
+    "message": "联系方式（也检查联系页面）"
+  },
+  "bulkRecipe": {
+    "message": "与当前页面相同的列表（使用已选列表）"
+  },
+  "bulkAuto": {
+    "message": "自动识别每个页面的主列表"
+  },
+  "pagesAtATime": {
+    "message": "同时打开的页面数"
+  },
+  "startBulk": {
+    "message": "开始批量抓取"
+  },
+  "bulkNote": {
+    "message": "页面会在后台标签页中打开并自动关闭。Chrome 会询问一次读取这些网站的权限。"
+  },
+  "schedTitle": {
+    "message": "自动重新抓取此列表"
+  },
+  "schedNote": {
+    "message": "使用“列表”标签页中的列表和翻页设置。在 Chrome 打开期间于后台标签页运行。非常适合跟踪价格和库存。"
+  },
+  "howOften": {
+    "message": "频率"
+  },
+  "autoDownload": {
+    "message": "自动下载"
+  },
+  "every60": {
+    "message": "每小时"
+  },
+  "every360": {
+    "message": "每 6 小时"
+  },
+  "every1440": {
+    "message": "每天"
+  },
+  "every10080": {
+    "message": "每周"
+  },
+  "createSchedule": {
+    "message": "创建定时任务"
+  },
+  "noSchedules": {
+    "message": "还没有定时任务。"
+  },
+  "working": {
+    "message": "处理中…"
+  },
+  "stop": {
+    "message": "停止"
+  },
+  "rows": {
+    "message": "行"
+  },
+  "columns": {
+    "message": "列"
+  },
+  "images": {
+    "message": "图片"
+  },
+  "imagesTitle": {
+    "message": "把数据中的所有图片保存到下载文件夹"
+  },
+  "dedupe": {
+    "message": "去重"
+  },
+  "dedupeTitle": {
+    "message": "删除重复行"
+  },
+  "clear": {
+    "message": "清空"
+  },
+  "clearTitle": {
+    "message": "清除所有数据"
+  },
+  "emptyTitle": {
+    "message": "你的数据会显示在这里。"
+  },
+  "emptySub": {
+    "message": "选择一个列表，或使用快速抓取。"
+  },
+  "copy": {
+    "message": "复制"
+  },
+  "copyTitle": {
+    "message": "复制为表格，可粘贴到任何地方"
+  },
+  "sheetsTitle": {
+    "message": "复制并打开新的 Google 表格，用 Ctrl+V 粘贴"
+  },
+  "enjoying": {
+    "message": "喜欢 Grabbit 吗？"
+  },
+  "leaveReview": {
+    "message": "留下 ★★★★★ 好评"
+  },
+  "dismiss": {
+    "message": "关闭"
+  },
+  "errCantRead": {
+    "message": "Grabbit 无法读取此页面。Chrome 会在 chrome:// 页面和 Chrome 应用商店中阻止扩展程序。如果页面刚刚切换，请再次点击 Grabbit 图标。"
+  },
+  "errGeneric": {
+    "message": "出错了：$P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "列名"
+  },
+  "removeColumn": {
+    "message": "删除列"
+  },
+  "showingFirst": {
+    "message": "显示前 $P1$ 行。导出时包含全部 $P2$ 行。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "已删除 $P1$ 条重复",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "未找到列表。请使用“在页面上选择”。"
+  },
+  "listInfo": {
+    "message": "列表 $P1$/$P2$ · $P3$ 项 · $P4$ 个字段",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "无法读取页面。"
+  },
+  "clickItem": {
+    "message": "点击页面上的某个元素"
+  },
+  "clickNext": {
+    "message": "点击页面上的“下一页”按钮"
+  },
+  "notFoundChoose": {
+    "message": "未找到，请点击“选择”"
+  },
+  "pickListFirst": {
+    "message": "请先选择列表"
+  },
+  "chooseNextFirst": {
+    "message": "请先选择“下一页”按钮"
+  },
+  "permFollow": {
+    "message": "需要权限才能翻页"
+  },
+  "pageOf": {
+    "message": "第 $P1$/$P2$ 页 · $P3$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "完成 · $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "已为 $P1$ 保存方案",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "正在使用已保存的方案"
+  },
+  "scanningContacts": {
+    "message": "正在分析页面和联系页面…"
+  },
+  "foundEmails": {
+    "message": "找到 $P1$ 个邮箱",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "此网站未找到邮箱"
+  },
+  "grabbed": {
+    "message": "已抓取 $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "请至少粘贴一个网址"
+  },
+  "pickListCurrent": {
+    "message": "请先在当前页面选择列表"
+  },
+  "permSites": {
+    "message": "需要权限才能打开这些网站"
+  },
+  "bulkProgress": {
+    "message": "$P1$/$P2$ 个页面 · $P3$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ 个失败",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "批量抓取完成 · $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "数据中没有图片网址"
+  },
+  "permImages": {
+    "message": "需要权限才能保存图片"
+  },
+  "savingImages": {
+    "message": "正在保存图片 $P1$/$P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "已将 $P1$ 张图片保存到 $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "请先在“列表”标签页选择列表"
+  },
+  "cantSchedule": {
+    "message": "此页面无法设置定时"
+  },
+  "permBackground": {
+    "message": "需要权限才能在后台运行"
+  },
+  "scheduled": {
+    "message": "已设置定时 · 首次运行已开始"
+  },
+  "viewData": {
+    "message": "查看数据"
+  },
+  "runNow": {
+    "message": "立即运行"
+  },
+  "delete": {
+    "message": "删除"
+  },
+  "autoX": {
+    "message": "自动 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "运行中…"
+  },
+  "lastRun": {
+    "message": "上次运行 $P1$ · $P2$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "新增 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "尚未运行"
+  },
+  "noDataYet": {
+    "message": "暂无数据"
+  },
+  "nothingToExport": {
+    "message": "还没有可导出的数据"
+  },
+  "copiedSheets": {
+    "message": "已复制！在新表格中按 Ctrl+V（⌘V）"
+  },
+  "copiedRows": {
+    "message": "已复制 $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "已导出 $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "请在要抓取的页面上，通过工具栏图标打开 Grabbit。"
+  },
+  "tipNext": {
+    "message": "点击“下一页”按钮或链接 · 按 Esc 取消"
+  },
+  "tipList": {
+    "message": "点击目标列表中的任意一项 · 按 Esc 取消"
+  },
+  "noRepeating": {
+    "message": "这里没有重复的元素。请试试点击其他元素。"
+  },
+  "errSiteAccess": {
+    "message": "网站访问权限已被移除"
+  },
+  "errNoRows": {
+    "message": "未找到数据行，页面布局可能已变化"
+  },
+  "errDownloadsPerm": {
+    "message": "下载权限已被移除"
+  },
+  "colLink": {
+    "message": "链接"
+  },
+  "colImage": {
+    "message": "图片"
+  },
+  "colTitle": {
+    "message": "标题"
+  },
+  "colLinkText": {
+    "message": "链接文本"
+  },
+  "colDate": {
+    "message": "日期"
+  },
+  "colItem": {
+    "message": "项目"
+  },
+  "colCell": {
+    "message": "单元格"
+  },
+  "colText": {
+    "message": "文本"
+  },
+  "colEmails": {
+    "message": "邮箱"
+  },
+  "colPhones": {
+    "message": "电话"
+  },
+  "colDescription": {
+    "message": "描述"
+  },
+  "colType": {
+    "message": "类型"
+  },
+  "colAlt": {
+    "message": "替代文本"
+  },
+  "colWidth": {
+    "message": "宽度"
+  },
+  "colHeight": {
+    "message": "高度"
+  },
+  "colSource": {
+    "message": "来源网址"
+  },
+  "colError": {
+    "message": "错误"
+  },
+  "wPageTitle": {
+    "message": "欢迎使用 Grabbit"
+  },
+  "wTitle": {
+    "message": "Grabbit 已就绪 🐰"
+  },
+  "wLead": {
+    "message": "几秒内把任意网站变成表格。免费、私密、无需账号。"
+  },
+  "wStep1": {
+    "message": "<b>固定 Grabbit：</b>点击 Chrome 工具栏中的拼图图标 🧩，再点击 Grabbit 旁边的图钉。"
+  },
+  "wStep2": {
+    "message": "<b>在任意页面打开：</b>点击图标或按 <kbd>Alt</kbd>+<kbd>G</kbd>，Grabbit 会自动找到列表和表格。"
+  },
+  "wStep3": {
+    "message": "<b>不是想要的数据？</b>点击 ‹ › 查看其他列表，或点击<b>在页面上选择</b>后点选任意一项。"
+  },
+  "wStep4": {
+    "message": "<b>导出</b>到 Excel、CSV、JSON，或直接导入 Google 表格。"
+  },
+  "wSchedules": {
+    "message": "定时任务"
+  },
+  "wImageDl": {
+    "message": "图片下载"
+  },
+  "wPrivate": {
+    "message": "100% 私密"
+  },
+  "wf1": {
+    "message": "自动点击“下一页”按钮并处理无限滚动。"
+  },
+  "wf2": {
+    "message": "还会检查网站的联系和关于页面。"
+  },
+  "wf3": {
+    "message": "从列表或 CSV 抓取数百个页面。"
+  },
+  "wf4": {
+    "message": "每小时、每天或每周重新抓取，跟踪价格和库存。"
+  },
+  "wf5": {
+    "message": "一键保存数据中的所有图片。"
+  },
+  "wf6": {
+    "message": "全部在浏览器中运行，不上传任何内容。"
+  },
+  "wBulk": {
+    "message": "批量网址"
   }
 }

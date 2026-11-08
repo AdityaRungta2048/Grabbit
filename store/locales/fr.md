@@ -46,8 +46,8 @@ Ouvrez Grabbit sur une page et il trouve les listes et tableaux pour vous : prod
 
 ★ COMMENT ÇA MARCHE
 1. Ouvrez un site et cliquez sur l'icône Grabbit (ou appuyez sur Alt+G)
-2. Grabbit met en évidence les données trouvées. Utilisez ‹ › pour changer de liste ou « Pick on page »
-3. En option : activez « Multiple pages » ou planifiez l'extraction
+2. Grabbit met en évidence les données trouvées. Utilisez ‹ › pour changer de liste ou « Choisir sur la page »
+3. En option : activez « Plusieurs pages » ou planifiez l'extraction
 4. Cliquez sur Excel, CSV, JSON ou Sheets. C'est fait !
 
 ★ CONFIDENTIALITÉ

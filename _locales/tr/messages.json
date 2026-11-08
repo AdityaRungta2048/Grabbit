@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "Bu sayfada Grabbit'i aç"
+  },
+  "webScraper": {
+    "message": "Web scraper"
+  },
+  "tabLists": {
+    "message": "Listeler"
+  },
+  "tabQuick": {
+    "message": "Hızlı çek"
+  },
+  "tabBulk": {
+    "message": "Toplu URL"
+  },
+  "tabSchedule": {
+    "message": "Zamanla"
+  },
+  "savedRecipe": {
+    "message": "Bu site için kayıtlı tarif"
+  },
+  "useIt": {
+    "message": "Kullan"
+  },
+  "detectedData": {
+    "message": "Algılanan veri"
+  },
+  "scanning": {
+    "message": "Sayfa taranıyor…"
+  },
+  "prevList": {
+    "message": "Önceki liste"
+  },
+  "nextList": {
+    "message": "Sonraki liste"
+  },
+  "pickOnPage": {
+    "message": "Sayfada seç"
+  },
+  "rescan": {
+    "message": "Yeniden tara"
+  },
+  "rescanTitle": {
+    "message": "Sayfayı yeniden tara"
+  },
+  "multiplePages": {
+    "message": "Çoklu sayfa"
+  },
+  "off": {
+    "message": "Kapalı"
+  },
+  "nextButton": {
+    "message": "\"Sonraki\" düğmesi"
+  },
+  "infiniteScroll": {
+    "message": "Sonsuz kaydırma"
+  },
+  "buttonLabel": {
+    "message": "Düğme:"
+  },
+  "notFound": {
+    "message": "bulunamadı"
+  },
+  "choose": {
+    "message": "Seç"
+  },
+  "maxPages": {
+    "message": "Maks. sayfa"
+  },
+  "waitSec": {
+    "message": "Bekleme (sn)"
+  },
+  "scrapeAllPages": {
+    "message": "Tüm sayfaları çek"
+  },
+  "saveRecipe": {
+    "message": "Bu site için tarif olarak kaydet"
+  },
+  "qContacts": {
+    "message": "E-postalar ve kişiler"
+  },
+  "qContactsSub": {
+    "message": "E-posta, telefon, sosyal"
+  },
+  "qLinks": {
+    "message": "Tüm bağlantılar"
+  },
+  "qLinksSub": {
+    "message": "Metin, URL, iç/dış"
+  },
+  "qImages": {
+    "message": "Tüm görseller"
+  },
+  "qImagesSub": {
+    "message": "URL, alt metin, boyut"
+  },
+  "qText": {
+    "message": "Sayfa metni"
+  },
+  "qTextSub": {
+    "message": "Başlıklar ve paragraflar"
+  },
+  "pasteUrls": {
+    "message": "URL'leri yapıştırın (her satıra bir)"
+  },
+  "loadCsv": {
+    "message": "CSV'den yükle"
+  },
+  "urlCount": {
+    "message": "$P1$ URL",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "Ne çekilsin"
+  },
+  "bulkContacts": {
+    "message": "İletişim bilgileri (iletişim sayfalarına da bakar)"
+  },
+  "bulkRecipe": {
+    "message": "Bu sayfadaki listenin aynısı (seçilen liste)"
+  },
+  "bulkAuto": {
+    "message": "Her sayfadaki ana listeyi otomatik algıla"
+  },
+  "pagesAtATime": {
+    "message": "Aynı anda sayfa"
+  },
+  "startBulk": {
+    "message": "Toplu çekmeyi başlat"
+  },
+  "bulkNote": {
+    "message": "Sayfalar arka plan sekmelerinde açılır ve kendiliğinden kapanır. Chrome bu siteleri okumak için bir kez izin ister."
+  },
+  "schedTitle": {
+    "message": "Bu listeyi otomatik olarak yeniden çek"
+  },
+  "schedNote": {
+    "message": "Listeler sekmesindeki listeyi ve sayfa ayarlarını kullanır. Chrome açıkken arka plan sekmesinde çalışır. Fiyat ve stok takibi için ideal."
+  },
+  "howOften": {
+    "message": "Sıklık"
+  },
+  "autoDownload": {
+    "message": "Otomatik indirme"
+  },
+  "every60": {
+    "message": "Her saat"
+  },
+  "every360": {
+    "message": "6 saatte bir"
+  },
+  "every1440": {
+    "message": "Her gün"
+  },
+  "every10080": {
+    "message": "Her hafta"
+  },
+  "createSchedule": {
+    "message": "Zamanlama oluştur"
+  },
+  "noSchedules": {
+    "message": "Henüz zamanlama yok."
+  },
+  "working": {
+    "message": "Çalışıyor…"
+  },
+  "stop": {
+    "message": "Durdur"
+  },
+  "rows": {
+    "message": "satır"
+  },
+  "columns": {
+    "message": "sütun"
+  },
+  "images": {
+    "message": "Görseller"
+  },
+  "imagesTitle": {
+    "message": "Verideki tüm görselleri İndirilenler klasörüne kaydet"
+  },
+  "dedupe": {
+    "message": "Tekrarı sil"
+  },
+  "dedupeTitle": {
+    "message": "Yinelenen satırları kaldır"
+  },
+  "clear": {
+    "message": "Temizle"
+  },
+  "clearTitle": {
+    "message": "Tüm verileri temizle"
+  },
+  "emptyTitle": {
+    "message": "Verileriniz burada görünecek."
+  },
+  "emptySub": {
+    "message": "Bir liste seçin veya Hızlı çek özelliğini kullanın."
+  },
+  "copy": {
+    "message": "Kopyala"
+  },
+  "copyTitle": {
+    "message": "Her yere yapıştırmak için tablo olarak kopyala"
+  },
+  "sheetsTitle": {
+    "message": "Kopyala ve yeni bir Google E-Tablo aç. Ctrl+V ile yapıştır"
+  },
+  "enjoying": {
+    "message": "Grabbit'i beğendiniz mi?"
+  },
+  "leaveReview": {
+    "message": "★★★★★ yorum bırakın"
+  },
+  "dismiss": {
+    "message": "Kapat"
+  },
+  "errCantRead": {
+    "message": "Grabbit bu sayfayı okuyamıyor. Chrome, chrome:// sayfalarında ve Chrome Web Mağazası'nda uzantıları engeller. Sayfa az önce değiştiyse Grabbit simgesine tekrar tıklayın."
+  },
+  "errGeneric": {
+    "message": "Bir sorun oluştu: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "Sütun adı"
+  },
+  "removeColumn": {
+    "message": "Sütunu kaldır"
+  },
+  "showingFirst": {
+    "message": "İlk $P1$ satır gösteriliyor. $P2$ satırın tamamı dışa aktarılır.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "$P1$ yinelenen satır kaldırıldı",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "Liste bulunamadı. \"Sayfada seç\" özelliğini kullanın."
+  },
+  "listInfo": {
+    "message": "Liste $P1$/$P2$ · $P3$ öğe · $P4$ alan",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "Sayfa okunamıyor."
+  },
+  "clickItem": {
+    "message": "Sayfada bir öğeye tıklayın"
+  },
+  "clickNext": {
+    "message": "Sayfadaki Sonraki düğmesine tıklayın"
+  },
+  "notFoundChoose": {
+    "message": "bulunamadı, Seç'e tıklayın"
+  },
+  "pickListFirst": {
+    "message": "Önce bir liste seçin"
+  },
+  "chooseNextFirst": {
+    "message": "Önce Sonraki düğmesini seçin"
+  },
+  "permFollow": {
+    "message": "Sayfaları takip etmek için izin gerekiyor"
+  },
+  "pageOf": {
+    "message": "Sayfa $P1$/$P2$ · $P3$ satır",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "Bitti · $P1$ satır",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "$P1$ için tarif kaydedildi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "Kayıtlı tarif kullanılıyor"
+  },
+  "scanningContacts": {
+    "message": "Sayfa ve iletişim sayfaları taranıyor…"
+  },
+  "foundEmails": {
+    "message": "$P1$ e-posta bulundu",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "Bu sitede e-posta bulunamadı"
+  },
+  "grabbed": {
+    "message": "$P1$ satır çekildi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "En az bir URL yapıştırın"
+  },
+  "pickListCurrent": {
+    "message": "Önce bu sayfada bir liste seçin"
+  },
+  "permSites": {
+    "message": "Bu siteleri açmak için izin gerekiyor"
+  },
+  "bulkProgress": {
+    "message": "$P1$/$P2$ sayfa · $P3$ satır",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ başarısız",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "Toplu çekme bitti · $P1$ satır",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "Veride görsel URL'si yok"
+  },
+  "permImages": {
+    "message": "Görselleri kaydetmek için izin gerekiyor"
+  },
+  "savingImages": {
+    "message": "Görseller kaydediliyor $P1$/$P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "$P1$ görsel $P2$ klasörüne kaydedildi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "Önce Listeler sekmesinde bir liste seçin"
+  },
+  "cantSchedule": {
+    "message": "Bu sayfa zamanlanamaz"
+  },
+  "permBackground": {
+    "message": "Arka planda çalışmak için izin gerekiyor"
+  },
+  "scheduled": {
+    "message": "Zamanlandı · ilk çalıştırma başladı"
+  },
+  "viewData": {
+    "message": "Veriyi gör"
+  },
+  "runNow": {
+    "message": "Şimdi çalıştır"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "autoX": {
+    "message": "otomatik $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "Çalışıyor…"
+  },
+  "lastRun": {
+    "message": "Son çalıştırma $P1$ · $P2$ satır",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "$P1$ yeni",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "Henüz çalışmadı"
+  },
+  "noDataYet": {
+    "message": "Henüz veri yok"
+  },
+  "nothingToExport": {
+    "message": "Dışa aktarılacak bir şey yok"
+  },
+  "copiedSheets": {
+    "message": "Kopyalandı! Yeni tabloda Ctrl+V (⌘V) tuşlarına basın"
+  },
+  "copiedRows": {
+    "message": "$P1$ satır kopyalandı",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$ satır dışa aktarıldı",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "Verisini çekmek istediğiniz sayfada Grabbit'i araç çubuğu simgesinden açın."
+  },
+  "tipNext": {
+    "message": "\"Sonraki\" düğmesine veya bağlantısına tıklayın · İptal için Esc"
+  },
+  "tipList": {
+    "message": "İstediğiniz listedeki herhangi bir öğeye tıklayın · İptal için Esc"
+  },
+  "noRepeating": {
+    "message": "Orada tekrar eden öğe yok. Başka bir öğeye tıklamayı deneyin."
+  },
+  "errSiteAccess": {
+    "message": "site erişimi kaldırıldı"
+  },
+  "errNoRows": {
+    "message": "satır bulunamadı, sayfa düzeni değişmiş olabilir"
+  },
+  "errDownloadsPerm": {
+    "message": "indirme izni kaldırıldı"
+  },
+  "colLink": {
+    "message": "Bağlantı"
+  },
+  "colImage": {
+    "message": "Görsel"
+  },
+  "colTitle": {
+    "message": "Başlık"
+  },
+  "colLinkText": {
+    "message": "Bağlantı metni"
+  },
+  "colDate": {
+    "message": "Tarih"
+  },
+  "colItem": {
+    "message": "Öğe"
+  },
+  "colCell": {
+    "message": "Hücre"
+  },
+  "colText": {
+    "message": "Metin"
+  },
+  "colEmails": {
+    "message": "E-postalar"
+  },
+  "colPhones": {
+    "message": "Telefonlar"
+  },
+  "colDescription": {
+    "message": "Açıklama"
+  },
+  "colType": {
+    "message": "Tür"
+  },
+  "colAlt": {
+    "message": "Alt metin"
+  },
+  "colWidth": {
+    "message": "Genişlik"
+  },
+  "colHeight": {
+    "message": "Yükseklik"
+  },
+  "colSource": {
+    "message": "Kaynak URL"
+  },
+  "colError": {
+    "message": "Hata"
+  },
+  "wPageTitle": {
+    "message": "Grabbit'e hoş geldiniz"
+  },
+  "wTitle": {
+    "message": "Grabbit hazır 🐰"
+  },
+  "wLead": {
+    "message": "Herhangi bir web sitesini saniyeler içinde tabloya dönüştürün. Ücretsiz, gizli ve hesap gerektirmez."
+  },
+  "wStep1": {
+    "message": "<b>Grabbit'i sabitleyin:</b> Chrome araç çubuğundaki yapboz simgesine 🧩, ardından Grabbit'in yanındaki raptiyeye tıklayın."
+  },
+  "wStep2": {
+    "message": "<b>Herhangi bir sayfada açın:</b> simgeyle veya <kbd>Alt</kbd>+<kbd>G</kbd> ile. Grabbit listeleri ve tabloları otomatik bulur."
+  },
+  "wStep3": {
+    "message": "<b>Doğru veri değil mi?</b> Diğer listeler için ‹ › düğmelerine tıklayın ya da <b>Sayfada seç</b> deyip bir öğeye tıklayın."
+  },
+  "wStep4": {
+    "message": "Excel, CSV, JSON'a veya doğrudan Google E-Tablolar'a <b>aktarın</b>."
+  },
+  "wSchedules": {
+    "message": "Zamanlamalar"
+  },
+  "wImageDl": {
+    "message": "Görsel indirici"
+  },
+  "wPrivate": {
+    "message": "%100 gizli"
+  },
+  "wf1": {
+    "message": "\"Sonraki\" düğmelerini ve sonsuz kaydırmayı takip eder."
+  },
+  "wf2": {
+    "message": "Sitenin iletişim ve hakkında sayfalarına da bakar."
+  },
+  "wf3": {
+    "message": "Bir listeden veya CSV'den yüzlerce sayfa çekin."
+  },
+  "wf4": {
+    "message": "Fiyat ve stok takibi için saatlik, günlük veya haftalık yeniden çekin."
+  },
+  "wf5": {
+    "message": "Verinizdeki tüm görselleri tek tıkla kaydedin."
+  },
+  "wf6": {
+    "message": "Her şey tarayıcınızda çalışır. Hiçbir şey yüklenmez."
+  },
+  "wBulk": {
+    "message": "Toplu URL"
   }
 }

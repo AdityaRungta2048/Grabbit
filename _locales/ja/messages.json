@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "このページで Grabbit を開く"
+  },
+  "webScraper": {
+    "message": "Webスクレイパー"
+  },
+  "tabLists": {
+    "message": "リスト"
+  },
+  "tabQuick": {
+    "message": "クイック取得"
+  },
+  "tabBulk": {
+    "message": "URL一括"
+  },
+  "tabSchedule": {
+    "message": "スケジュール"
+  },
+  "savedRecipe": {
+    "message": "このサイトの保存済みレシピ"
+  },
+  "useIt": {
+    "message": "使う"
+  },
+  "detectedData": {
+    "message": "検出したデータ"
+  },
+  "scanning": {
+    "message": "ページを解析中…"
+  },
+  "prevList": {
+    "message": "前のリスト"
+  },
+  "nextList": {
+    "message": "次のリスト"
+  },
+  "pickOnPage": {
+    "message": "ページで選択"
+  },
+  "rescan": {
+    "message": "再スキャン"
+  },
+  "rescanTitle": {
+    "message": "ページをもう一度解析"
+  },
+  "multiplePages": {
+    "message": "複数ページ"
+  },
+  "off": {
+    "message": "オフ"
+  },
+  "nextButton": {
+    "message": "「次へ」ボタン"
+  },
+  "infiniteScroll": {
+    "message": "無限スクロール"
+  },
+  "buttonLabel": {
+    "message": "ボタン："
+  },
+  "notFound": {
+    "message": "見つかりません"
+  },
+  "choose": {
+    "message": "選択"
+  },
+  "maxPages": {
+    "message": "最大ページ数"
+  },
+  "waitSec": {
+    "message": "待機（秒）"
+  },
+  "scrapeAllPages": {
+    "message": "全ページを取得"
+  },
+  "saveRecipe": {
+    "message": "このサイトのレシピとして保存"
+  },
+  "qContacts": {
+    "message": "メールと連絡先"
+  },
+  "qContactsSub": {
+    "message": "メール、電話、SNS"
+  },
+  "qLinks": {
+    "message": "すべてのリンク"
+  },
+  "qLinksSub": {
+    "message": "テキスト、URL、内部/外部"
+  },
+  "qImages": {
+    "message": "すべての画像"
+  },
+  "qImagesSub": {
+    "message": "URL、代替テキスト、サイズ"
+  },
+  "qText": {
+    "message": "ページ本文"
+  },
+  "qTextSub": {
+    "message": "見出しと段落"
+  },
+  "pasteUrls": {
+    "message": "URLを貼り付け（1行に1つ）"
+  },
+  "loadCsv": {
+    "message": "CSVから読み込む"
+  },
+  "urlCount": {
+    "message": "$P1$ 件のURL",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "取得する内容"
+  },
+  "bulkContacts": {
+    "message": "連絡先（お問い合わせページも確認）"
+  },
+  "bulkRecipe": {
+    "message": "現在のページと同じリスト（選択したリスト）"
+  },
+  "bulkAuto": {
+    "message": "各ページのメインリストを自動検出"
+  },
+  "pagesAtATime": {
+    "message": "同時に開くページ数"
+  },
+  "startBulk": {
+    "message": "一括取得を開始"
+  },
+  "bulkNote": {
+    "message": "ページはバックグラウンドのタブで開き、自動で閉じます。これらのサイトを読み取る許可を Chrome が一度だけ確認します。"
+  },
+  "schedTitle": {
+    "message": "このリストを自動で再取得"
+  },
+  "schedNote": {
+    "message": "「リスト」タブのリストとページ設定を使います。Chrome が開いている間、バックグラウンドのタブで実行します。価格や在庫の追跡に最適です。"
+  },
+  "howOften": {
+    "message": "頻度"
+  },
+  "autoDownload": {
+    "message": "自動ダウンロード"
+  },
+  "every60": {
+    "message": "1時間ごと"
+  },
+  "every360": {
+    "message": "6時間ごと"
+  },
+  "every1440": {
+    "message": "毎日"
+  },
+  "every10080": {
+    "message": "毎週"
+  },
+  "createSchedule": {
+    "message": "スケジュールを作成"
+  },
+  "noSchedules": {
+    "message": "スケジュールはまだありません。"
+  },
+  "working": {
+    "message": "処理中…"
+  },
+  "stop": {
+    "message": "停止"
+  },
+  "rows": {
+    "message": "行"
+  },
+  "columns": {
+    "message": "列"
+  },
+  "images": {
+    "message": "画像"
+  },
+  "imagesTitle": {
+    "message": "データ内のすべての画像をダウンロードフォルダに保存"
+  },
+  "dedupe": {
+    "message": "重複削除"
+  },
+  "dedupeTitle": {
+    "message": "重複した行を削除"
+  },
+  "clear": {
+    "message": "クリア"
+  },
+  "clearTitle": {
+    "message": "すべてのデータを消去"
+  },
+  "emptyTitle": {
+    "message": "ここにデータが表示されます。"
+  },
+  "emptySub": {
+    "message": "リストを選ぶか、クイック取得を使ってください。"
+  },
+  "copy": {
+    "message": "コピー"
+  },
+  "copyTitle": {
+    "message": "表としてコピーしてどこにでも貼り付け"
+  },
+  "sheetsTitle": {
+    "message": "コピーして新しい Google スプレッドシートを開きます。Ctrl+V で貼り付け"
+  },
+  "enjoying": {
+    "message": "Grabbit は気に入りましたか？"
+  },
+  "leaveReview": {
+    "message": "★★★★★ のレビューを書く"
+  },
+  "dismiss": {
+    "message": "閉じる"
+  },
+  "errCantRead": {
+    "message": "Grabbit はこのページを読み取れません。Chrome は chrome:// ページと Chrome ウェブストアで拡張機能をブロックします。ページが切り替わった直後なら、もう一度 Grabbit のアイコンをクリックしてください。"
+  },
+  "errGeneric": {
+    "message": "問題が発生しました：$P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "列名"
+  },
+  "removeColumn": {
+    "message": "列を削除"
+  },
+  "showingFirst": {
+    "message": "最初の $P1$ 行を表示中。全 $P2$ 行がエクスポートされます。",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "$P1$ 件の重複を削除しました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "リストが見つかりません。「ページで選択」を使ってください。"
+  },
+  "listInfo": {
+    "message": "リスト $P1$/$P2$ · $P3$ 項目 · $P4$ フィールド",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "ページを読み取れません。"
+  },
+  "clickItem": {
+    "message": "ページ上の項目をクリックしてください"
+  },
+  "clickNext": {
+    "message": "ページの「次へ」ボタンをクリックしてください"
+  },
+  "notFoundChoose": {
+    "message": "見つかりません。「選択」をクリック"
+  },
+  "pickListFirst": {
+    "message": "先にリストを選んでください"
+  },
+  "chooseNextFirst": {
+    "message": "先に「次へ」ボタンを選んでください"
+  },
+  "permFollow": {
+    "message": "ページをたどるには許可が必要です"
+  },
+  "pageOf": {
+    "message": "$P1$/$P2$ ページ · $P3$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "完了 · $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "$P1$ のレシピを保存しました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "保存済みレシピを使用中"
+  },
+  "scanningContacts": {
+    "message": "ページとお問い合わせページを解析中…"
+  },
+  "foundEmails": {
+    "message": "$P1$ 件のメールが見つかりました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "このサイトにメールは見つかりませんでした"
+  },
+  "grabbed": {
+    "message": "$P1$ 行を取得しました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "URLを1つ以上貼り付けてください"
+  },
+  "pickListCurrent": {
+    "message": "先に現在のページでリストを選んでください"
+  },
+  "permSites": {
+    "message": "これらのサイトを開くには許可が必要です"
+  },
+  "bulkProgress": {
+    "message": "$P1$/$P2$ ページ · $P3$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ 件失敗",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "一括取得完了 · $P1$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "データに画像URLがありません"
+  },
+  "permImages": {
+    "message": "画像を保存するには許可が必要です"
+  },
+  "savingImages": {
+    "message": "画像を保存中 $P1$/$P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "$P1$ 枚の画像を $P2$ に保存しました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "先に「リスト」タブでリストを選んでください"
+  },
+  "cantSchedule": {
+    "message": "このページはスケジュールできません"
+  },
+  "permBackground": {
+    "message": "バックグラウンドで実行するには許可が必要です"
+  },
+  "scheduled": {
+    "message": "スケジュール作成 · 初回実行を開始しました"
+  },
+  "viewData": {
+    "message": "データを見る"
+  },
+  "runNow": {
+    "message": "今すぐ実行"
+  },
+  "delete": {
+    "message": "削除"
+  },
+  "autoX": {
+    "message": "自動 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "実行中…"
+  },
+  "lastRun": {
+    "message": "前回の実行 $P1$ · $P2$ 行",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "新規 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "未実行"
+  },
+  "noDataYet": {
+    "message": "まだデータがありません"
+  },
+  "nothingToExport": {
+    "message": "エクスポートするデータがまだありません"
+  },
+  "copiedSheets": {
+    "message": "コピーしました！新しいシートで Ctrl+V（⌘V）を押してください"
+  },
+  "copiedRows": {
+    "message": "$P1$ 行をコピーしました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$ 行をエクスポートしました",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "取得したいページで、ツールバーのアイコンから Grabbit を開いてください。"
+  },
+  "tipNext": {
+    "message": "「次へ」ボタンかリンクをクリック · Esc でキャンセル"
+  },
+  "tipList": {
+    "message": "取得したいリストの項目をクリック · Esc でキャンセル"
+  },
+  "noRepeating": {
+    "message": "そこには繰り返しの項目がありません。別の項目をクリックしてください。"
+  },
+  "errSiteAccess": {
+    "message": "サイトへのアクセス許可が取り消されました"
+  },
+  "errNoRows": {
+    "message": "行が見つかりません。ページのレイアウトが変わった可能性があります"
+  },
+  "errDownloadsPerm": {
+    "message": "ダウンロードの許可が取り消されました"
+  },
+  "colLink": {
+    "message": "リンク"
+  },
+  "colImage": {
+    "message": "画像"
+  },
+  "colTitle": {
+    "message": "タイトル"
+  },
+  "colLinkText": {
+    "message": "リンクテキスト"
+  },
+  "colDate": {
+    "message": "日付"
+  },
+  "colItem": {
+    "message": "項目"
+  },
+  "colCell": {
+    "message": "セル"
+  },
+  "colText": {
+    "message": "テキスト"
+  },
+  "colEmails": {
+    "message": "メール"
+  },
+  "colPhones": {
+    "message": "電話番号"
+  },
+  "colDescription": {
+    "message": "説明"
+  },
+  "colType": {
+    "message": "種類"
+  },
+  "colAlt": {
+    "message": "代替テキスト"
+  },
+  "colWidth": {
+    "message": "幅"
+  },
+  "colHeight": {
+    "message": "高さ"
+  },
+  "colSource": {
+    "message": "取得元URL"
+  },
+  "colError": {
+    "message": "エラー"
+  },
+  "wPageTitle": {
+    "message": "Grabbit へようこそ"
+  },
+  "wTitle": {
+    "message": "Grabbit の準備ができました 🐰"
+  },
+  "wLead": {
+    "message": "どんなWebサイトも数秒でスプレッドシートに。無料、プライベート、アカウント不要です。"
+  },
+  "wStep1": {
+    "message": "<b>Grabbit を固定：</b>Chrome のツールバーにあるパズルのアイコン 🧩 をクリックし、Grabbit の横のピンをクリックします。"
+  },
+  "wStep2": {
+    "message": "<b>どのページでも開けます：</b>アイコンか <kbd>Alt</kbd>+<kbd>G</kbd> で開くと、Grabbit がリストや表を自動で見つけます。"
+  },
+  "wStep3": {
+    "message": "<b>欲しいデータと違う？</b> ‹ › で別のリストに切り替えるか、<b>ページで選択</b> を押して項目をクリックします。"
+  },
+  "wStep4": {
+    "message": "Excel、CSV、JSON、または Google スプレッドシートに直接<b>エクスポート</b>できます。"
+  },
+  "wSchedules": {
+    "message": "スケジュール"
+  },
+  "wImageDl": {
+    "message": "画像ダウンローダー"
+  },
+  "wPrivate": {
+    "message": "完全プライベート"
+  },
+  "wf1": {
+    "message": "「次へ」ボタンや無限スクロールを自動でたどります。"
+  },
+  "wf2": {
+    "message": "お問い合わせページや会社概要ページも確認します。"
+  },
+  "wf3": {
+    "message": "リストやCSVから数百ページを取得できます。"
+  },
+  "wf4": {
+    "message": "1時間・1日・1週間ごとに再取得して価格や在庫を追跡。"
+  },
+  "wf5": {
+    "message": "データ内の画像をワンクリックで一括保存。"
+  },
+  "wf6": {
+    "message": "すべてブラウザ内で処理。何もアップロードしません。"
+  },
+  "wBulk": {
+    "message": "URL一括"
   }
 }

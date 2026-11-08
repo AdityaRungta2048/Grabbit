@@ -15,17 +15,17 @@ function notice(msg) {
   $('#notice').hidden = !msg;
 }
 function toast(msg) {
-  const t = $('#toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(t._h);
-  t._h = setTimeout(() => t.classList.remove('show'), 2200);
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(el._h);
+  el._h = setTimeout(() => el.classList.remove('show'), 2200);
 }
 function accessError(e) {
   console.warn(e);
   notice(/Cannot access|cannot be scripted|chrome:\/\/|webstore|Missing host permission|No tab/i.test(String(e?.message || e))
-    ? 'Grabbit can’t read this page. Chrome blocks extensions on chrome:// pages and the Web Store. If the page just changed, click the Grabbit icon again.'
-    : 'Something went wrong: ' + (e?.message || e));
+    ? t('errCantRead')
+    : t('errGeneric', e?.message || e));
 }
 
 // ---------- data / grid ----------
@@ -43,9 +43,10 @@ function addRows(cols, rows, seen) {
   }
   render();
 }
+const colName = (key) => chrome.i18n.getMessage('col' + key.replace(/\W/g, '')) || key;
 const fromObjects = (objs, extra = {}) => {
   const keys = [...new Set(objs.flatMap((o) => Object.keys(o)))];
-  return { cols: keys.map((k) => ({ key: k, name: k })), rows: objs.map((o) => ({ ...o, ...extra })) };
+  return { cols: keys.map((k) => ({ key: k, name: colName(k) })), rows: objs.map((o) => ({ ...o, ...extra })) };
 };
 
 const isImageCol = (c) => c.kind === 'src' || c.key === 'Image';
@@ -66,7 +67,10 @@ function render() {
   hr.appendChild(Object.assign(document.createElement('th'), { className: 'num', textContent: '#' }));
   cols.forEach((c, i) => {
     const th = document.createElement('th');
-    th.innerHTML = '<div class="colhead"><input aria-label="Column name" /><button class="x" title="Remove column" aria-label="Remove column">×</button></div>';
+    th.innerHTML = '<div class="colhead"><input /><button class="x">×</button></div>';
+    th.querySelector('input').setAttribute('aria-label', t('columnName'));
+    th.querySelector('.x').title = t('removeColumn');
+    th.querySelector('.x').setAttribute('aria-label', t('removeColumn'));
     const inp = th.querySelector('input');
     inp.value = c.name;
     inp.onchange = () => { c.name = inp.value.trim() || c.name; };
@@ -94,7 +98,7 @@ function render() {
   });
   tbody.appendChild(frag);
   $('#more').hidden = rows.length <= MAX_SHOWN;
-  $('#more').textContent = `Showing first ${MAX_SHOWN} rows. All ${rows.length.toLocaleString()} rows are exported.`;
+  $('#more').textContent = t('showingFirst', MAX_SHOWN, rows.length.toLocaleString());
 }
 
 $('#dedupe').onclick = () => {
@@ -105,7 +109,7 @@ $('#dedupe').onclick = () => {
     return !seen.has(k) && seen.add(k);
   });
   render();
-  toast(`Removed ${before - state.rows.length} duplicates`);
+  toast(t('removedDupes', before - state.rows.length));
 };
 $('#clearData').onclick = () => { setData([], []); call('clear').catch(() => {}); };
 
@@ -121,10 +125,10 @@ function showCandidate() {
   const c = state.cands[state.ci];
   $('#prevCand').disabled = $('#nextCand').disabled = state.cands.length < 2;
   if (!c) {
-    $('#candInfo').textContent = 'No lists found. Use “Pick on page”.';
+    $('#candInfo').textContent = t('noLists');
     return;
   }
-  $('#candInfo').textContent = `List ${state.ci + 1} of ${state.cands.length} · ${c.count} items · ${c.columns.length} fields`;
+  $('#candInfo').textContent = t('listInfo', state.ci + 1, state.cands.length, c.count, c.columns.length);
   useRecipe({ rowSelector: c.rowSelector, columns: c.columns });
 }
 async function useRecipe(recipe, scroll = true) {
@@ -136,22 +140,22 @@ async function useRecipe(recipe, scroll = true) {
   } catch (e) { accessError(e); }
 }
 async function scan() {
-  $('#candInfo').textContent = 'Scanning page…';
+  $('#candInfo').textContent = t('scanning');
   try {
     state.cands = await call('detect');
     state.ci = 0;
     notice('');
     showCandidate();
   } catch (e) {
-    $('#candInfo').textContent = 'Page not readable.';
+    $('#candInfo').textContent = t('notReadable');
     accessError(e);
   }
 }
 $('#rescan').onclick = scan;
 $('#prevCand').onclick = () => { state.ci = (state.ci - 1 + state.cands.length) % state.cands.length; showCandidate(); };
 $('#nextCand').onclick = () => { state.ci = (state.ci + 1) % state.cands.length; showCandidate(); };
-$('#pick').onclick = () => { call('pick', 'list').catch(accessError); toast('Click an item on the page'); };
-$('#pickNext').onclick = () => { call('pick', 'next').catch(accessError); toast('Click the Next button on the page'); };
+$('#pick').onclick = () => { call('pick', 'list').catch(accessError); toast(t('clickItem')); };
+$('#pickNext').onclick = () => { call('pick', 'next').catch(accessError); toast(t('clickNext')); };
 
 chrome.runtime.onMessage.addListener((msg, sender) => {
   if (!msg.grabbit || sender.tab?.id !== tabId) return;
@@ -175,11 +179,11 @@ function pagerUI() {
   const mode = $('[name=pmode]:checked').value;
   $('#nextRow').hidden = mode !== 'next';
   $('#runPager').disabled = mode === 'none';
-  $('#pagerSummary').textContent = { none: 'Off', next: 'Next button', scroll: 'Infinite scroll' }[mode];
+  $('#pagerSummary').textContent = t({ none: 'off', next: 'nextButton', scroll: 'infiniteScroll' }[mode]);
   if (mode === 'next' && !state.next) {
     call('findNext').then((n) => {
       state.next = n;
-      $('#nextLabel').textContent = n ? n.label : 'not found, click Choose';
+      $('#nextLabel').textContent = n ? n.label : t('notFoundChoose');
     }).catch(() => {});
   }
 }
@@ -207,27 +211,27 @@ $('#stop').onclick = () => { state.stop = true; };
 
 $('#runPager').onclick = async () => {
   const mode = $('[name=pmode]:checked').value;
-  if (!state.recipe) return toast('Pick a list first');
-  if (mode === 'next' && !state.next) return toast('Choose the Next button first');
+  if (!state.recipe) return toast(t('pickListFirst'));
+  if (mode === 'next' && !state.next) return toast(t('chooseNextFirst'));
   const max = Math.max(1, +$('#maxPages').value || 10);
   const delay = Math.max(0, +$('#delay').value || 0) * 1000;
   if (mode === 'next') {
     // Page loads would drop the one-time activeTab grant, so ask for this site only.
-    if (state.origin && !(await chrome.permissions.request({ origins: [state.origin] }))) return toast('Permission needed to follow pages');
+    if (state.origin && !(await chrome.permissions.request({ origins: [state.origin] }))) return toast(t('permFollow'));
   }
   const seen = new Set();
   setData(state.recipe.columns, []);
-  startBusy('Page 1…');
+  startBusy(t('pageOf', 1, max, 0));
   try {
     await paginate(tabId, state.recipe, {
       mode, next: state.next, max, delay,
       stop: () => state.stop,
       onPage: (rows, page) => {
         addRows(state.recipe.columns, rows, seen);
-        progress(page / max, `Page ${page} of ${max} · ${state.rows.length} rows`);
+        progress(page / max, t('pageOf', page, max, state.rows.length));
       },
     });
-    endBusy(`Done · ${state.rows.length} rows`);
+    endBusy(t('doneRows', state.rows.length));
   } catch (e) {
     endBusy();
     accessError(e);
@@ -241,12 +245,12 @@ const currentRecipe = () => ({
 });
 async function recipes() { return (await chrome.storage.local.get('recipes')).recipes || {}; }
 $('#saveRecipe').onclick = async () => {
-  if (!state.recipe) return toast('Pick a list first');
+  if (!state.recipe) return toast(t('pickListFirst'));
   const all = await recipes();
   all[state.host] = { recipe: currentRecipe(), next: state.next, mode: $('[name=pmode]:checked').value };
   await chrome.storage.local.set({ recipes: all });
   $('#saved').hidden = false;
-  toast('Recipe saved for ' + state.host);
+  toast(t('recipeSaved', state.host));
 };
 $('#useSaved').onclick = async () => {
   const r = (await recipes())[state.host];
@@ -255,7 +259,7 @@ $('#useSaved').onclick = async () => {
   if (r.next) $('#nextLabel').textContent = r.next.label;
   $(`[name=pmode][value=${r.mode || 'none'}]`).checked = true;
   pagerUI();
-  $('#candInfo').textContent = 'Using saved recipe';
+  $('#candInfo').textContent = t('usingSaved');
   useRecipe(r.recipe);
 };
 
@@ -265,18 +269,18 @@ $$('[data-quick]').forEach((b) => (b.onclick = async () => {
     const kind = b.dataset.quick;
     call('clear').catch(() => {});
     if (kind === 'contacts') {
-      startBusy('Scanning page and contact pages…');
+      startBusy(t('scanningContacts'));
       const c = await call('contacts');
       for (const link of await call('contactLinks')) mergeContacts(c, await fetchContacts(link));
       endBusy();
       for (const k of Object.keys(c)) if (!c[k]) delete c[k]; // one page: hide empty fields
       const { cols, rows } = fromObjects([c]);
       setData(cols, rows);
-      toast(c.Emails ? `Found ${c.Emails.split(', ').length} email(s)` : 'No emails found on this site');
+      toast(c.Emails ? t('foundEmails', c.Emails.split(', ').length) : t('noEmails'));
     } else {
       const { cols, rows } = fromObjects(await call(kind));
       setData(cols, rows);
-      toast(`${rows.length} ${kind} grabbed`);
+      toast(t('grabbed', rows.length));
     }
   } catch (e) { endBusy(); accessError(e); }
 }));
@@ -298,7 +302,7 @@ function mergeContacts(into, extra) {
 
 // ---------- bulk ----------
 const parseUrls = () => [...new Set($('#urls').value.split(/[\s,;]+/).map((u) => u.trim().replace(/^["']|["']$/g, '')).filter((u) => /^https?:\/\/\S+\.\S+/.test(u) || /^[\w-]+(\.[\w-]+)+(\/\S*)?$/.test(u)).map((u) => (/^https?:/.test(u) ? u : 'https://' + u)))];
-$('#urls').oninput = () => { $('#urlCount').textContent = parseUrls().length + ' URLs'; };
+$('#urls').oninput = () => { $('#urlCount').textContent = t('urlCount', parseUrls().length); };
 $('#csvFile').onchange = async (e) => {
   const f = e.target.files[0];
   if (!f) return;
@@ -314,7 +318,7 @@ async function scrapeOne(url, mode) {
     if (mode === 'contacts') {
       const c = await callIn(tab.id, 'contacts');
       for (const link of await callIn(tab.id, 'contactLinks')) mergeContacts(c, await fetchContacts(link));
-      return { cols: Object.keys(c).map((k) => ({ key: k, name: k })), rows: [c] };
+      return { cols: Object.keys(c).map((k) => ({ key: k, name: colName(k) })), rows: [c] };
     }
     let recipe = state.recipe;
     if (mode === 'auto' || !recipe) {
@@ -322,7 +326,7 @@ async function scrapeOne(url, mode) {
       if (!best) return { cols: [], rows: [] };
       recipe = { rowSelector: best.rowSelector, columns: best.columns };
     }
-    const src = { key: '_source', name: 'Source URL' };
+    const src = { key: '_source', name: t('colSource') };
     const rows = (await callIn(tab.id, 'extract', recipe)).map((r) => ({ ...r, _source: url }));
     return { cols: [...recipe.columns, src], rows };
   } finally {
@@ -333,11 +337,11 @@ async function scrapeOne(url, mode) {
 $('#runBulk').onclick = async () => {
   const urls = parseUrls();
   const mode = $('#bulkMode').value;
-  if (!urls.length) return toast('Paste at least one URL');
-  if (mode === 'recipe' && !state.recipe) return toast('Pick a list on the current page first');
-  if (!(await chrome.permissions.request({ origins: ['<all_urls>'] }))) return toast('Permission is needed to open those sites');
+  if (!urls.length) return toast(t('pasteOneUrl'));
+  if (mode === 'recipe' && !state.recipe) return toast(t('pickListCurrent'));
+  if (!(await chrome.permissions.request({ origins: ['<all_urls>'] }))) return toast(t('permSites'));
   setData([], []);
-  startBusy(`0 of ${urls.length} pages`);
+  startBusy(t('bulkProgress', 0, urls.length, 0));
   let done = 0, failed = 0, i = 0;
   const worker = async () => {
     while (i < urls.length && !state.stop) {
@@ -347,13 +351,13 @@ $('#runBulk').onclick = async () => {
         addRows(cols, rows);
       } catch (e) {
         failed++;
-        addRows([{ key: 'URL', name: 'URL' }, { key: '_error', name: 'Error' }], [{ URL: url, _error: String(e.message || e).slice(0, 120) }]);
+        addRows([{ key: 'URL', name: 'URL' }, { key: '_error', name: t('colError') }], [{ URL: url, _error: String(e.message || e).slice(0, 120) }]);
       }
-      progress(++done / urls.length, `${done} of ${urls.length} pages · ${state.rows.length} rows${failed ? ` · ${failed} failed` : ''}`);
+      progress(++done / urls.length, t('bulkProgress', done, urls.length, state.rows.length) + (failed ? ' · ' + t('failedN', failed) : ''));
     }
   };
   await Promise.all(Array.from({ length: Math.min(+$('#concurrency').value, urls.length) }, worker));
-  endBusy(`Bulk done · ${state.rows.length} rows`);
+  endBusy(t('bulkDone', state.rows.length));
 };
 
 // ---------- image downloads ----------
@@ -368,29 +372,28 @@ function imageName(url, i) {
 }
 $('#dlImages').onclick = async () => {
   const urls = [...new Set(state.rows.flatMap((r) => state.cols.filter(isImageCol).map((c) => String(r[c.key] ?? ''))).filter((v) => /^(https?:|data:image\/)/.test(v)))];
-  if (!urls.length) return toast('No image URLs in the data');
-  if (!(await chrome.permissions.request({ permissions: ['downloads'] }))) return toast('Permission needed to save images');
+  if (!urls.length) return toast(t('noImageUrls'));
+  if (!(await chrome.permissions.request({ permissions: ['downloads'] }))) return toast(t('permImages'));
   const folder = 'grabbit/' + (state.host || 'images').replace(/^www\./, '').replace(/[^\w.-]+/g, '_') + '-' + new Date().toISOString().slice(0, 10);
-  startBusy(`Saving 0 of ${urls.length} images…`);
+  startBusy(t('savingImages', 0, urls.length));
   let failed = 0;
   for (const [i, url] of urls.entries()) {
     if (state.stop) break;
     try { await chrome.downloads.download({ url, filename: `${folder}/${imageName(url, i)}`, conflictAction: 'uniquify', saveAs: false }); }
     catch { failed++; }
-    progress((i + 1) / urls.length, `Saving ${i + 1} of ${urls.length} images…`);
+    progress((i + 1) / urls.length, t('savingImages', i + 1, urls.length));
   }
-  endBusy(`Saved ${urls.length - failed} images to Downloads/${folder}${failed ? ` · ${failed} failed` : ''}`);
+  endBusy(t('savedImages', urls.length - failed, 'Downloads/' + folder) + (failed ? ' · ' + t('failedN', failed) : ''));
 };
 
 // ---------- schedules (runs happen in background.js) ----------
-const EVERY = { 60: 'Every hour', 360: 'Every 6 hours', 1440: 'Every day', 10080: 'Every week' };
 $('#createSchedule').onclick = async () => {
-  if (!state.recipe) return toast('Pick a list on the Lists tab first');
-  if (!state.origin) return toast('This page can’t be scheduled');
+  if (!state.recipe) return toast(t('pickListTab'));
+  if (!state.origin) return toast(t('cantSchedule'));
   const autoExport = $('#schedExport').value;
   // Request before any other await so the click still counts as a user gesture.
   const ok = await chrome.permissions.request({ origins: [state.origin], ...(autoExport !== 'none' && { permissions: ['downloads'] }) });
-  if (!ok) return toast('Permission needed to run in the background');
+  if (!ok) return toast(t('permBackground'));
   const mode = $('[name=pmode]:checked').value;
   const s = {
     id: Date.now().toString(36),
@@ -408,7 +411,7 @@ $('#createSchedule').onclick = async () => {
   await chrome.storage.local.set({ schedules: [...schedules, s] });
   await chrome.alarms.create('sched:' + s.id, { periodInMinutes: s.every, delayInMinutes: s.every });
   chrome.runtime.sendMessage({ grabbit: 'runSchedule', id: s.id }); // first run now, so the user sees it works
-  toast('Scheduled · first run started');
+  toast(t('scheduled'));
 };
 
 async function renderSchedules() {
@@ -419,16 +422,19 @@ async function renderSchedules() {
   for (const s of schedules) {
     const li = document.createElement('li');
     li.className = 'card';
-    li.innerHTML = '<div class="row between"><b class="host"></b><span class="muted tiny every"></span></div><div class="muted tiny status"></div><div class="row gap mt"><button class="btn small" data-a="view">View data</button><button class="btn small" data-a="run">Run now</button><button class="btn small danger" data-a="del">Delete</button></div>';
+    li.innerHTML = '<div class="row between"><b class="host"></b><span class="muted tiny every"></span></div><div class="muted tiny status"></div><div class="row gap mt"><button class="btn small" data-a="view"></button><button class="btn small" data-a="run"></button><button class="btn small danger" data-a="del"></button></div>';
+    li.querySelector('[data-a=view]').textContent = t('viewData');
+    li.querySelector('[data-a=run]').textContent = t('runNow');
+    li.querySelector('[data-a=del]').textContent = t('delete');
     li.querySelector('.host').textContent = s.host + new URL(s.url).pathname.replace(/\/$/, '');
-    li.querySelector('.every').textContent = EVERY[s.every] + (s.autoExport !== 'none' ? ` · auto ${s.autoExport.toUpperCase()}` : '');
-    li.querySelector('.status').textContent = s.running ? 'Running…'
-      : s.lastRun ? `Last run ${new Date(s.lastRun).toLocaleString()} · ${s.lastCount} rows${s.lastAdded ? ` · ${s.lastAdded} new` : ''}${s.lastError ? ` · ⚠ ${s.lastError}` : ''}`
-      : 'Not run yet';
+    li.querySelector('.every').textContent = t('every' + s.every) + (s.autoExport !== 'none' ? ' · ' + t('autoX', s.autoExport === 'xlsx' ? 'Excel' : 'CSV') : '');
+    li.querySelector('.status').textContent = s.running ? t('running')
+      : s.lastRun ? t('lastRun', new Date(s.lastRun).toLocaleString(), s.lastCount) + (s.lastAdded ? ' · ' + t('newN', s.lastAdded) : '') + (s.lastError ? ' · ⚠ ' + s.lastError : '')
+      : t('notRunYet');
     li.querySelector('[data-a=run]').onclick = () => chrome.runtime.sendMessage({ grabbit: 'runSchedule', id: s.id });
     li.querySelector('[data-a=view]').onclick = async () => {
       const res = (await chrome.storage.local.get('result:' + s.id))['result:' + s.id];
-      if (!res) return toast('No data yet');
+      if (!res) return toast(t('noDataYet'));
       setData(res.cols, res.rows);
     };
     li.querySelector('[data-a=del]').onclick = async () => {
@@ -450,7 +456,7 @@ function download(blob, name) {
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 $$('[data-export]').forEach((b) => (b.onclick = async () => {
-  if (!state.rows.length) return toast('Nothing to export yet');
+  if (!state.rows.length) return toast(t('nothingToExport'));
   const { cols, rows } = state;
   const kind = b.dataset.export;
   if (kind === 'xlsx') download(Exporter.xlsx(cols, rows), fileBase() + '.xlsx');
@@ -460,9 +466,9 @@ $$('[data-export]').forEach((b) => (b.onclick = async () => {
     await navigator.clipboard.writeText(Exporter.tsv(cols, rows));
     if (kind === 'sheets') {
       chrome.tabs.create({ url: 'https://sheets.new' });
-      toast('Copied! Press Ctrl+V (⌘V) in the new sheet');
-    } else toast(`Copied ${rows.length} rows`);
-  } else toast(`Exported ${rows.length} rows`);
+      toast(t('copiedSheets'));
+    } else toast(t('copiedRows', rows.length));
+  } else toast(t('exportedRows', rows.length));
   countExport();
 }));
 
@@ -477,13 +483,13 @@ $('#rateLink').onclick = $('#rateClose').onclick = () => { chrome.storage.local.
 
 // ---------- init ----------
 (async () => {
-  if (!tabId) return notice('Open Grabbit from the toolbar icon on the page you want to scrape.');
+  if (!tabId) return notice(t('openFromIcon'));
   try {
     const tab = await chrome.tabs.get(tabId);
     state.host = tab.url ? new URL(tab.url).hostname : '';
     state.url = tab.url;
     if (/^https?:/.test(tab.url)) state.origin = new URL(tab.url).origin + '/*';
-    $('#host').textContent = state.host || 'Web scraper';
+    $('#host').textContent = state.host || t('webScraper');
     if ((await recipes())[state.host]) $('#saved').hidden = false;
   } catch {}
   pagerUI();

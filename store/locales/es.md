@@ -46,8 +46,8 @@ Abre Grabbit en una página y encontrará las listas y tablas por ti: productos,
 
 ★ CÓMO FUNCIONA
 1. Abre cualquier web y haz clic en el icono de Grabbit (o pulsa Alt+G)
-2. Grabbit resalta los datos encontrados. Usa ‹ › para cambiar de lista o «Pick on page»
-3. Opcional: activa «Multiple pages» o prográmalo
+2. Grabbit resalta los datos encontrados. Usa ‹ › para cambiar de lista o «Elegir en la página»
+3. Opcional: activa «Varias páginas» o prográmalo
 4. Haz clic en Excel, CSV, JSON o Sheets. ¡Listo!
 
 ★ PRIVACIDAD

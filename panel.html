@@ -9,14 +9,14 @@
 <body>
   <header class="top">
     <img src="icons/48.png" alt="" width="28" height="28" />
-    <div class="brand"><b>Grabbit</b><span id="host">Web scraper</span></div>
+    <div class="brand"><b>Grabbit</b><span id="host" data-i18n="webScraper">Web scraper</span></div>
   </header>
 
   <nav class="tabs" role="tablist">
-    <button role="tab" data-tab="list" aria-selected="true">Lists</button>
-    <button role="tab" data-tab="quick">Quick grab</button>
-    <button role="tab" data-tab="bulk">Bulk URLs</button>
-    <button role="tab" data-tab="schedule">Schedule</button>
+    <button role="tab" data-tab="list" aria-selected="true" data-i18n="tabLists">Lists</button>
+    <button role="tab" data-tab="quick" data-i18n="tabQuick">Quick grab</button>
+    <button role="tab" data-tab="bulk" data-i18n="tabBulk">Bulk URLs</button>
+    <button role="tab" data-tab="schedule" data-i18n="tabSchedule">Schedule</button>
   </nav>
 
   <div id="notice" class="notice" hidden></div>
@@ -24,121 +24,126 @@
   <!-- Lists & tables -->
   <section data-pane="list">
     <div id="saved" class="card saved" hidden>
-      <span>Saved recipe for this site</span>
-      <button id="useSaved" class="btn small">Use it</button>
+      <span data-i18n="savedRecipe">Saved recipe for this site</span>
+      <button id="useSaved" class="btn small" data-i18n="useIt">Use it</button>
     </div>
 
     <div class="card">
       <div class="row between">
         <div>
-          <div class="label">Detected data</div>
-          <div id="candInfo" class="muted">Scanning page…</div>
+          <div class="label" data-i18n="detectedData">Detected data</div>
+          <div id="candInfo" class="muted" data-i18n="scanning">Scanning page…</div>
         </div>
         <div class="row gap">
-          <button id="prevCand" class="btn icon" title="Previous list" aria-label="Previous list">‹</button>
-          <button id="nextCand" class="btn icon" title="Next list" aria-label="Next list">›</button>
+          <button id="prevCand" class="btn icon" data-i18n-attr="title:prevList,aria-label:prevList">‹</button>
+          <button id="nextCand" class="btn icon" data-i18n-attr="title:nextList,aria-label:nextList">›</button>
         </div>
       </div>
       <div class="row gap mt">
-        <button id="pick" class="btn primary grow">🎯 Pick on page</button>
-        <button id="rescan" class="btn" title="Scan the page again">Rescan</button>
+        <button id="pick" class="btn primary grow">🎯 <span data-i18n="pickOnPage">Pick on page</span></button>
+        <button id="rescan" class="btn" data-i18n="rescan" data-i18n-attr="title:rescanTitle">Rescan</button>
       </div>
     </div>
 
     <details class="card" id="pagerCard">
-      <summary><span class="label">Multiple pages</span> <span id="pagerSummary" class="muted">Off</span></summary>
+      <summary><span class="label" data-i18n="multiplePages">Multiple pages</span> <span id="pagerSummary" class="muted" data-i18n="off">Off</span></summary>
       <div class="seg mt" role="radiogroup">
-        <label><input type="radio" name="pmode" value="none" checked /> Off</label>
-        <label><input type="radio" name="pmode" value="next" /> “Next” button</label>
-        <label><input type="radio" name="pmode" value="scroll" /> Infinite scroll</label>
+        <label><input type="radio" name="pmode" value="none" checked /> <span data-i18n="off">Off</span></label>
+        <label><input type="radio" name="pmode" value="next" /> <span data-i18n="nextButton">“Next” button</span></label>
+        <label><input type="radio" name="pmode" value="scroll" /> <span data-i18n="infiniteScroll">Infinite scroll</span></label>
       </div>
       <div id="nextRow" class="row between mt" hidden>
-        <span class="muted">Button: <b id="nextLabel">not found</b></span>
-        <button id="pickNext" class="btn small">Choose</button>
+        <span class="muted"><span data-i18n="buttonLabel">Button:</span> <b id="nextLabel" data-i18n="notFound">not found</b></span>
+        <button id="pickNext" class="btn small" data-i18n="choose">Choose</button>
       </div>
       <div class="row gap mt">
-        <label class="field">Max pages <input id="maxPages" type="number" min="1" max="500" value="10" /></label>
-        <label class="field">Wait (sec) <input id="delay" type="number" min="0" max="30" step="0.5" value="1.5" /></label>
+        <label class="field"><span data-i18n="maxPages">Max pages</span> <input id="maxPages" type="number" min="1" max="500" value="10" /></label>
+        <label class="field"><span data-i18n="waitSec">Wait (sec)</span> <input id="delay" type="number" min="0" max="30" step="0.5" value="1.5" /></label>
       </div>
-      <button id="runPager" class="btn primary wide mt">Scrape all pages</button>
+      <button id="runPager" class="btn primary wide mt" data-i18n="scrapeAllPages">Scrape all pages</button>
     </details>
 
-    <button id="saveRecipe" class="link">💾 Save as recipe for this site</button>
+    <button id="saveRecipe" class="link">💾 <span data-i18n="saveRecipe">Save as recipe for this site</span></button>
   </section>
 
   <!-- Quick grab -->
   <section data-pane="quick" hidden>
     <div class="grid2">
-      <button class="tile" data-quick="contacts"><b>✉️ Emails &amp; contacts</b><span>Emails, phones, socials</span></button>
-      <button class="tile" data-quick="links"><b>🔗 All links</b><span>Text, URL, internal/external</span></button>
-      <button class="tile" data-quick="images"><b>🖼️ All images</b><span>URL, alt text, size</span></button>
-      <button class="tile" data-quick="text"><b>📄 Page text</b><span>Headings &amp; paragraphs</span></button>
+      <button class="tile" data-quick="contacts"><b>✉️ <span data-i18n="qContacts">Emails &amp; contacts</span></b><span data-i18n="qContactsSub">Emails, phones, socials</span></button>
+      <button class="tile" data-quick="links"><b>🔗 <span data-i18n="qLinks">All links</span></b><span data-i18n="qLinksSub">Text, URL, internal/external</span></button>
+      <button class="tile" data-quick="images"><b>🖼️ <span data-i18n="qImages">All images</span></b><span data-i18n="qImagesSub">URL, alt text, size</span></button>
+      <button class="tile" data-quick="text"><b>📄 <span data-i18n="qText">Page text</span></b><span data-i18n="qTextSub">Headings &amp; paragraphs</span></button>
     </div>
   </section>
 
   <!-- Bulk -->
   <section data-pane="bulk" hidden>
     <div class="card">
-      <label class="label" for="urls">Paste URLs (one per line)</label>
+      <label class="label" for="urls" data-i18n="pasteUrls">Paste URLs (one per line)</label>
       <textarea id="urls" rows="6" placeholder="https://example.com&#10;https://another-site.com/contact"></textarea>
       <div class="row between mt">
-        <label class="link"><input id="csvFile" type="file" accept=".csv,.txt" hidden />📂 Load from CSV</label>
+        <label class="link"><input id="csvFile" type="file" accept=".csv,.txt" hidden />📂 <span data-i18n="loadCsv">Load from CSV</span></label>
         <span id="urlCount" class="muted">0 URLs</span>
       </div>
-      <label class="field mt">What to grab
+      <label class="field mt"><span data-i18n="whatToGrab">What to grab</span>
         <select id="bulkMode">
-          <option value="contacts">Contact details (also checks contact/about pages)</option>
-          <option value="recipe">Same list as current page (uses picked list)</option>
-          <option value="auto">Auto-detect main list on each page</option>
+          <option value="contacts" data-i18n="bulkContacts">Contact details (also checks contact/about pages)</option>
+          <option value="recipe" data-i18n="bulkRecipe">Same list as current page (uses picked list)</option>
+          <option value="auto" data-i18n="bulkAuto">Auto-detect main list on each page</option>
         </select>
       </label>
-      <label class="field mt">Pages at a time
+      <label class="field mt"><span data-i18n="pagesAtATime">Pages at a time</span>
         <select id="concurrency"><option>1</option><option>2</option><option selected>3</option><option>5</option></select>
       </label>
-      <button id="runBulk" class="btn primary wide mt">Start bulk scrape</button>
-      <p class="muted tiny">Pages open in background tabs and close automatically. Chrome will ask once for permission to read those sites.</p>
+      <button id="runBulk" class="btn primary wide mt" data-i18n="startBulk">Start bulk scrape</button>
+      <p class="muted tiny" data-i18n="bulkNote">Pages open in background tabs and close automatically. Chrome will ask once for permission to read those sites.</p>
     </div>
   </section>
 
   <!-- Schedule -->
   <section data-pane="schedule" hidden>
     <div class="card">
-      <div class="label">Re-scrape this list automatically</div>
-      <p class="muted tiny">Uses the list and page settings from the Lists tab. Runs in a background tab while Chrome is open. Great for price and stock tracking.</p>
+      <div class="label" data-i18n="schedTitle">Re-scrape this list automatically</div>
+      <p class="muted tiny" data-i18n="schedNote">Uses the list and page settings from the Lists tab. Runs in a background tab while Chrome is open. Great for price and stock tracking.</p>
       <div class="row gap">
-        <label class="field">How often
-          <select id="schedEvery"><option value="60">Every hour</option><option value="360">Every 6 hours</option><option value="1440" selected>Every day</option><option value="10080">Every week</option></select>
+        <label class="field"><span data-i18n="howOften">How often</span>
+          <select id="schedEvery">
+            <option value="60" data-i18n="every60">Every hour</option>
+            <option value="360" data-i18n="every360">Every 6 hours</option>
+            <option value="1440" selected data-i18n="every1440">Every day</option>
+            <option value="10080" data-i18n="every10080">Every week</option>
+          </select>
         </label>
-        <label class="field">Auto-download
-          <select id="schedExport"><option value="none">Off</option><option value="xlsx">Excel</option><option value="csv">CSV</option></select>
+        <label class="field"><span data-i18n="autoDownload">Auto-download</span>
+          <select id="schedExport"><option value="none" data-i18n="off">Off</option><option value="xlsx">Excel</option><option value="csv">CSV</option></select>
         </label>
       </div>
-      <button id="createSchedule" class="btn primary wide mt">⏰ Create schedule</button>
+      <button id="createSchedule" class="btn primary wide mt">⏰ <span data-i18n="createSchedule">Create schedule</span></button>
     </div>
-    <p id="schedEmpty" class="muted tiny">No schedules yet.</p>
+    <p id="schedEmpty" class="muted tiny" data-i18n="noSchedules">No schedules yet.</p>
     <ul id="schedList" class="plain"></ul>
   </section>
 
   <!-- Progress -->
   <div id="progress" class="progress" hidden>
     <div class="bar"><i id="barFill"></i></div>
-    <div class="row between"><span id="progText">Working…</span><button id="stop" class="btn small danger">Stop</button></div>
+    <div class="row between"><span id="progText" data-i18n="working">Working…</span><button id="stop" class="btn small danger" data-i18n="stop">Stop</button></div>
   </div>
 
   <!-- Results -->
   <section class="results">
     <div class="row between">
-      <div class="label"><span id="rowCount">0</span> rows · <span id="colCount">0</span> columns</div>
+      <div class="label"><span id="rowCount">0</span> <span data-i18n="rows">rows</span> · <span id="colCount">0</span> <span data-i18n="columns">columns</span></div>
       <div class="row gap">
-        <button id="dlImages" class="btn small" title="Save every image in the data to your Downloads folder" hidden>⬇ Images</button>
-        <button id="dedupe" class="btn small" title="Remove duplicate rows">Dedupe</button>
-        <button id="clearData" class="btn small" title="Clear all data">Clear</button>
+        <button id="dlImages" class="btn small" data-i18n-attr="title:imagesTitle" hidden>⬇ <span data-i18n="images">Images</span></button>
+        <button id="dedupe" class="btn small" data-i18n="dedupe" data-i18n-attr="title:dedupeTitle">Dedupe</button>
+        <button id="clearData" class="btn small" data-i18n="clear" data-i18n-attr="title:clearTitle">Clear</button>
       </div>
     </div>
     <div class="tablewrap" id="tableWrap">
       <div id="empty" class="empty">
         <img src="icons/128.png" alt="" width="56" height="56" />
-        <p>Your data will appear here.<br /><span class="muted">Pick a list, or use Quick grab.</span></p>
+        <p><span data-i18n="emptyTitle">Your data will appear here.</span><br /><span class="muted" data-i18n="emptySub">Pick a list, or use Quick grab.</span></p>
       </div>
       <table id="grid" hidden><thead></thead><tbody></tbody></table>
     </div>
@@ -149,12 +154,13 @@
     <button class="btn primary" data-export="xlsx">Excel</button>
     <button class="btn" data-export="csv">CSV</button>
     <button class="btn" data-export="json">JSON</button>
-    <button class="btn" data-export="copy" title="Copy as a table to paste anywhere">Copy</button>
-    <button class="btn sheets" data-export="sheets" title="Copy and open a new Google Sheet. Paste with Ctrl+V">Sheets</button>
+    <button class="btn" data-export="copy" data-i18n="copy" data-i18n-attr="title:copyTitle">Copy</button>
+    <button class="btn sheets" data-export="sheets" data-i18n-attr="title:sheetsTitle">Sheets</button>
   </footer>
-  <div id="rate" class="rate" hidden>Enjoying Grabbit? <a id="rateLink" target="_blank">Leave a ★★★★★ review</a> <button id="rateClose" class="x" aria-label="Dismiss">×</button></div>
+  <div id="rate" class="rate" hidden><span data-i18n="enjoying">Enjoying Grabbit?</span> <a id="rateLink" target="_blank" data-i18n="leaveReview">Leave a ★★★★★ review</a> <button id="rateClose" class="x" data-i18n-attr="aria-label:dismiss">×</button></div>
   <div id="toast" class="toast" role="status"></div>
 
+  <script src="i18n.js"></script>
   <script src="content.js"></script>
   <script src="export.js"></script>
   <script src="scrape.js"></script>

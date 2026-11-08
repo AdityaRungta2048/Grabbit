@@ -46,8 +46,8 @@ Grabbit 能在几秒内把任意网站变成整洁的表格。完全免费、无
 
 ★ 使用方法
 1. 打开任意网站，点击 Grabbit 图标（或按 Alt+G）
-2. Grabbit 会高亮找到的数据。用 ‹ › 切换列表，或使用"Pick on page"
-3. 可选：开启"Multiple pages"或设置定时任务
+2. Grabbit 会高亮找到的数据。用 ‹ › 切换列表，或使用"在页面上选择"
+3. 可选：开启"多页"或设置定时任务
 4. 点击 Excel、CSV、JSON 或 Sheets，完成！
 
 ★ 隐私

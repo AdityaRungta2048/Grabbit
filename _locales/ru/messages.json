@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "Открыть Grabbit на этой странице"
+  },
+  "webScraper": {
+    "message": "Веб-скрапер"
+  },
+  "tabLists": {
+    "message": "Списки"
+  },
+  "tabQuick": {
+    "message": "Быстро"
+  },
+  "tabBulk": {
+    "message": "URL"
+  },
+  "tabSchedule": {
+    "message": "Расписание"
+  },
+  "savedRecipe": {
+    "message": "Сохранённый рецепт для этого сайта"
+  },
+  "useIt": {
+    "message": "Применить"
+  },
+  "detectedData": {
+    "message": "Найденные данные"
+  },
+  "scanning": {
+    "message": "Анализ страницы…"
+  },
+  "prevList": {
+    "message": "Предыдущий список"
+  },
+  "nextList": {
+    "message": "Следующий список"
+  },
+  "pickOnPage": {
+    "message": "Выбрать на странице"
+  },
+  "rescan": {
+    "message": "Обновить"
+  },
+  "rescanTitle": {
+    "message": "Проанализировать страницу заново"
+  },
+  "multiplePages": {
+    "message": "Несколько страниц"
+  },
+  "off": {
+    "message": "Выкл."
+  },
+  "nextButton": {
+    "message": "Кнопка «Далее»"
+  },
+  "infiniteScroll": {
+    "message": "Бесконечная прокрутка"
+  },
+  "buttonLabel": {
+    "message": "Кнопка:"
+  },
+  "notFound": {
+    "message": "не найдена"
+  },
+  "choose": {
+    "message": "Выбрать"
+  },
+  "maxPages": {
+    "message": "Макс. страниц"
+  },
+  "waitSec": {
+    "message": "Пауза (с)"
+  },
+  "scrapeAllPages": {
+    "message": "Собрать все страницы"
+  },
+  "saveRecipe": {
+    "message": "Сохранить как рецепт для этого сайта"
+  },
+  "qContacts": {
+    "message": "Email и контакты"
+  },
+  "qContactsSub": {
+    "message": "Email, телефоны, соцсети"
+  },
+  "qLinks": {
+    "message": "Все ссылки"
+  },
+  "qLinksSub": {
+    "message": "Текст, URL, внутренние/внешние"
+  },
+  "qImages": {
+    "message": "Все изображения"
+  },
+  "qImagesSub": {
+    "message": "URL, alt-текст, размер"
+  },
+  "qText": {
+    "message": "Текст страницы"
+  },
+  "qTextSub": {
+    "message": "Заголовки и абзацы"
+  },
+  "pasteUrls": {
+    "message": "Вставьте URL (по одному в строке)"
+  },
+  "loadCsv": {
+    "message": "Загрузить из CSV"
+  },
+  "urlCount": {
+    "message": "URL: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "Что собирать"
+  },
+  "bulkContacts": {
+    "message": "Контакты (проверяет и страницы контактов)"
+  },
+  "bulkRecipe": {
+    "message": "Тот же список, что на текущей странице (выбранный)"
+  },
+  "bulkAuto": {
+    "message": "Автоопределение основного списка на каждой странице"
+  },
+  "pagesAtATime": {
+    "message": "Страниц одновременно"
+  },
+  "startBulk": {
+    "message": "Начать массовый сбор"
+  },
+  "bulkNote": {
+    "message": "Страницы открываются в фоновых вкладках и закрываются сами. Chrome один раз попросит разрешение на чтение этих сайтов."
+  },
+  "schedTitle": {
+    "message": "Автоматически собирать этот список заново"
+  },
+  "schedNote": {
+    "message": "Использует список и настройки страниц со вкладки «Списки». Работает в фоновой вкладке, пока Chrome открыт. Отлично для отслеживания цен и наличия."
+  },
+  "howOften": {
+    "message": "Как часто"
+  },
+  "autoDownload": {
+    "message": "Автозагрузка"
+  },
+  "every60": {
+    "message": "Каждый час"
+  },
+  "every360": {
+    "message": "Каждые 6 часов"
+  },
+  "every1440": {
+    "message": "Каждый день"
+  },
+  "every10080": {
+    "message": "Каждую неделю"
+  },
+  "createSchedule": {
+    "message": "Создать расписание"
+  },
+  "noSchedules": {
+    "message": "Расписаний пока нет."
+  },
+  "working": {
+    "message": "Выполняется…"
+  },
+  "stop": {
+    "message": "Стоп"
+  },
+  "rows": {
+    "message": "строк"
+  },
+  "columns": {
+    "message": "столбцов"
+  },
+  "images": {
+    "message": "Изображения"
+  },
+  "imagesTitle": {
+    "message": "Сохранить все изображения из данных в папку «Загрузки»"
+  },
+  "dedupe": {
+    "message": "Без дублей"
+  },
+  "dedupeTitle": {
+    "message": "Удалить повторяющиеся строки"
+  },
+  "clear": {
+    "message": "Очистить"
+  },
+  "clearTitle": {
+    "message": "Удалить все данные"
+  },
+  "emptyTitle": {
+    "message": "Здесь появятся ваши данные."
+  },
+  "emptySub": {
+    "message": "Выберите список или откройте вкладку «Быстро»."
+  },
+  "copy": {
+    "message": "Копировать"
+  },
+  "copyTitle": {
+    "message": "Скопировать как таблицу, чтобы вставить куда угодно"
+  },
+  "sheetsTitle": {
+    "message": "Скопировать и открыть новую Google Таблицу. Вставьте через Ctrl+V"
+  },
+  "enjoying": {
+    "message": "Нравится Grabbit?"
+  },
+  "leaveReview": {
+    "message": "Оставьте отзыв ★★★★★"
+  },
+  "dismiss": {
+    "message": "Закрыть"
+  },
+  "errCantRead": {
+    "message": "Grabbit не может прочитать эту страницу. Chrome блокирует расширения на страницах chrome:// и в Chrome Web Store. Если страница только что изменилась, снова нажмите на значок Grabbit."
+  },
+  "errGeneric": {
+    "message": "Что-то пошло не так: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "Название столбца"
+  },
+  "removeColumn": {
+    "message": "Удалить столбец"
+  },
+  "showingFirst": {
+    "message": "Показаны первые $P1$ строк. Экспортируются все $P2$ строк.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "Удалено дублей: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "Списки не найдены. Используйте «Выбрать на странице»."
+  },
+  "listInfo": {
+    "message": "Список $P1$ из $P2$ · элементов: $P3$ · полей: $P4$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "Не удаётся прочитать страницу."
+  },
+  "clickItem": {
+    "message": "Нажмите на элемент на странице"
+  },
+  "clickNext": {
+    "message": "Нажмите на странице кнопку «Далее»"
+  },
+  "notFoundChoose": {
+    "message": "не найдена, нажмите «Выбрать»"
+  },
+  "pickListFirst": {
+    "message": "Сначала выберите список"
+  },
+  "chooseNextFirst": {
+    "message": "Сначала выберите кнопку «Далее»"
+  },
+  "permFollow": {
+    "message": "Нужно разрешение для перехода по страницам"
+  },
+  "pageOf": {
+    "message": "Страница $P1$ из $P2$ · строк: $P3$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "Готово · строк: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "Рецепт сохранён для $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "Используется сохранённый рецепт"
+  },
+  "scanningContacts": {
+    "message": "Анализ страницы и страниц контактов…"
+  },
+  "foundEmails": {
+    "message": "Найдено email: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "На этом сайте email не найдены"
+  },
+  "grabbed": {
+    "message": "Собрано строк: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "Вставьте хотя бы один URL"
+  },
+  "pickListCurrent": {
+    "message": "Сначала выберите список на текущей странице"
+  },
+  "permSites": {
+    "message": "Нужно разрешение, чтобы открыть эти сайты"
+  },
+  "bulkProgress": {
+    "message": "Страниц: $P1$ из $P2$ · строк: $P3$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "ошибок: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "Массовый сбор завершён · строк: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "В данных нет URL изображений"
+  },
+  "permImages": {
+    "message": "Нужно разрешение для сохранения изображений"
+  },
+  "savingImages": {
+    "message": "Сохранение изображений: $P1$ из $P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "Сохранено изображений: $P1$ в $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "Сначала выберите список на вкладке «Списки»"
+  },
+  "cantSchedule": {
+    "message": "Для этой страницы нельзя создать расписание"
+  },
+  "permBackground": {
+    "message": "Нужно разрешение для работы в фоне"
+  },
+  "scheduled": {
+    "message": "Запланировано · первый запуск начат"
+  },
+  "viewData": {
+    "message": "Данные"
+  },
+  "runNow": {
+    "message": "Запустить"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "autoX": {
+    "message": "авто $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "Выполняется…"
+  },
+  "lastRun": {
+    "message": "Последний запуск $P1$ · строк: $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "новых: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "Ещё не запускалось"
+  },
+  "noDataYet": {
+    "message": "Данных пока нет"
+  },
+  "nothingToExport": {
+    "message": "Пока нечего экспортировать"
+  },
+  "copiedSheets": {
+    "message": "Скопировано! Нажмите Ctrl+V (⌘V) в новой таблице"
+  },
+  "copiedRows": {
+    "message": "Скопировано строк: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "Экспортировано строк: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "Откройте Grabbit значком на панели инструментов на странице, с которой нужно собрать данные."
+  },
+  "tipNext": {
+    "message": "Нажмите кнопку или ссылку «Далее» · Esc для отмены"
+  },
+  "tipList": {
+    "message": "Нажмите на любой элемент нужного списка · Esc для отмены"
+  },
+  "noRepeating": {
+    "message": "Здесь нет повторяющихся элементов. Попробуйте нажать на другой элемент."
+  },
+  "errSiteAccess": {
+    "message": "доступ к сайту отозван"
+  },
+  "errNoRows": {
+    "message": "строки не найдены, возможно, изменилась вёрстка страницы"
+  },
+  "errDownloadsPerm": {
+    "message": "разрешение на загрузки отозвано"
+  },
+  "colLink": {
+    "message": "Ссылка"
+  },
+  "colImage": {
+    "message": "Изображение"
+  },
+  "colTitle": {
+    "message": "Заголовок"
+  },
+  "colLinkText": {
+    "message": "Текст ссылки"
+  },
+  "colDate": {
+    "message": "Дата"
+  },
+  "colItem": {
+    "message": "Элемент"
+  },
+  "colCell": {
+    "message": "Ячейка"
+  },
+  "colText": {
+    "message": "Текст"
+  },
+  "colEmails": {
+    "message": "Email"
+  },
+  "colPhones": {
+    "message": "Телефоны"
+  },
+  "colDescription": {
+    "message": "Описание"
+  },
+  "colType": {
+    "message": "Тип"
+  },
+  "colAlt": {
+    "message": "Alt-текст"
+  },
+  "colWidth": {
+    "message": "Ширина"
+  },
+  "colHeight": {
+    "message": "Высота"
+  },
+  "colSource": {
+    "message": "Исходный URL"
+  },
+  "colError": {
+    "message": "Ошибка"
+  },
+  "wPageTitle": {
+    "message": "Добро пожаловать в Grabbit"
+  },
+  "wTitle": {
+    "message": "Grabbit готов 🐰"
+  },
+  "wLead": {
+    "message": "Превратите любой сайт в таблицу за секунды. Бесплатно, приватно и без регистрации."
+  },
+  "wStep1": {
+    "message": "<b>Закрепите Grabbit:</b> нажмите значок пазла 🧩 на панели Chrome, а затем булавку рядом с Grabbit."
+  },
+  "wStep2": {
+    "message": "<b>Откройте на любой странице</b> значком или сочетанием <kbd>Alt</kbd>+<kbd>G</kbd>. Grabbit сам найдёт списки и таблицы."
+  },
+  "wStep3": {
+    "message": "<b>Не те данные?</b> Переключайте списки стрелками ‹ › или нажмите <b>Выбрать на странице</b> и кликните по любому элементу."
+  },
+  "wStep4": {
+    "message": "<b>Экспортируйте</b> в Excel, CSV, JSON или сразу в Google Таблицы."
+  },
+  "wSchedules": {
+    "message": "Расписания"
+  },
+  "wImageDl": {
+    "message": "Загрузка изображений"
+  },
+  "wPrivate": {
+    "message": "100% приватно"
+  },
+  "wf1": {
+    "message": "Переходит по кнопкам «Далее» и прокручивает бесконечные ленты."
+  },
+  "wf2": {
+    "message": "Проверяет также страницы контактов и «О нас»."
+  },
+  "wf3": {
+    "message": "Собирайте сотни страниц по списку или из CSV."
+  },
+  "wf4": {
+    "message": "Повтор каждый час, день или неделю для отслеживания цен и наличия."
+  },
+  "wf5": {
+    "message": "Сохраняйте все изображения из данных в один клик."
+  },
+  "wf6": {
+    "message": "Всё работает в вашем браузере. Ничего не загружается."
+  },
+  "wBulk": {
+    "message": "Много URL"
   }
 }

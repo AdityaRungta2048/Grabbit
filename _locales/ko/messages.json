@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "이 페이지에서 Grabbit 열기"
+  },
+  "webScraper": {
+    "message": "웹 스크래퍼"
+  },
+  "tabLists": {
+    "message": "목록"
+  },
+  "tabQuick": {
+    "message": "빠른 추출"
+  },
+  "tabBulk": {
+    "message": "URL 일괄"
+  },
+  "tabSchedule": {
+    "message": "예약"
+  },
+  "savedRecipe": {
+    "message": "이 사이트에 저장된 레시피"
+  },
+  "useIt": {
+    "message": "사용"
+  },
+  "detectedData": {
+    "message": "감지된 데이터"
+  },
+  "scanning": {
+    "message": "페이지 분석 중…"
+  },
+  "prevList": {
+    "message": "이전 목록"
+  },
+  "nextList": {
+    "message": "다음 목록"
+  },
+  "pickOnPage": {
+    "message": "페이지에서 선택"
+  },
+  "rescan": {
+    "message": "다시 분석"
+  },
+  "rescanTitle": {
+    "message": "페이지를 다시 분석"
+  },
+  "multiplePages": {
+    "message": "여러 페이지"
+  },
+  "off": {
+    "message": "끔"
+  },
+  "nextButton": {
+    "message": "\"다음\" 버튼"
+  },
+  "infiniteScroll": {
+    "message": "무한 스크롤"
+  },
+  "buttonLabel": {
+    "message": "버튼:"
+  },
+  "notFound": {
+    "message": "찾지 못함"
+  },
+  "choose": {
+    "message": "선택"
+  },
+  "maxPages": {
+    "message": "최대 페이지"
+  },
+  "waitSec": {
+    "message": "대기(초)"
+  },
+  "scrapeAllPages": {
+    "message": "모든 페이지 추출"
+  },
+  "saveRecipe": {
+    "message": "이 사이트의 레시피로 저장"
+  },
+  "qContacts": {
+    "message": "이메일 및 연락처"
+  },
+  "qContactsSub": {
+    "message": "이메일, 전화, SNS"
+  },
+  "qLinks": {
+    "message": "모든 링크"
+  },
+  "qLinksSub": {
+    "message": "텍스트, URL, 내부/외부"
+  },
+  "qImages": {
+    "message": "모든 이미지"
+  },
+  "qImagesSub": {
+    "message": "URL, 대체 텍스트, 크기"
+  },
+  "qText": {
+    "message": "페이지 텍스트"
+  },
+  "qTextSub": {
+    "message": "제목과 단락"
+  },
+  "pasteUrls": {
+    "message": "URL 붙여넣기(한 줄에 하나)"
+  },
+  "loadCsv": {
+    "message": "CSV에서 불러오기"
+  },
+  "urlCount": {
+    "message": "URL $P1$개",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "추출할 내용"
+  },
+  "bulkContacts": {
+    "message": "연락처 정보(문의 페이지도 확인)"
+  },
+  "bulkRecipe": {
+    "message": "현재 페이지와 같은 목록(선택한 목록 사용)"
+  },
+  "bulkAuto": {
+    "message": "각 페이지의 주요 목록 자동 감지"
+  },
+  "pagesAtATime": {
+    "message": "동시 페이지 수"
+  },
+  "startBulk": {
+    "message": "일괄 추출 시작"
+  },
+  "bulkNote": {
+    "message": "페이지는 백그라운드 탭에서 열리고 자동으로 닫힙니다. Chrome이 해당 사이트를 읽을 권한을 한 번 요청합니다."
+  },
+  "schedTitle": {
+    "message": "이 목록을 자동으로 다시 추출"
+  },
+  "schedNote": {
+    "message": "목록 탭의 목록과 페이지 설정을 사용합니다. Chrome이 열려 있는 동안 백그라운드 탭에서 실행됩니다. 가격과 재고 추적에 좋습니다."
+  },
+  "howOften": {
+    "message": "빈도"
+  },
+  "autoDownload": {
+    "message": "자동 다운로드"
+  },
+  "every60": {
+    "message": "매시간"
+  },
+  "every360": {
+    "message": "6시간마다"
+  },
+  "every1440": {
+    "message": "매일"
+  },
+  "every10080": {
+    "message": "매주"
+  },
+  "createSchedule": {
+    "message": "예약 만들기"
+  },
+  "noSchedules": {
+    "message": "아직 예약이 없습니다."
+  },
+  "working": {
+    "message": "작업 중…"
+  },
+  "stop": {
+    "message": "중지"
+  },
+  "rows": {
+    "message": "행"
+  },
+  "columns": {
+    "message": "열"
+  },
+  "images": {
+    "message": "이미지"
+  },
+  "imagesTitle": {
+    "message": "데이터의 모든 이미지를 다운로드 폴더에 저장"
+  },
+  "dedupe": {
+    "message": "중복 제거"
+  },
+  "dedupeTitle": {
+    "message": "중복 행 제거"
+  },
+  "clear": {
+    "message": "지우기"
+  },
+  "clearTitle": {
+    "message": "모든 데이터 지우기"
+  },
+  "emptyTitle": {
+    "message": "여기에 데이터가 표시됩니다."
+  },
+  "emptySub": {
+    "message": "목록을 선택하거나 빠른 추출을 사용하세요."
+  },
+  "copy": {
+    "message": "복사"
+  },
+  "copyTitle": {
+    "message": "표로 복사해 어디든 붙여넣기"
+  },
+  "sheetsTitle": {
+    "message": "복사 후 새 Google 스프레드시트 열기. Ctrl+V로 붙여넣기"
+  },
+  "enjoying": {
+    "message": "Grabbit이 마음에 드시나요?"
+  },
+  "leaveReview": {
+    "message": "★★★★★ 리뷰 남기기"
+  },
+  "dismiss": {
+    "message": "닫기"
+  },
+  "errCantRead": {
+    "message": "Grabbit이 이 페이지를 읽을 수 없습니다. Chrome은 chrome:// 페이지와 Chrome 웹 스토어에서 확장 프로그램을 차단합니다. 페이지가 방금 바뀌었다면 Grabbit 아이콘을 다시 클릭하세요."
+  },
+  "errGeneric": {
+    "message": "문제가 발생했습니다: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "열 이름"
+  },
+  "removeColumn": {
+    "message": "열 삭제"
+  },
+  "showingFirst": {
+    "message": "처음 $P1$행을 표시합니다. 전체 $P2$행이 내보내집니다.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "중복 $P1$개 제거됨",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "목록을 찾지 못했습니다. \"페이지에서 선택\"을 사용하세요."
+  },
+  "listInfo": {
+    "message": "목록 $P1$/$P2$ · 항목 $P3$개 · 필드 $P4$개",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "페이지를 읽을 수 없습니다."
+  },
+  "clickItem": {
+    "message": "페이지에서 항목을 클릭하세요"
+  },
+  "clickNext": {
+    "message": "페이지에서 다음 버튼을 클릭하세요"
+  },
+  "notFoundChoose": {
+    "message": "찾지 못함, 선택을 클릭하세요"
+  },
+  "pickListFirst": {
+    "message": "먼저 목록을 선택하세요"
+  },
+  "chooseNextFirst": {
+    "message": "먼저 다음 버튼을 선택하세요"
+  },
+  "permFollow": {
+    "message": "페이지를 따라가려면 권한이 필요합니다"
+  },
+  "pageOf": {
+    "message": "$P1$/$P2$ 페이지 · $P3$행",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "완료 · $P1$행",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "$P1$의 레시피를 저장했습니다",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "저장된 레시피 사용 중"
+  },
+  "scanningContacts": {
+    "message": "페이지와 문의 페이지 분석 중…"
+  },
+  "foundEmails": {
+    "message": "이메일 $P1$개를 찾았습니다",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "이 사이트에서 이메일을 찾지 못했습니다"
+  },
+  "grabbed": {
+    "message": "$P1$행 추출됨",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "URL을 하나 이상 붙여넣으세요"
+  },
+  "pickListCurrent": {
+    "message": "먼저 현재 페이지에서 목록을 선택하세요"
+  },
+  "permSites": {
+    "message": "해당 사이트를 열려면 권한이 필요합니다"
+  },
+  "bulkProgress": {
+    "message": "$P1$/$P2$ 페이지 · $P3$행",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$개 실패",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "일괄 추출 완료 · $P1$행",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "데이터에 이미지 URL이 없습니다"
+  },
+  "permImages": {
+    "message": "이미지를 저장하려면 권한이 필요합니다"
+  },
+  "savingImages": {
+    "message": "이미지 저장 중 $P1$/$P2$…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "이미지 $P1$개를 $P2$에 저장했습니다",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "먼저 목록 탭에서 목록을 선택하세요"
+  },
+  "cantSchedule": {
+    "message": "이 페이지는 예약할 수 없습니다"
+  },
+  "permBackground": {
+    "message": "백그라운드에서 실행하려면 권한이 필요합니다"
+  },
+  "scheduled": {
+    "message": "예약됨 · 첫 실행 시작"
+  },
+  "viewData": {
+    "message": "데이터 보기"
+  },
+  "runNow": {
+    "message": "지금 실행"
+  },
+  "delete": {
+    "message": "삭제"
+  },
+  "autoX": {
+    "message": "자동 $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "실행 중…"
+  },
+  "lastRun": {
+    "message": "마지막 실행 $P1$ · $P2$행",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "새 항목 $P1$개",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "아직 실행 안 됨"
+  },
+  "noDataYet": {
+    "message": "아직 데이터 없음"
+  },
+  "nothingToExport": {
+    "message": "아직 내보낼 데이터가 없습니다"
+  },
+  "copiedSheets": {
+    "message": "복사했습니다! 새 시트에서 Ctrl+V(⌘V)를 누르세요"
+  },
+  "copiedRows": {
+    "message": "$P1$행 복사됨",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$행 내보냄",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "추출하려는 페이지에서 툴바 아이콘으로 Grabbit을 여세요."
+  },
+  "tipNext": {
+    "message": "\"다음\" 버튼이나 링크를 클릭 · Esc로 취소"
+  },
+  "tipList": {
+    "message": "원하는 목록의 아무 항목이나 클릭 · Esc로 취소"
+  },
+  "noRepeating": {
+    "message": "그곳에는 반복되는 항목이 없습니다. 다른 항목을 클릭해 보세요."
+  },
+  "errSiteAccess": {
+    "message": "사이트 접근 권한이 해제됨"
+  },
+  "errNoRows": {
+    "message": "행을 찾지 못함, 페이지 레이아웃이 바뀌었을 수 있음"
+  },
+  "errDownloadsPerm": {
+    "message": "다운로드 권한이 해제됨"
+  },
+  "colLink": {
+    "message": "링크"
+  },
+  "colImage": {
+    "message": "이미지"
+  },
+  "colTitle": {
+    "message": "제목"
+  },
+  "colLinkText": {
+    "message": "링크 텍스트"
+  },
+  "colDate": {
+    "message": "날짜"
+  },
+  "colItem": {
+    "message": "항목"
+  },
+  "colCell": {
+    "message": "셀"
+  },
+  "colText": {
+    "message": "텍스트"
+  },
+  "colEmails": {
+    "message": "이메일"
+  },
+  "colPhones": {
+    "message": "전화번호"
+  },
+  "colDescription": {
+    "message": "설명"
+  },
+  "colType": {
+    "message": "유형"
+  },
+  "colAlt": {
+    "message": "대체 텍스트"
+  },
+  "colWidth": {
+    "message": "너비"
+  },
+  "colHeight": {
+    "message": "높이"
+  },
+  "colSource": {
+    "message": "출처 URL"
+  },
+  "colError": {
+    "message": "오류"
+  },
+  "wPageTitle": {
+    "message": "Grabbit에 오신 것을 환영합니다"
+  },
+  "wTitle": {
+    "message": "Grabbit 준비 완료 🐰"
+  },
+  "wLead": {
+    "message": "어떤 웹사이트든 몇 초 만에 스프레드시트로. 무료, 비공개, 계정 불필요."
+  },
+  "wStep1": {
+    "message": "<b>Grabbit 고정:</b> Chrome 툴바의 퍼즐 아이콘 🧩을 클릭한 다음 Grabbit 옆의 핀을 클릭하세요."
+  },
+  "wStep2": {
+    "message": "<b>어떤 페이지에서든 열기:</b> 아이콘이나 <kbd>Alt</kbd>+<kbd>G</kbd>로 열면 Grabbit이 목록과 표를 자동으로 찾습니다."
+  },
+  "wStep3": {
+    "message": "<b>원하는 데이터가 아닌가요?</b> ‹ ›로 다른 목록을 보거나 <b>페이지에서 선택</b>을 누르고 항목을 클릭하세요."
+  },
+  "wStep4": {
+    "message": "Excel, CSV, JSON 또는 Google 스프레드시트로 바로 <b>내보내기</b>."
+  },
+  "wSchedules": {
+    "message": "예약"
+  },
+  "wImageDl": {
+    "message": "이미지 다운로더"
+  },
+  "wPrivate": {
+    "message": "100% 비공개"
+  },
+  "wf1": {
+    "message": "\"다음\" 버튼과 무한 스크롤을 자동으로 따라갑니다."
+  },
+  "wf2": {
+    "message": "사이트의 문의 및 소개 페이지도 확인합니다."
+  },
+  "wf3": {
+    "message": "목록이나 CSV로 수백 개 페이지를 추출하세요."
+  },
+  "wf4": {
+    "message": "매시간, 매일, 매주 다시 추출해 가격과 재고를 추적."
+  },
+  "wf5": {
+    "message": "데이터의 모든 이미지를 클릭 한 번으로 저장."
+  },
+  "wf6": {
+    "message": "모든 작업이 브라우저에서 실행됩니다. 아무것도 업로드되지 않습니다."
+  },
+  "wBulk": {
+    "message": "URL 일괄"
   }
 }

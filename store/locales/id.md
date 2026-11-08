@@ -46,8 +46,8 @@ Buka Grabbit di sebuah halaman dan ia akan menemukan daftar dan tabel untuk Anda
 
 ★ CARA KERJA
 1. Buka situs apa pun dan klik ikon Grabbit (atau tekan Alt+G)
-2. Grabbit menyorot data yang ditemukan. Gunakan ‹ › untuk ganti daftar atau "Pick on page"
-3. Opsional: aktifkan "Multiple pages" atau buat jadwal
+2. Grabbit menyorot data yang ditemukan. Gunakan ‹ › untuk ganti daftar atau "Pilih di halaman"
+3. Opsional: aktifkan "Banyak halaman" atau buat jadwal
 4. Klik Excel, CSV, JSON, atau Sheets. Selesai!
 
 ★ PRIVASI

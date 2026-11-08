@@ -10,5 +10,624 @@
   },
   "commandDesc": {
     "message": "Apri Grabbit in questa pagina"
+  },
+  "webScraper": {
+    "message": "Web scraper"
+  },
+  "tabLists": {
+    "message": "Liste"
+  },
+  "tabQuick": {
+    "message": "Rapido"
+  },
+  "tabBulk": {
+    "message": "URL"
+  },
+  "tabSchedule": {
+    "message": "Pianifica"
+  },
+  "savedRecipe": {
+    "message": "Ricetta salvata per questo sito"
+  },
+  "useIt": {
+    "message": "Usa"
+  },
+  "detectedData": {
+    "message": "Dati rilevati"
+  },
+  "scanning": {
+    "message": "Analisi della pagina…"
+  },
+  "prevList": {
+    "message": "Lista precedente"
+  },
+  "nextList": {
+    "message": "Lista successiva"
+  },
+  "pickOnPage": {
+    "message": "Scegli nella pagina"
+  },
+  "rescan": {
+    "message": "Rianalizza"
+  },
+  "rescanTitle": {
+    "message": "Analizza di nuovo la pagina"
+  },
+  "multiplePages": {
+    "message": "Più pagine"
+  },
+  "off": {
+    "message": "No"
+  },
+  "nextButton": {
+    "message": "Pulsante «Avanti»"
+  },
+  "infiniteScroll": {
+    "message": "Scroll infinito"
+  },
+  "buttonLabel": {
+    "message": "Pulsante:"
+  },
+  "notFound": {
+    "message": "non trovato"
+  },
+  "choose": {
+    "message": "Scegli"
+  },
+  "maxPages": {
+    "message": "Pagine max"
+  },
+  "waitSec": {
+    "message": "Attesa (s)"
+  },
+  "scrapeAllPages": {
+    "message": "Estrai tutte le pagine"
+  },
+  "saveRecipe": {
+    "message": "Salva come ricetta per questo sito"
+  },
+  "qContacts": {
+    "message": "Email e contatti"
+  },
+  "qContactsSub": {
+    "message": "Email, telefoni, social"
+  },
+  "qLinks": {
+    "message": "Tutti i link"
+  },
+  "qLinksSub": {
+    "message": "Testo, URL, interno/esterno"
+  },
+  "qImages": {
+    "message": "Tutte le immagini"
+  },
+  "qImagesSub": {
+    "message": "URL, testo alt, dimensioni"
+  },
+  "qText": {
+    "message": "Testo della pagina"
+  },
+  "qTextSub": {
+    "message": "Titoli e paragrafi"
+  },
+  "pasteUrls": {
+    "message": "Incolla gli URL (uno per riga)"
+  },
+  "loadCsv": {
+    "message": "Carica da CSV"
+  },
+  "urlCount": {
+    "message": "$P1$ URL",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "whatToGrab": {
+    "message": "Cosa estrarre"
+  },
+  "bulkContacts": {
+    "message": "Contatti (controlla anche le pagine contatti)"
+  },
+  "bulkRecipe": {
+    "message": "Stessa lista della pagina attuale (lista scelta)"
+  },
+  "bulkAuto": {
+    "message": "Rileva la lista principale di ogni pagina"
+  },
+  "pagesAtATime": {
+    "message": "Pagine alla volta"
+  },
+  "startBulk": {
+    "message": "Avvia l'estrazione in blocco"
+  },
+  "bulkNote": {
+    "message": "Le pagine si aprono in schede in background e si chiudono da sole. Chrome chiederà una volta l'autorizzazione a leggere quei siti."
+  },
+  "schedTitle": {
+    "message": "Estrai di nuovo questa lista in automatico"
+  },
+  "schedNote": {
+    "message": "Usa la lista e le impostazioni delle pagine della scheda Liste. Gira in una scheda in background mentre Chrome è aperto. Ottimo per monitorare prezzi e disponibilità."
+  },
+  "howOften": {
+    "message": "Frequenza"
+  },
+  "autoDownload": {
+    "message": "Download automatico"
+  },
+  "every60": {
+    "message": "Ogni ora"
+  },
+  "every360": {
+    "message": "Ogni 6 ore"
+  },
+  "every1440": {
+    "message": "Ogni giorno"
+  },
+  "every10080": {
+    "message": "Ogni settimana"
+  },
+  "createSchedule": {
+    "message": "Crea pianificazione"
+  },
+  "noSchedules": {
+    "message": "Ancora nessuna pianificazione."
+  },
+  "working": {
+    "message": "In corso…"
+  },
+  "stop": {
+    "message": "Ferma"
+  },
+  "rows": {
+    "message": "righe"
+  },
+  "columns": {
+    "message": "colonne"
+  },
+  "images": {
+    "message": "Immagini"
+  },
+  "imagesTitle": {
+    "message": "Salva tutte le immagini dei dati nella cartella Download"
+  },
+  "dedupe": {
+    "message": "Togli doppi"
+  },
+  "dedupeTitle": {
+    "message": "Rimuovi righe duplicate"
+  },
+  "clear": {
+    "message": "Svuota"
+  },
+  "clearTitle": {
+    "message": "Cancella tutti i dati"
+  },
+  "emptyTitle": {
+    "message": "I tuoi dati appariranno qui."
+  },
+  "emptySub": {
+    "message": "Scegli una lista o usa la scheda Rapido."
+  },
+  "copy": {
+    "message": "Copia"
+  },
+  "copyTitle": {
+    "message": "Copia come tabella da incollare ovunque"
+  },
+  "sheetsTitle": {
+    "message": "Copia e apri un nuovo foglio Google. Incolla con Ctrl+V"
+  },
+  "enjoying": {
+    "message": "Ti piace Grabbit?"
+  },
+  "leaveReview": {
+    "message": "Lascia una recensione ★★★★★"
+  },
+  "dismiss": {
+    "message": "Chiudi"
+  },
+  "errCantRead": {
+    "message": "Grabbit non può leggere questa pagina. Chrome blocca le estensioni sulle pagine chrome:// e sul Chrome Web Store. Se la pagina è appena cambiata, fai di nuovo clic sull'icona di Grabbit."
+  },
+  "errGeneric": {
+    "message": "Qualcosa è andato storto: $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "columnName": {
+    "message": "Nome colonna"
+  },
+  "removeColumn": {
+    "message": "Rimuovi colonna"
+  },
+  "showingFirst": {
+    "message": "Sono mostrate le prime $P1$ righe. Vengono esportate tutte le $P2$ righe.",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "removedDupes": {
+    "message": "$P1$ duplicati rimossi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noLists": {
+    "message": "Nessuna lista trovata. Usa «Scegli nella pagina»."
+  },
+  "listInfo": {
+    "message": "Lista $P1$ di $P2$ · $P3$ elementi · $P4$ campi",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      },
+      "p4": {
+        "content": "$4"
+      }
+    }
+  },
+  "notReadable": {
+    "message": "Pagina non leggibile."
+  },
+  "clickItem": {
+    "message": "Fai clic su un elemento della pagina"
+  },
+  "clickNext": {
+    "message": "Fai clic sul pulsante Avanti nella pagina"
+  },
+  "notFoundChoose": {
+    "message": "non trovato, fai clic su Scegli"
+  },
+  "pickListFirst": {
+    "message": "Prima scegli una lista"
+  },
+  "chooseNextFirst": {
+    "message": "Prima scegli il pulsante Avanti"
+  },
+  "permFollow": {
+    "message": "Serve l'autorizzazione per seguire le pagine"
+  },
+  "pageOf": {
+    "message": "Pagina $P1$ di $P2$ · $P3$ righe",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "doneRows": {
+    "message": "Fatto · $P1$ righe",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "recipeSaved": {
+    "message": "Ricetta salvata per $P1$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "usingSaved": {
+    "message": "Uso la ricetta salvata"
+  },
+  "scanningContacts": {
+    "message": "Analisi della pagina e delle pagine contatti…"
+  },
+  "foundEmails": {
+    "message": "$P1$ email trovate",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noEmails": {
+    "message": "Nessuna email trovata su questo sito"
+  },
+  "grabbed": {
+    "message": "$P1$ righe estratte",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "pasteOneUrl": {
+    "message": "Incolla almeno un URL"
+  },
+  "pickListCurrent": {
+    "message": "Prima scegli una lista nella pagina attuale"
+  },
+  "permSites": {
+    "message": "Serve l'autorizzazione per aprire quei siti"
+  },
+  "bulkProgress": {
+    "message": "$P1$ di $P2$ pagine · $P3$ righe",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      },
+      "p3": {
+        "content": "$3"
+      }
+    }
+  },
+  "failedN": {
+    "message": "$P1$ non riuscite",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "bulkDone": {
+    "message": "Estrazione in blocco completata · $P1$ righe",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noImageUrls": {
+    "message": "Nessun URL di immagine nei dati"
+  },
+  "permImages": {
+    "message": "Serve l'autorizzazione per salvare le immagini"
+  },
+  "savingImages": {
+    "message": "Salvataggio di $P1$ di $P2$ immagini…",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "savedImages": {
+    "message": "$P1$ immagini salvate in $P2$",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "pickListTab": {
+    "message": "Prima scegli una lista nella scheda Liste"
+  },
+  "cantSchedule": {
+    "message": "Questa pagina non può essere pianificata"
+  },
+  "permBackground": {
+    "message": "Serve l'autorizzazione per funzionare in background"
+  },
+  "scheduled": {
+    "message": "Pianificato · prima esecuzione avviata"
+  },
+  "viewData": {
+    "message": "Vedi dati"
+  },
+  "runNow": {
+    "message": "Esegui ora"
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "autoX": {
+    "message": "$P1$ automatico",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "running": {
+    "message": "In esecuzione…"
+  },
+  "lastRun": {
+    "message": "Ultima esecuzione $P1$ · $P2$ righe",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      },
+      "p2": {
+        "content": "$2"
+      }
+    }
+  },
+  "newN": {
+    "message": "$P1$ nuove",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "notRunYet": {
+    "message": "Non ancora eseguito"
+  },
+  "noDataYet": {
+    "message": "Ancora nessun dato"
+  },
+  "nothingToExport": {
+    "message": "Ancora niente da esportare"
+  },
+  "copiedSheets": {
+    "message": "Copiato! Premi Ctrl+V (⌘V) nel nuovo foglio"
+  },
+  "copiedRows": {
+    "message": "$P1$ righe copiate",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "exportedRows": {
+    "message": "$P1$ righe esportate",
+    "placeholders": {
+      "p1": {
+        "content": "$1"
+      }
+    }
+  },
+  "openFromIcon": {
+    "message": "Apri Grabbit dall'icona nella barra degli strumenti sulla pagina da cui vuoi estrarre i dati."
+  },
+  "tipNext": {
+    "message": "Fai clic sul pulsante o link «Avanti» · Esc per annullare"
+  },
+  "tipList": {
+    "message": "Fai clic su un elemento qualsiasi della lista che vuoi · Esc per annullare"
+  },
+  "noRepeating": {
+    "message": "Lì non ci sono elementi ripetuti. Prova a fare clic su un altro elemento."
+  },
+  "errSiteAccess": {
+    "message": "l'accesso al sito è stato revocato"
+  },
+  "errNoRows": {
+    "message": "nessuna riga trovata, il layout della pagina potrebbe essere cambiato"
+  },
+  "errDownloadsPerm": {
+    "message": "l'autorizzazione ai download è stata revocata"
+  },
+  "colLink": {
+    "message": "Link"
+  },
+  "colImage": {
+    "message": "Immagine"
+  },
+  "colTitle": {
+    "message": "Titolo"
+  },
+  "colLinkText": {
+    "message": "Testo del link"
+  },
+  "colDate": {
+    "message": "Data"
+  },
+  "colItem": {
+    "message": "Elemento"
+  },
+  "colCell": {
+    "message": "Cella"
+  },
+  "colText": {
+    "message": "Testo"
+  },
+  "colEmails": {
+    "message": "Email"
+  },
+  "colPhones": {
+    "message": "Telefoni"
+  },
+  "colDescription": {
+    "message": "Descrizione"
+  },
+  "colType": {
+    "message": "Tipo"
+  },
+  "colAlt": {
+    "message": "Testo alt"
+  },
+  "colWidth": {
+    "message": "Larghezza"
+  },
+  "colHeight": {
+    "message": "Altezza"
+  },
+  "colSource": {
+    "message": "URL di origine"
+  },
+  "colError": {
+    "message": "Errore"
+  },
+  "wPageTitle": {
+    "message": "Benvenuto in Grabbit"
+  },
+  "wTitle": {
+    "message": "Grabbit è pronto 🐰"
+  },
+  "wLead": {
+    "message": "Trasforma qualsiasi sito in un foglio di calcolo in pochi secondi. Gratis, privato e senza account."
+  },
+  "wStep1": {
+    "message": "<b>Fissa Grabbit:</b> fai clic sull'icona del puzzle 🧩 nella barra di Chrome, poi sulla puntina accanto a Grabbit."
+  },
+  "wStep2": {
+    "message": "<b>Aprilo su qualsiasi pagina</b> con l'icona o <kbd>Alt</kbd>+<kbd>G</kbd>. Grabbit trova liste e tabelle in automatico."
+  },
+  "wStep3": {
+    "message": "<b>Non sono i dati giusti?</b> Usa ‹ › per vedere altre liste, oppure <b>Scegli nella pagina</b> e fai clic su un elemento."
+  },
+  "wStep4": {
+    "message": "<b>Esporta</b> in Excel, CSV, JSON o direttamente in Google Sheets."
+  },
+  "wSchedules": {
+    "message": "Pianificazioni"
+  },
+  "wImageDl": {
+    "message": "Download immagini"
+  },
+  "wPrivate": {
+    "message": "100% privato"
+  },
+  "wf1": {
+    "message": "Segue i pulsanti «Avanti» e lo scroll infinito."
+  },
+  "wf2": {
+    "message": "Controlla anche le pagine contatti e chi siamo."
+  },
+  "wf3": {
+    "message": "Estrai centinaia di pagine da una lista o da un CSV."
+  },
+  "wf4": {
+    "message": "Ripeti ogni ora, giorno o settimana per seguire prezzi e disponibilità."
+  },
+  "wf5": {
+    "message": "Salva tutte le immagini dei tuoi dati con un clic."
+  },
+  "wf6": {
+    "message": "Tutto gira nel tuo browser. Non viene caricato nulla."
+  },
+  "wBulk": {
+    "message": "URL in blocco"
   }
 }

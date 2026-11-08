@@ -46,8 +46,8 @@ Grabbit verwandelt jede Website in Sekunden in eine saubere Tabelle. Kostenlos, 
 
 ★ SO FUNKTIONIERT ES
 1. Website öffnen und auf das Grabbit-Symbol klicken (oder Alt+G drücken)
-2. Grabbit markiert die gefundenen Daten. Mit ‹ › die Liste wechseln oder „Pick on page“ nutzen
-3. Optional: „Multiple pages“ aktivieren oder einen Zeitplan anlegen
+2. Grabbit markiert die gefundenen Daten. Mit ‹ › die Liste wechseln oder „Auf der Seite wählen“ nutzen
+3. Optional: „Mehrere Seiten“ aktivieren oder einen Zeitplan anlegen
 4. Auf Excel, CSV, JSON oder Sheets klicken. Fertig!
 
 ★ DATENSCHUTZ

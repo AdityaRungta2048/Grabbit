@@ -35,7 +35,7 @@ async function runSchedule(id) {
   let error = '';
   let tab;
   try {
-    if (!(await chrome.permissions.contains({ origins: [new URL(s.url).origin + '/*'] }))) throw new Error('site access was removed');
+    if (!(await chrome.permissions.contains({ origins: [new URL(s.url).origin + '/*'] }))) throw new Error(chrome.i18n.getMessage('errSiteAccess'));
     tab = await chrome.tabs.create({ url: s.url, active: false });
     await waitLoaded(tab.id);
     await sleep(1500);
@@ -43,7 +43,7 @@ async function runSchedule(id) {
       mode: s.mode, next: s.next, max: s.max, delay: s.delay,
       onPage: (page) => page.forEach((r) => !seen.has(rowKey(r)) && seen.add(rowKey(r)) && rows.push(r)),
     });
-    if (!rows.length) error = 'no rows found, the page layout may have changed';
+    if (!rows.length) error = chrome.i18n.getMessage('errNoRows');
   } catch (e) {
     error = String(e.message || e).slice(0, 120);
   } finally {
@@ -69,7 +69,7 @@ async function runSchedule(id) {
 
 // Service workers have no object URLs, so downloads go through a data: URL.
 async function autoExport(s, rows) {
-  if (!(await chrome.permissions.contains({ permissions: ['downloads'] }))) return 'downloads permission was removed';
+  if (!(await chrome.permissions.contains({ permissions: ['downloads'] }))) return chrome.i18n.getMessage('errDownloadsPerm');
   const bytes = s.autoExport === 'xlsx'
     ? new Uint8Array(await Exporter.xlsx(s.recipe.columns, rows).arrayBuffer())
     : new TextEncoder().encode(Exporter.csv(s.recipe.columns, rows));
