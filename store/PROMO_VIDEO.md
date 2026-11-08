@@ -28,7 +28,7 @@ Use **books.toscrape.com**, a public sandbox site built for scraping practice. I
 | 0:47–0:56 | So why does nobody tell you? Most scrapers sell credits. Grabbit runs in your own browser, so it's free. No account, no limits, nothing uploaded. | Click Excel, the file downloads, and the spreadsheet opens full of rows. Caption: **Free · No account · 100% private** |
 | 0:56–1:00 | Add Grabbit to Chrome. | End card: the Grabbit icon, "Add to Chrome", and the Chrome Web Store badge. |
 
-**Runtime:** about 150 spoken words, roughly 60 seconds at 150 words per minute.
+**Runtime:** 133 spoken words, about 53 seconds at 150 words per minute. Short pauses on the visuals bring it to about 60 seconds.
 
 ## Voiceover text only (to read or paste into a text-to-speech tool)
 ```
