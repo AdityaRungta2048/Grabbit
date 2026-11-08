@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "Harga asli"
+  },
+  "loadingPictures": {
+    "message": "Memuat gambar…"
   }
 }

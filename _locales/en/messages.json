@@ -650,5 +650,8 @@
   },
   "colOldPrice": {
     "message": "Original price"
+  },
+  "loadingPictures": {
+    "message": "Loading pictures…"
   }
 }

@@ -138,9 +138,17 @@ function showCandidate() {
 async function useRecipe(recipe, scroll = true) {
   state.recipe = recipe;
   try {
-    const rows = await call('extract', recipe);
+    setData(recipe.columns, await call('extract', recipe));
+    // Shops often add a picture only once it scrolls into view. Load the missing ones, then refresh.
+    if (recipe.columns.some((c) => c.kind === 'src') && state.rows.length) {
+      const info = $('#candInfo').textContent;
+      $('#candInfo').textContent = t('loadingPictures');
+      await call('revealLazy', recipe.rowSelector);
+      if (state.recipe !== recipe) return; // user switched lists meanwhile
+      $('#candInfo').textContent = info;
+      setData(recipe.columns, await call('extract', recipe));
+    }
     if (scroll) call('preview', recipe);
-    setData(recipe.columns, rows);
   } catch (e) { accessError(e); }
 }
 async function scan() {

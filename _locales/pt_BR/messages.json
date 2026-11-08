@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "Preço original"
+  },
+  "loadingPictures": {
+    "message": "Carregando imagens…"
   }
 }

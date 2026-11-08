@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "原价"
+  },
+  "loadingPictures": {
+    "message": "正在加载图片…"
   }
 }

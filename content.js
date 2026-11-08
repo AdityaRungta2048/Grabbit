@@ -386,9 +386,10 @@
   G.revealLazy = async (rowSelector) => {
     const wait = (ms) => new Promise((res) => setTimeout(res, ms));
     const hasImg = (r) => [...r.querySelectorAll('img')].some((i) => { const s = imgSrc(i); return s && !s.startsWith('data:'); });
+    // Only the rows there now: on endless pages scrolling pulls in more, and chasing those is Infinite scroll's job.
+    const rows = [...document.querySelectorAll(rowSelector)];
     const lacking = () => {
-      const rows = [...document.querySelectorAll(rowSelector)];
-      const l = rows.filter((r) => !hasImg(r));
+      const l = rows.filter((r) => r.isConnected && !hasImg(r));
       return l.length === rows.length ? [] : l; // a list without pictures at all: nothing to wait for
     };
     let todo = lacking();
@@ -399,12 +400,11 @@
       for (const r of todo) {
         if (hasImg(r)) continue;
         r.scrollIntoView({ block: 'center' });
-        await wait(250);
+        for (let t = 0; t < 10 && !hasImg(r); t++) await wait(100); // up to 1s for its picture to arrive
       }
       await wait(400);
-      const left = lacking();
-      if (left.length >= todo.length) break; // no progress: these rows really have no picture
-      todo = left;
+      if (!todo.some(hasImg)) break; // none of them loaded: these rows really have no picture
+      todo = lacking();
     }
     scrollTo(x, y);
     return lacking().length;

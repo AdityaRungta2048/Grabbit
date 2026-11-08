@@ -91,6 +91,12 @@ const launch = require('./harness');
   // 8. Infinite scroll: 10 items load at a time, 40 total
   const sc = await openPanel(`${base}/scroll.html`);
   await sc.panel.waitForFunction(() => +document.querySelector('#rowCount').textContent === 10, null, { polling: 200 });
+  // Opening the panel alone (no multi-page run) must still fetch pictures that load on scroll.
+  await sc.panel.waitForFunction(() => {
+    const cols = [...document.querySelectorAll('#grid thead input')].map((i) => i.value);
+    const cells = [...document.querySelectorAll(`#grid tbody td:nth-child(${cols.indexOf('Image') + 2})`)];
+    return cells.length >= 10 && cells.slice(0, 10).every((td) => td.title); // rows the scroll pulled in are Infinite scroll's job
+  }, null, { polling: 200, timeout: 15000 });
   // The list runs to the page bottom with no Next button, so the panel offers infinite scroll in one click.
   await sc.panel.waitForSelector('#scrollHint:not([hidden])', { timeout: 10000 });
   await sc.panel.evaluate(() => { document.querySelector('#delay').value = '0.5'; }); // pager section is still collapsed

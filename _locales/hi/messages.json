@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "मूल कीमत"
+  },
+  "loadingPictures": {
+    "message": "इमेज लोड हो रही हैं…"
   }
 }

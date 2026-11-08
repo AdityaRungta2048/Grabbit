@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "Старая цена"
+  },
+  "loadingPictures": {
+    "message": "Загрузка изображений…"
   }
 }

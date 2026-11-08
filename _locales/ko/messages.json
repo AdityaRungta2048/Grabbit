@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "원래 가격"
+  },
+  "loadingPictures": {
+    "message": "이미지 불러오는 중…"
   }
 }

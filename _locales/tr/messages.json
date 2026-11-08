@@ -646,5 +646,8 @@
   },
   "colOldPrice": {
     "message": "Eski fiyat"
+  },
+  "loadingPictures": {
+    "message": "Görseller yükleniyor…"
   }
 }
