@@ -18,7 +18,7 @@ footer{padding:10px 28px 30px}footer a{padding:8px 14px;background:#222;color:#f
 <header><b>⛰ Northpeak Outdoor</b><nav><a href="#" id="n0"></a><a href="#" id="n1"></a><a href="contact.html" id="n2"></a></nav></header>
 <h1 id="h1"></h1><p class="sub" id="sub"></p>
 <div class="grid" id="grid"></div>
-<footer><a href="demo.html?page=2" id="next"></a><p id="foot"></p></footer>
+<footer><a href="#" id="next"></a><p id="foot"></p></footer>
 <script>
 const COLORS = ['#7c5cff', '#ff7a59', '#2bb3a3', '#f5b83d', '#4f8cff', '#e0569b', '#3d405b', '#81b29a', '#ff9f1c'];
 const USD = [129, 89, 219, 59, 289, 24, 75, 18, 39];
@@ -72,7 +72,13 @@ document.getElementById('h1').textContent = s.h1;
 document.getElementById('sub').textContent = s.sub;
 document.getElementById('next').textContent = s.next;
 document.getElementById('foot').textContent = `${s.foot} hello@northpeakoutdoor.co · +1 (303) 555-0187`;
-document.getElementById('grid').innerHTML = s.p.map((name, i) => `<article class="card"><img src="${img(COLORS[i])}" alt="${name}"><h3 class="name"><a href="/p/${i}">${name}</a></h3><div class="meta"><span class="price">${price(USD[i])}</span><span class="stars">★ ${STARS[i]}</span></div><span class="ship">${s.ship[i % 2]}</span></article>`).join('');
+// ?page=2..4: the same catalog rotated, so following "Next" gives new items (page 4 is the last).
+const pg = Math.min(4, Math.max(1, +new URLSearchParams(location.search).get('page') || 1));
+const ix = s.p.map((_, i) => (i + (pg - 1) * 4) % s.p.length);
+const nextA = document.getElementById('next');
+if (pg < 4) nextA.href = `demo.html?${new URLSearchParams({ ...Object.fromEntries(new URLSearchParams(location.search)), page: pg + 1 })}`;
+else nextA.remove();
+document.getElementById('grid').innerHTML = ix.map((i) => `<article class="card"><img src="${img(COLORS[i])}" alt="${s.p[i]}"><h3 class="name"><a href="/p/${pg}-${i}">${s.p[i]}${pg > 1 ? ' ' + ['', '', 'II', 'III', 'IV'][pg] : ''}</a></h3><div class="meta"><span class="price">${price(USD[i] + (pg - 1) * 10)}</span><span class="stars">★ ${STARS[i]}</span></div><span class="ship">${s.ship[(i + pg) % 2]}</span></article>`).join('');
 </script>
 </body>
 </html>

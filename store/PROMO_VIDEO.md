@@ -48,3 +48,21 @@ Add Grabbit to Chrome.
 - Use bold captions in brand purple (#7C5CFF) on white, so the video works with the sound off.
 - For the YouTube upload, use the title **Grabbit – Free Web Scraper for Chrome (Any Website to Excel in One Click)**, put the store link first in the description, and use `store/promo-marquee.jpg` as the thumbnail.
 - Paste the YouTube URL into **Global promo video** in the dashboard.
+
+## Ready-made video
+`grabbit-promo.mp4` is a 56-second captioned video (1920×1080, no voiceover) recorded from the real extension. Regenerate it with `node test/promo-video.js`; it's written to `dist/grabbit-promo.mp4`.
+
+**Upload to YouTube** (the store only accepts a YouTube link):
+1. Go to YouTube Studio → **Create → Upload videos** and choose `grabbit-promo.mp4`.
+2. Title: **Grabbit – Free Web Scraper for Chrome (Any Website to Excel in One Click)**
+3. Description:
+   ```
+   Grabbit turns any website into a spreadsheet in one click. Free, no code, no account.
+   Lists, tables, emails, multiple pages, infinite scroll, bulk URLs and scheduled scraping.
+   Export to Excel, CSV, JSON or Google Sheets.
+
+   Get it free: <your Chrome Web Store link>
+   ```
+4. Thumbnail: `store/promo-marquee.jpg`.
+5. Optional music: in YouTube Studio → **Editor → Audio**, add a free track from the Audio Library.
+6. Visibility: **Public** (or Unlisted). Copy the link and paste it into **Global promo video** in the store dashboard.

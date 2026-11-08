@@ -9,7 +9,8 @@ const root = path.join(__dirname, '..');
 const fixtures = path.join(__dirname, 'fixtures');
 
 // lang: a _locales code such as 'ja' or 'pt_BR'; the browser runs in that language.
-module.exports = async function launch(viewport, lang) {
+// extra: more browser-context options, e.g. { deviceScaleFactor: 2 } for sharper captures.
+module.exports = async function launch(viewport, lang, extra = {}) {
   const server = http.createServer((req, res) => {
     const f = path.join(fixtures, path.normalize(req.url.split('?')[0]).replace(/^(\.\.[/\\])+/, ''));
     if (fs.existsSync(f) && fs.statSync(f).isFile()) {
@@ -35,6 +36,7 @@ module.exports = async function launch(viewport, lang) {
     ...(lang && { locale: lang.replace('_', '-') }),
     acceptDownloads: true,
     viewport,
+    ...extra,
   });
   const sw = ctx.serviceWorkers()[0] || (await ctx.waitForEvent('serviceworker'));
   const extId = sw.url().split('/')[2];
