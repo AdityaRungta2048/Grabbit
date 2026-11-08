@@ -28,7 +28,7 @@ Ouvrez Grabbit sur une page et il trouve les listes et tableaux pour vous : prod
 ✔ Scraping d'URL en masse : collez des centaines de liens ou chargez un CSV
 ✔ Scraping planifié : relancez l'extraction chaque heure, jour ou semaine et voyez combien de lignes sont nouvelles. Idéal pour suivre les prix, les stocks et les offres d'emploi. Téléchargement automatique Excel ou CSV possible
 ✔ Téléchargement de toutes les images dans un dossier en un clic
-✔ Extracteur d'e-mails, de téléphones et de profils sociaux (LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub), y compris depuis les pages de contact
+✔ Extracteur d'e-mails, de téléphones et de profils sociaux, y compris depuis les pages de contact
 ✔ Extracteur de liens, d'images et de texte
 ✔ Les tableaux HTML gardent leurs vrais en-têtes
 ✔ Éditeur intégré : renommez et supprimez des colonnes, modifiez des cellules, supprimez les doublons

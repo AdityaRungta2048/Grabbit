@@ -28,7 +28,7 @@ Grabbit'i bir sayfada açın; listeleri ve tabloları sizin için bulsun: ürün
 ✔ Toplu URL kazıma: yüzlerce bağlantı yapıştırın veya CSV yükleyin
 ✔ Zamanlanmış kazıma: her saat, gün veya hafta yeniden çalıştırın ve kaç satırın yeni olduğunu görün. Fiyat, stok ve iş ilanı takibi için ideal. Excel veya CSV otomatik indirme seçeneği
 ✔ Tüm görselleri tek tıkla bir klasöre indirme
-✔ E-posta, telefon ve sosyal profil (LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub) çıkarıcı, iletişim sayfaları dahil
+✔ E-posta, telefon ve sosyal profil çıkarıcı, iletişim sayfaları dahil
 ✔ Bağlantı, görsel ve sayfa metni çıkarıcı
 ✔ HTML tablolar gerçek başlıklarını korur
 ✔ Yerleşik düzenleyici: sütunları yeniden adlandırın ve silin, hücreleri düzenleyin, kopyaları kaldırın

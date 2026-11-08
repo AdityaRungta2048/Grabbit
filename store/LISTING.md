@@ -37,54 +37,42 @@ Scrape any website to Excel, CSV, JSON or Google Sheets in one click. Free, no c
 ```
 Grabbit turns any website into a clean spreadsheet in seconds. It's free, needs no account, and your data never leaves your browser.
 
-Open Grabbit on a page and it finds the lists and tables for you: products, search results, listings, directories, leads, jobs, reviews, prices. Check the preview, then export to Excel, CSV, JSON or Google Sheets.
+Open Grabbit on a page and it finds the lists and tables for you, such as products, search results, listings, directories or reviews. Check the preview, then export with one click.
 
 ★ WHY GRABBIT
-• 100% free. No credits, no row limits, no "upgrade to export"
-• No sign-up, no account, no API key
-• Private by design: everything runs locally in your browser, nothing is uploaded
-• Works without code: no selectors, XPath or setup
+• Free, with no credits or row limits
+• No sign-up and no account
+• Private: everything runs locally in your browser and nothing is uploaded
+• No code: no selectors or setup needed
 • Few permissions: Grabbit only reads the tab you open it on, and asks before doing more
 
 ★ FEATURES
-✔ One-click auto-detect: finds lists, grids and tables on any page
-✔ Point-and-click picker: click one item and Grabbit selects all the similar ones
-✔ Multi-page scraping: follows "Next" buttons and pagination for you
+✔ Auto-detect: finds lists, grids and tables on the page in one click
+✔ Point and click: click one item and Grabbit selects all the similar ones
+✔ Multiple pages: follows "Next" buttons and pagination for you
 ✔ Infinite scroll: keeps scrolling and collects every item
-✔ Bulk URL scraper: paste hundreds of URLs or load a CSV, and Grabbit visits each one
-✔ Scheduled scraping: re-scrape a page every hour, day or week and see how many rows are new. Great for price, stock and job tracking. Can auto-download Excel or CSV after each run
-✔ Bulk image downloader: save every image in your data to a folder in one click
-✔ Email extractor: finds emails, phone numbers and social profiles (LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub), and also checks each site's contact and about pages
-✔ Link extractor, image extractor and page text extractor
-✔ Real table headers: HTML tables keep their column names
-✔ Built-in editor: rename columns, delete columns, edit cells, remove duplicates
-✔ Saved recipes: save a setup per website and reuse it in one click
-✔ Export to Excel (.xlsx), CSV, JSON, clipboard, or straight into Google Sheets
-✔ Side panel UI that stays open while you browse
-✔ Keyboard shortcut: Alt+G
-✔ Dark mode
-
-★ GREAT FOR
-• Lead generation: collect emails and contacts from business directories
-• E-commerce: product names, prices, ratings and images, plus scheduled price monitoring and competitor tracking
-• Real estate, jobs and marketplace listings
-• SEO: all links, headings and page text
-• Research and journalism: turn HTML tables into spreadsheets
-• Recruiting: candidate and company lists
-• Marketing: influencer and social profile lists
+✔ Bulk URLs: paste a list of links or load a CSV file, and Grabbit visits each page
+✔ Scheduled scraping: re-run a scrape hourly, daily or weekly and see how many rows are new, with optional automatic download
+✔ Image downloader: save every image in your results to a folder
+✔ Contact finder: collects email addresses, phone numbers and social profile links, including from a site's contact and about pages
+✔ Quick grab: all links, all images or the page text
+✔ HTML tables keep their real column headers
+✔ Editor: rename or delete columns, edit cells and remove duplicates
+✔ Saved recipes: save a setup per website and reuse it
+✔ Export to Excel, CSV, JSON or Google Sheets, or copy to the clipboard
+✔ Side panel that stays open while you browse, keyboard shortcut Alt+G and dark mode
+✔ Available in 13 languages
 
 ★ HOW IT WORKS
 1. Open any website and click the Grabbit icon (or press Alt+G)
-2. Grabbit highlights the data it found. Use ‹ › to switch lists, or "Pick on page"
-3. Optional: turn on "Multiple pages" to scrape every page, or schedule it to run automatically
-4. Click Excel, CSV, JSON or Sheets. Done!
+2. Grabbit highlights the data it found. Use ‹ › to switch lists, or "Pick on page" to choose one
+3. Optional: turn on "Multiple pages", or schedule the scrape
+4. Click Export. Done!
 
 ★ PRIVACY
-Grabbit has no servers. It doesn't collect, store or sell any data. Scraped data stays on your computer until you export it.
+Grabbit has no servers. It doesn't collect, store or sell any data. Your results stay on your computer until you export them.
 
 Please scrape responsibly and respect each website's terms of service.
-
-Questions or ideas? Leave a review. We read every one.
 ```
 
 **Category:** `Tools` (under Productivity)
@@ -181,12 +169,13 @@ Then click **Submit for review**. A first review usually takes a few days. Optio
 ---
 
 ## Keywords this listing targets
+> Don't paste these into the description. Google rejects lists of keywords or other brands' names as "keyword spam" (this listing was rejected once for listing social networks). Use them only as a guide for natural wording.
 web scraper, data scraper, data extractor, scrape to excel, website to excel, scrape to google sheets, csv export, table scraper, list scraper, email extractor, email scraper, lead extractor, contact finder, pagination scraper, infinite scroll scraper, bulk url scraper, scheduled scraper, price tracker, price monitor, image downloader, bulk image downloader, no code scraper, free web scraper, instant data scraper, link extractor
 
 ## Launch tips for more installs
 1. Once the store approves Grabbit, point the "Get Grabbit for Chrome" button in `docs/index.html` at the store page. Listings with a website rank better, and the site sends visitors to the store.
 2. Add a short YouTube demo as the promo video.
 3. Early ratings matter most. The panel asks for a review after a user's 3rd export, and you can also share the review link with your first users.
-4. Post a short demo GIF on Product Hunt, Reddit (r/webscraping, r/chrome_extensions, r/sales, r/leadgeneration, r/datasets, r/ecommerce), and in LinkedIn/X growth communities.
+4. Post a short demo GIF on Product Hunt, Reddit (r/webscraping, r/chrome_extensions, r/sales, r/leadgeneration, r/datasets, r/ecommerce), and in social media growth communities.
 5. Localize the listing (Spanish, Portuguese, French, German, Hindi, Japanese) in the dashboard. Each translated listing ranks in that locale's search.
 6. Ship small updates often and mention them in the description. Recently updated extensions get more trust.

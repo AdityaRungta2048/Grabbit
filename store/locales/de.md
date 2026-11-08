@@ -28,7 +28,7 @@ Grabbit verwandelt jede Website in Sekunden in eine saubere Tabelle. Kostenlos, 
 ✔ Massen-Scraping von URLs: Hunderte Links einfügen oder eine CSV laden
 ✔ Geplantes Scraping: stündlich, täglich oder wöchentlich neu scrapen und sehen, wie viele Zeilen neu sind. Ideal für Preis-, Bestands- und Job-Monitoring. Optionaler automatischer Excel- oder CSV-Download
 ✔ Alle Bilder mit einem Klick in einen Ordner herunterladen
-✔ E-Mail-, Telefon- und Social-Profile-Extraktor (LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub), auch von Kontaktseiten
+✔ E-Mail-, Telefon- und Social-Profile-Extraktor, auch von Kontaktseiten
 ✔ Link-, Bild- und Text-Extraktor
 ✔ HTML-Tabellen behalten ihre echten Spaltenüberschriften
 ✔ Integrierter Editor: Spalten umbenennen und löschen, Zellen bearbeiten, Duplikate entfernen

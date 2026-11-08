@@ -28,7 +28,7 @@ Buka Grabbit di sebuah halaman dan ia akan menemukan daftar dan tabel untuk Anda
 ✔ Scraping URL massal: tempel ratusan link atau muat CSV
 ✔ Scraping terjadwal: ulangi setiap jam, hari, atau minggu dan lihat berapa baris yang baru. Cocok untuk memantau harga, stok, dan lowongan. Bisa unduh Excel atau CSV otomatis
 ✔ Unduh semua gambar ke satu folder dengan satu klik
-✔ Ekstraktor email, nomor telepon, dan profil sosial (LinkedIn, X/Twitter, Facebook, Instagram, YouTube, TikTok, GitHub), termasuk dari halaman kontak
+✔ Ekstraktor email, nomor telepon, dan profil sosial, termasuk dari halaman kontak
 ✔ Ekstraktor link, gambar, dan teks halaman
 ✔ Tabel HTML tetap memakai judul kolom aslinya
 ✔ Editor bawaan: ganti nama dan hapus kolom, edit sel, hapus duplikat
