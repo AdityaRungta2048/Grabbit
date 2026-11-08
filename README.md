@@ -27,7 +27,7 @@ Needs Node and Playwright with Chromium.
 node test/e2e.js
 node test/i18n-check.js
 ```
-This loads the real extension and checks auto-detect, the picker, pagination, infinite scroll, contacts, table headers, bulk URLs, image downloads, schedules and exports against the pages in `test/fixtures/`. `node test/screenshots.js` regenerates the store images.
+This loads the real extension and checks auto-detect, the picker, pagination, infinite scroll, contacts, table headers, bulk URLs, image downloads, schedules and exports against the pages in `test/fixtures/`. `node test/screenshots.js` regenerates the store images for every language (or `node test/screenshots.js ja de` for some). Captions live in `store/captions.json`. CJK and Hindi captions need Noto fonts installed (`fonts-noto-cjk`, `fonts-noto-core`).
 
 ## Package for the Chrome Web Store
 ```bash

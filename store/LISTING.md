@@ -115,25 +115,26 @@ The screenshots and tiles are JPEGs with no alpha, as the store requires. Upload
 ---
 
 ## 2b. Localized listings (12 more languages)
-The title and summary are translated inside the package (`_locales/`), so the store shows them automatically after you upload 1.2.0. The description has to be pasted in per language:
+The title and summary are translated inside the package (`_locales/`), so the store shows them automatically after you upload 1.2.0. The description and images are added per language:
 
 1. **Store listing** tab → the language dropdown at the top → **Add language** (or pick it).
-2. Paste the description from the matching file. The screenshots and promo tiles default to the English ones, so you can leave them.
+2. Paste the description from the language's `.md` file.
+3. Under **Graphic assets** for that language, upload the localized images from the language's folder: `screenshot-1.jpg` … `screenshot-5.jpg` (in order), `promo-small.jpg` and `promo-marquee.jpg`. The store icon is shared, so don't re-upload it. They show the side panel and captions in that language.
 
-| Language | Dashboard name | File |
-| --- | --- | --- |
-| Spanish | Spanish | `store/locales/es.md` |
-| Portuguese (Brazil) | Portuguese (Brazil) | `store/locales/pt_BR.md` |
-| French | French | `store/locales/fr.md` |
-| German | German | `store/locales/de.md` |
-| Italian | Italian | `store/locales/it.md` |
-| Russian | Russian | `store/locales/ru.md` |
-| Japanese | Japanese | `store/locales/ja.md` |
-| Korean | Korean | `store/locales/ko.md` |
-| Chinese (Simplified) | Chinese (China) | `store/locales/zh_CN.md` |
-| Hindi | Hindi | `store/locales/hi.md` |
-| Indonesian | Indonesian | `store/locales/id.md` |
-| Turkish | Turkish | `store/locales/tr.md` |
+| Language | Dashboard name | Description | Images folder |
+| --- | --- | --- | --- |
+| Spanish | Spanish | `store/locales/es.md` | `store/locales/es/` |
+| Portuguese (Brazil) | Portuguese (Brazil) | `store/locales/pt_BR.md` | `store/locales/pt_BR/` |
+| French | French | `store/locales/fr.md` | `store/locales/fr/` |
+| German | German | `store/locales/de.md` | `store/locales/de/` |
+| Italian | Italian | `store/locales/it.md` | `store/locales/it/` |
+| Russian | Russian | `store/locales/ru.md` | `store/locales/ru/` |
+| Japanese | Japanese | `store/locales/ja.md` | `store/locales/ja/` |
+| Korean | Korean | `store/locales/ko.md` | `store/locales/ko/` |
+| Chinese (Simplified) | Chinese (China) | `store/locales/zh_CN.md` | `store/locales/zh_CN/` |
+| Hindi | Hindi | `store/locales/hi.md` | `store/locales/hi/` |
+| Indonesian | Indonesian | `store/locales/id.md` | `store/locales/id/` |
+| Turkish | Turkish | `store/locales/tr.md` | `store/locales/tr/` |
 
 The extension's own interface (side panel, on-page picker, welcome page) is translated into the same 13 languages and follows the browser language, so the button names in each description match what users see.
 

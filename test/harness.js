@@ -8,7 +8,8 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const fixtures = path.join(__dirname, 'fixtures');
 
-module.exports = async function launch(viewport) {
+// lang: a _locales code such as 'ja' or 'pt_BR'; the browser runs in that language.
+module.exports = async function launch(viewport, lang) {
   const server = http.createServer((req, res) => {
     const f = path.join(fixtures, path.normalize(req.url.split('?')[0]).replace(/^(\.\.[/\\])+/, ''));
     if (fs.existsSync(f) && fs.statSync(f).isFile()) {
@@ -30,7 +31,8 @@ module.exports = async function launch(viewport) {
 
   const ctx = await chromium.launchPersistentContext(fs.mkdtempSync(path.join(os.tmpdir(), 'grabbit-prof-')), {
     channel: 'chromium',
-    args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`],
+    args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`, ...(lang ? [`--lang=${lang.replace('_', '-')}`] : [])],
+    ...(lang && { locale: lang.replace('_', '-') }),
     acceptDownloads: true,
     viewport,
   });
