@@ -61,7 +61,7 @@ Add Grabbit to Chrome.
    Lists, tables, emails, multiple pages, infinite scroll, bulk URLs and scheduled scraping.
    Export to Excel, CSV, JSON or Google Sheets.
 
-   Get it free: <your Chrome Web Store link>
+   Get it free: https://chromewebstore.google.com/detail/eoaacdkiehhbjfebnnabbammefccioef
    ```
 4. Thumbnail: `store/promo-marquee.jpg`.
 5. Visibility: **Unlisted**, so only people with the link (your store page) can see it. Copy the link and paste it into **Global promo video** in the store dashboard.

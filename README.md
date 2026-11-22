@@ -1,5 +1,7 @@
 # Grabbit 🐰: Free Web Scraper & Data Extractor
 
+**[Add Grabbit to Chrome](https://chromewebstore.google.com/detail/eoaacdkiehhbjfebnnabbammefccioef)** (free)
+
 Turn any website into a spreadsheet in one click. Free, private, no code, no account.
 
 - **Auto-detects** lists, grids and tables, and keeps real table headers

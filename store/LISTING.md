@@ -173,7 +173,7 @@ Then click **Submit for review**. A first review usually takes a few days. Optio
 web scraper, data scraper, data extractor, scrape to excel, website to excel, scrape to google sheets, csv export, table scraper, list scraper, email extractor, email scraper, lead extractor, contact finder, pagination scraper, infinite scroll scraper, bulk url scraper, scheduled scraper, price tracker, price monitor, image downloader, bulk image downloader, no code scraper, free web scraper, instant data scraper, link extractor
 
 ## Launch tips for more installs
-1. Once the store approves Grabbit, point the "Get Grabbit for Chrome" button in `docs/index.html` at the store page. Listings with a website rank better, and the site sends visitors to the store.
+1. Grabbit is live at https://chromewebstore.google.com/detail/eoaacdkiehhbjfebnnabbammefccioef and the website button points there. Listings with a website rank better, and the site sends visitors to the store.
 2. Add a short YouTube demo as the promo video.
 3. Early ratings matter most. The panel asks for a review after a user's 3rd export, and you can also share the review link with your first users.
 4. Post a short demo GIF on Product Hunt, Reddit (r/webscraping, r/chrome_extensions, r/sales, r/leadgeneration, r/datasets, r/ecommerce), and in social media growth communities.
