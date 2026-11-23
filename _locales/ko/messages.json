@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "이미지 불러오는 중…"
+  },
+  "moreBy": {
+    "message": "AR Labs의 다른 확장 프로그램:"
   }
 }

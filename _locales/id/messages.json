@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "Memuat gambar…"
+  },
+  "moreBy": {
+    "message": "Ekstensi lain dari AR Labs:"
   }
 }

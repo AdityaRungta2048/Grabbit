@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "Görseller yükleniyor…"
+  },
+  "moreBy": {
+    "message": "AR Labs'in diğer uzantıları:"
   }
 }

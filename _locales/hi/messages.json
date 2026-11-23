@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "इमेज लोड हो रही हैं…"
+  },
+  "moreBy": {
+    "message": "AR Labs के और एक्सटेंशन:"
   }
 }

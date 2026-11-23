@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "Chargement des images…"
+  },
+  "moreBy": {
+    "message": "Autres extensions d'AR Labs :"
   }
 }

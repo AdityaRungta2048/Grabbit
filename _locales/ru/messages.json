@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "Загрузка изображений…"
+  },
+  "moreBy": {
+    "message": "Другие расширения AR Labs:"
   }
 }

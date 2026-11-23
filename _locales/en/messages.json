@@ -653,5 +653,8 @@
   },
   "loadingPictures": {
     "message": "Loading pictures…"
+  },
+  "moreBy": {
+    "message": "More extensions by AR Labs:"
   }
 }

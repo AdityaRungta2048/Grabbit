@@ -649,5 +649,8 @@
   },
   "loadingPictures": {
     "message": "正在加载图片…"
+  },
+  "moreBy": {
+    "message": "AR Labs 的更多扩展："
   }
 }
